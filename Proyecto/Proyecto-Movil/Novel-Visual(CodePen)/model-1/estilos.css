@@ -13,34 +13,18 @@ body{
     padding:20px;
     width:90%;
     height:20%;
-    background:rgb(0,0,0,.5);
+    background:black;
     bottom:0px;
     left:2%;
-    border-radius:40px;
   }
   
   .char_name{
     position:fixed;
-    background:#85aae5;
+    background:blue;
     bottom:22%;
     font-size:30px;
     padding:10px 45px;
-    border-radius:25px 0;
-    transition:padding .2s, transform .2s, font-size .1s, background .5s;
   }
-  
-  .box:hover .char_name{
-    background:#ffaa99;
-    padding:15px 50px;
-    transform:rotate(1deg);
-    font-size:35px;
-  }
-  
-  p#text{
-    position:relative;
-    margin:20px;
-  }
-  
   .arrow{
     padding:0;
     cursor:pointer;
@@ -62,7 +46,5 @@ body{
     50% {border-bottom:transparent 4px solid;}
     100% {border-bottom:transparent 0px solid;}
   }
+
   
-  .arrow:hover{
-    border-top:#ddd 20px solid;
-  }
