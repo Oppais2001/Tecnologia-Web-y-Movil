@@ -1,0 +1,74 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Times New Roman", Times, serif;
+    background-color: black;
+}p{
+    position: absolute;
+    top: 10%;
+    left: 2%;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size:75%;
+    width: 96%;
+}
+
+form{
+    background-color: black;
+    width: 60%;
+    height: 25%;
+    padding-top: 0%;
+    padding-left: 0%;
+    margin: 50px auto;
+    border: 2px solid white;
+    position: absolute;
+    top: 60%;
+    left: 19%;
+    border-radius: 15px;
+    
+    
+}
+#Boton1{
+    width: 0;
+    height: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 75%;
+    left: 92%;
+    border-right: 0px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid white;
+}
+#Boton2{
+    width: 0;
+    height: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 75%;
+    left: 3%;
+    border-left: 0px solid transparent;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 10px solid white;
+}
+
+#fondo{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+}
+
+#Personaje{
+    width: 50%;
+    height: 200%;
+    position: absolute;
+    bottom: 100%;
+    left: 25%;
+    background-color: transparent;
+
+}

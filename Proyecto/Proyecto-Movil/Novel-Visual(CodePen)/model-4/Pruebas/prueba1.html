@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #myButton {
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
+    }
+    #myButton.hidden {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <button id="myButton" onclick="toggle()">Haz clic aquí</button>
+
+  <script>
+    function toggle() {
+      var button = document.getElementById("myButton");
+      button.classList.toggle("hidden");
+    }
+
+    setInterval(toggle, 1000);
+  </script>
+</body>
+</html>
