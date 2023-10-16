@@ -1,12 +1,55 @@
+//Clases
+class Personajes{
+    constructor(LV, HP,HPMax, SP, SPMax, E, P){
+        this.LV = LV //Nivel del personaje
+        this.HP = HP //Puntos de Salud
+        this.HPMax = HPMax //Puntos de Salud Maximos
+        this.SP = SP //Puntos de Aguante
+        this.SPMax = SPMax //Puntos de Aguante Maximos
+        this.E = E //Puntos de Experiencia
+        this.P = P //Puntos de Juego
+    }//Acciones que pueden realizarse durante el combate
+    RealizarAtaque(Aguante){
+        this.HP = this.HP - Aguante;
+    }
+    RecibirAtaque(Ataque){
+        this.PV = PV - Ataque;
+    }
+    RecuperarSP(){
+        this.SP = this.SPMax;
+    }
+    RecuperarHP(Puntos){
+        this.HP = this.HP + Puntos;
+        if(this.HP>this.HPMax){
+            this.HP = this.HPMax;
+        }
+    }//Acciones que solo se dan despues del combate
+    SubirNvl(){
+        this.LV = LV++;
+        this.E = 0;
+    }
+    SumarPuntos(E){
+        this.E = this.E + E;
+    }
+    SumarPuntos(P){
+        this.P = this.P + P;
+    }
+}
+var Player = new Personajes(1,10,10,10,10,0,0);
+//Funcion de inicio
 document.addEventListener('DOMContentLoaded', function() {
     var p = document.getElementById("puntos");
-    p.innerHTML = "1</br>10</br>10</br>0</br>0";  
+    p.innerHTML = Player.LV + "</br>" + Player.HP + "</br>" + Player.SP + "</br>" + Player.E + "</br>" + Player.P;
+    var Texto = "¡Acabas de ver a un Tanaka!\n¿Que deseas hacer?";
+    MostrarTexto(Texto);
 });
+//Funciones para la narraciones mediante los botones
 function NarrarAtaque(){
-    var Texto = "Has decidido Atacar";
-    var MagnitudATQ = -100;
+    var MagnitudATQ = 1;
+    var Texto = "¡Has decidido Atacar!\n Los puntos de salud del\n Tanaka disminuyen en "+ MagnitudATQ +".";
     MostrarTexto(Texto);
     MostrarAtaque(MagnitudATQ, "Ataque");
+    NarrarRecibirAtaque();
 
 }
 function NarrarRecibirAtaque(){
@@ -28,10 +71,11 @@ function Huir(){
     MostrarTexto(Texto);
 }
 function RecibirAtaque(){
-    var Texto = "Has sido Atacado";
-    var MagnitudATQ = 100;
+    var MagnitudATQ = 1;
+    var Texto = "¡Ha sido Atacado!\n Tus puntos de salud\n disminuyen en "+ MagnitudATQ +".";
+    Player.HP -= MagnitudATQ;
     MostrarTexto(Texto);
-    MostrarAtaque(MagnitudATQ, "RecibirAtaque");
+    ActualizarEstadoPersonaje();
 }
 
 function MostrarTexto(dialogo) {
@@ -74,3 +118,9 @@ function MostrarAtaque(Ataque, elemento){
         }
         contador++;
     }, 2000);}
+
+function ActualizarEstadoPersonaje(){
+    var p = document.getElementById("puntos");
+    p.innerHTML = Player.LV + "</br>" + Player.HP + "</br>" + Player.SP + "</br>" + Player.E + "</br>" + Player.P;
+
+}
