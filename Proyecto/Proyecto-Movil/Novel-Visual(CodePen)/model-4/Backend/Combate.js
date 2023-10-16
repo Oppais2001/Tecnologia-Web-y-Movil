@@ -1,31 +1,31 @@
 //Clases
 class Personajes{
-    constructor(LV, HP,HPMax, SP, SPMax, E, P){
-        this.LV = LV //Nivel del personaje
-        this.HP = HP //Puntos de Salud
-        this.HPMax = HPMax //Puntos de Salud Maximos
-        this.SP = SP //Puntos de Aguante
-        this.SPMax = SPMax //Puntos de Aguante Maximos
+    constructor(NV, PV,PVMax, PA, PAMax, E, P){
+        this.NV = NV //Nivel del personaje
+        this.PV = PV //Puntos de Salud
+        this.PVMax = PVMax //Puntos de Salud Maximos
+        this.PA = PA //Puntos de Aguante
+        this.PAMax = PAMax //Puntos de Aguante Maximos
         this.E = E //Puntos de Experiencia
         this.P = P //Puntos de Juego
     }//Acciones que pueden realizarse durante el combate
-    RealizarAtaque(Aguante){
-        this.HP = this.HP - Aguante;
+    PerderPA(Aguante){
+        this.PA -= Aguante;
     }
-    RecibirAtaque(Ataque){
-        this.PV = PV - Ataque;
+    PerderPV(Ataque){
+        this.PV -= Ataque;
     }
-    RecuperarSP(){
-        this.SP = this.SPMax;
+    RecuperarPA(){
+        this.PA = this.PAMax;
     }
-    RecuperarHP(Puntos){
-        this.HP = this.HP + Puntos;
-        if(this.HP>this.HPMax){
-            this.HP = this.HPMax;
+    RecuperarPV(Puntos){
+        this.PV += Puntos;
+        if(this.PV>this.PVMax){
+            this.PV = this.PVMax;
         }
     }//Acciones que solo se dan despues del combate
     SubirNvl(){
-        this.LV = LV++;
+        this.NV++;
         this.E = 0;
     }
     SumarPuntos(E){
@@ -39,17 +39,23 @@ var Player = new Personajes(1,10,10,10,10,0,0);
 //Funcion de inicio
 document.addEventListener('DOMContentLoaded', function() {
     var p = document.getElementById("puntos");
-    p.innerHTML = Player.LV + "</br>" + Player.HP + "</br>" + Player.SP + "</br>" + Player.E + "</br>" + Player.P;
+    p.innerHTML = Player.NV + "</br>" + Player.PV + "</br>" + Player.PA + "</br>" + Player.E + "</br>" + Player.P;
     var Texto = "¡Acabas de ver a un Tanaka!\n¿Que deseas hacer?";
     MostrarTexto(Texto);
 });
 //Funciones para la narraciones mediante los botones
 function NarrarAtaque(){
     var MagnitudATQ = 1;
+    var GastoPA= 5;
+    Player.PerderPA(GastoPA);
     var Texto = "¡Has decidido Atacar!\n Los puntos de salud del\n Tanaka disminuyen en "+ MagnitudATQ +".";
     MostrarTexto(Texto);
     MostrarAtaque(MagnitudATQ, "Ataque");
-    NarrarRecibirAtaque();
+    ActualizarEstadoPersonaje();
+    if(Player.PA==0){
+        NarrarRecibirAtaque();
+        Player.RecuperarPA();
+    }
 
 }
 function NarrarRecibirAtaque(){
@@ -61,19 +67,28 @@ function NarrarRecibirAtaque(){
 function Defender(){
     var Texto = "Has decidido Defender";
     MostrarTexto(Texto);
+    var GastoPA= 5;
+    Player.PerderPA(GastoPA);
+    ActualizarEstadoPersonaje();
 }
 function Descansar(){
     var Texto = "Has decidido Descansar";
     MostrarTexto(Texto);
+    var GastoPA= 5;
+    Player.PerderPA(GastoPA);
+    ActualizarEstadoPersonaje();
 }
 function Huir(){
     var Texto ="Has decidido Huir";
     MostrarTexto(Texto);
+    var GastoPA= 5;
+    Player.PerderPA(GastoPA);
+    ActualizarEstadoPersonaje();
 }
 function RecibirAtaque(){
     var MagnitudATQ = 1;
-    var Texto = "¡Ha sido Atacado!\n Tus puntos de salud\n disminuyen en "+ MagnitudATQ +".";
-    Player.HP -= MagnitudATQ;
+    var Texto = "¡Has sido Atacado!\n Tus puntos de salud\n disminuyen en "+ MagnitudATQ +".";
+    Player.PerderPV(MagnitudATQ);
     MostrarTexto(Texto);
     ActualizarEstadoPersonaje();
 }
@@ -121,6 +136,9 @@ function MostrarAtaque(Ataque, elemento){
 
 function ActualizarEstadoPersonaje(){
     var p = document.getElementById("puntos");
-    p.innerHTML = Player.LV + "</br>" + Player.HP + "</br>" + Player.SP + "</br>" + Player.E + "</br>" + Player.P;
+    p.innerHTML = Player.NV + "</br>" + Player.PV + "</br>" + Player.PA + "</br>" + Player.E + "</br>" + Player.P;
 
+}
+function Enemy(){
+    Numero = Random
 }

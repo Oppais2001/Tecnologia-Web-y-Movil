@@ -33,7 +33,7 @@ form{
     border: 5px solid black;
     background-color: black;
     width: 32%;
-    height: 35%;
+    height: 36%;
     position: absolute;
     top: 28%;
     left: 35.25%;
@@ -70,8 +70,7 @@ p{
 #puntos{
     position: absolute;
     top: -6%;
-    left: 60%;
-    text-align: end;
+    left: 65%;
 }
 #Narracion{
     position: absolute;

@@ -78,12 +78,12 @@
 }
 
 #Personaje{
-    width: 25%;
-    height: 50%;
+    width: 20%;
+    height: 60%;
     position: absolute;
     z-index: -1;
     bottom: 30%;
-    left: 37%;
+    left: 40%;
     background-color: transparent;
 
 }
