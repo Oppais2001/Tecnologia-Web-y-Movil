@@ -1,0 +1,97 @@
+*{
+    background-color: black;
+}
+form{
+    border: 10px solid white;
+    background-color: black;
+}
+
+#SquareCommand{
+    align-items: center;
+    width: 35%;
+    height: 20%;
+    position: absolute;
+    top: 5%;
+    left: 40%;
+}
+#SquareNarracion{
+    width: 50%;
+    height: 30%;
+    position: absolute;
+    top: 65%;
+    left: 25%;
+
+}
+#SquareStatus{
+    width: 16%;
+    height: 43%;
+    position: absolute;
+    top: 12%;
+    left: 18%;
+}
+
+.Command{
+    width: 25%;
+    height: 5%;
+}
+
+input[type="button"]{
+    width: 49.5%;
+    height: 49.5%;
+    font-size: 200%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+}
+p{
+    color: white;
+    font-size: 250%;
+    font-family:sans-serif;
+    text-align: start;
+    position: absolute;
+    top: 1%;
+    left: 1%;
+
+}
+#stats{
+    position: absolute;
+    top: -6%;
+    left: 10%;
+}
+#puntos{
+    position: absolute;
+    top: -6%;
+    left: 60%;
+    text-align: end;
+}
+#Narracion{
+    position: absolute;
+    top: -10%;
+    left: 1%;
+}
+#Ataque{
+    color: red;
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(0, -50%);
+    animation: moverAtaque 0.5s linear infinite;
+}
+@keyframes moverAtaque {
+    0% {
+        left: 50%;
+    }
+    25% {
+        left: 60%;
+    }
+    50%{
+        left: 50%;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+

@@ -4,9 +4,13 @@ function Calcular(){
     var altura = parseFloat(document.getElementById("Altura").value);
     var actividad = document.getElementById("Actividad").value;
     var EscribeNombre = document.getElementById("EscribeNombre");
-    EscribeNombre.innerText = String("Resultados para " + Nombre);
-    IMC(peso, altura);
-    Gasto(peso, actividad);
+    if(peso<0||altura<0||isNaN(Nombre)||isNaN(actividad)){
+        alert("Ingrese Valores Validos");
+    }else{
+        EscribeNombre.innerText = String("Resultados para " + Nombre);
+        IMC(peso, altura);
+        Gasto(peso, actividad);
+    }
 }
 
 function IMC(p,a){
@@ -18,24 +22,19 @@ function IMC(p,a){
     if (IMC<18.5){
         TextoClasificacion.innerText="Clasificación: Bajo peso";
         TextoAtencion.innerText="Estado Nutricional: Necesita atención especializada"
-    }else{
-        if (IMC<25){
+    }else if (IMC<25){
         TextoClasificacion.innerText="Clasificación: Peso normal";
         TextoAtencion.innerText="Estado Nutricional: No Necesita atención especializada"
+    }else if(IMC<30){
+        TextoClasificacion.innerText="Clasificación: Sobrepeso";
+        TextoAtencion.innerText="Estado Nutricional: Necesita atención especializada"
 
-        }else{
-            if(IMC<30){
-            TextoClasificacion.innerText="Clasificación: Sobrepeso";
-            TextoAtencion.innerText="Estado Nutricional: Necesita atención especializada"
-
-            }else{
-                TextoClasificacion.innerText="Clasificación: Obesidad";
-                TextoAtencion.innerText="Estado Nutricional: Necesita atención especializada urgente"
-
-            }
-        }
+    }else{
+        TextoClasificacion.innerText="Clasificación: Obesidad";
+        TextoAtencion.innerText="Estado Nutricional: Necesita atención especializada urgente"
     }
 }
+            
 function Gasto(p,a){
     var EscribeGasto = document.getElementById("Gasto");
     if(a=="Sedentario"){

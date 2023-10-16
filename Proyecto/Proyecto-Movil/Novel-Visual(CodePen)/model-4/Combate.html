@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fight</title>
+    <script src="./Backend/Combate.js"></script>
+    <link rel="stylesheet" href="./Frontend/estiloCombate.css">
+</head>
+<body>
+    <section>
+        <form action="" id="SquareStatus">
+            <p id="stats">LV<br/>HP<br/>SP<br/>E<br/>P</p>
+            <p id="puntos"></p>
+        </form>
+    </section>
+    <section>
+        <p id="Ataque"></p>
+    </section>
+        <div>
+            <form action="" id="SquareNarracion">
+            <p id="Narracion"></p>
+            </form>
+        </div>
+    <section>
+        <form action="" id="SquareCommand">
+            <input class="Command" id="boton1" type="button" value="Atacar" onclick="NarrarAtaque()">
+            <input class="Command" id="boton2" type="button" value="Defenderse" onclick="Defender()">
+            <br>
+            <input class="Command" id="boton3" type="button" value="Descansar" onclick="Descansar()">
+            <input class="Command" id="boton4" type="button" value="Huir" onclick="Huir()">
+        </form>
+    </section>
+</body>
+</html>

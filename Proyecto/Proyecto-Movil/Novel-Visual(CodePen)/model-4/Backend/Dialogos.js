@@ -3,10 +3,16 @@ let listaDialogos=["Todos los humanos mueren. Y al igual que yo morí esa es la 
 ,"Es muy sencillo y claro. Los que estaban muertos reciben una nueva vida para librar a la tierra de los extraterrestres. Puede parecer absurdo, pero en realidad hay un gran número de ellos en la tierra."
 ,"Vienen en todas las formas y tamaños, ¿por qué deben ser erradicados? no lo sé y no quiero saberlo todo lo que sé es que hay que hacerlo y que es la única razón por la que estoy haciendo esto."]
 
+
 function SgteDialogo(){
     if(indiceDialogos<listaDialogos.length){
         indiceDialogos++;
+        var direccion = './Assets/Sounds/dialogo'+indiceDialogos+'_Español.mp3';
+        var audio = new Audio(direccion);
+        audio.play();
         MostrarTexto(indiceDialogos, listaDialogos[indiceDialogos-1]);
+    }else if(indiceDialogos==listaDialogos.length){
+        window.location.href = "./Combate.html";
     }
 }
 function AntDialogo(){
