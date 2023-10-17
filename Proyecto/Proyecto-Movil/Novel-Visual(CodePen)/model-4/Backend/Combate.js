@@ -1,15 +1,10 @@
 //Clases
 class Personajes{
-    constructor(NV, PV,PVMax, PA, PAMax, E, P){
-        this.NV = NV //Nivel del personaje
-        this.PV = PV //Puntos de Salud
-        this.PVMax = PVMax //Puntos de Salud Maximos
-        this.PA = PA //Puntos de Aguante
-        this.PAMax = PAMax //Puntos de Aguante Maximos
-        this.E = E //Puntos de Experiencia
-        this.P = P //Puntos de Juego
-    }//Acciones que pueden realizarse durante el combate
-    PerderPA(Aguante){
+    constructor({PV,PA,PAMax}){
+        this.PV = PV;//Puntos de Salud
+        this.PA = PA;//Puntos de Aguante
+        this.PAMax = PAMax;//Puntos de Aguante Maximos
+    }PerderPA(Aguante){
         this.PA -= Aguante;
     }
     PerderPV(Ataque){
@@ -18,6 +13,14 @@ class Personajes{
     RecuperarPA(){
         this.PA = this.PAMax;
     }
+}
+class Player extends Personajes{
+    constructor({NV,PVMax, E, P}){
+        this.NV = NV //Nivel del personaje
+        this.PVMax = PVMax //Puntos de Salud Maximos
+        this.E = E //Puntos de Experiencia
+        this.P = P //Puntos de Juego
+    }//Acciones que pueden realizarse durante el combate
     RecuperarPV(Puntos){
         this.PV += Puntos;
         if(this.PV>this.PVMax){
@@ -140,5 +143,5 @@ function ActualizarEstadoPersonaje(){
 
 }
 function Enemy(){
-    Numero = Random
+    Numero = round(Math.random()*4);
 }
