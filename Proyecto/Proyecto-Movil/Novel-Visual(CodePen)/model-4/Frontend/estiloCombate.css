@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'upheavtt';
+    src: url('../Assets/Fonts/upheavtt.ttf');
+}
+
 *{
     background-color: black;
 }
@@ -49,13 +54,13 @@ input[type="button"]{
     width: 49.5%;
     height: 49.5%;
     font-size: 200%;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'upheavtt', sans-serif;
     color: white;
 }
 p{
     color: white;
     font-size: 250%;
-    font-family:sans-serif;
+    font-family: 'upheavtt', sans-serif;
     text-align: start;
     position: absolute;
     top: 1%;
@@ -76,6 +81,22 @@ p{
     position: absolute;
     top: -12%;
     left: 3%;
+}
+#Comandos{
+    font-size: 350%;
+    position: absolute;
+    top: -72%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+#Nombre{
+    font-size: 350%;
+    position: absolute;
+    top: -32%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 #Ataque{
     color: red;

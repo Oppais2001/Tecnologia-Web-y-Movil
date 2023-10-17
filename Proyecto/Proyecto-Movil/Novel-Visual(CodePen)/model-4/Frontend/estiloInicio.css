@@ -1,8 +1,14 @@
+@font-face {
+    font-family: 'JMH_Savage';
+    src: url('../Assets/Fonts/JMH_Savage.ttf');
+    /*src: url('URL_DE_TU_FUENTE.ttf') format('truetype');*/
+    /* Opcional: otros formatos de fuentes como woff, woff2, eot, etc. */
+  }
 .Texto{
     text-align: center;
     color: white;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 1000%;
+    font-family: 'JMH_Savage', sans-serif;
+    font-size: 950%;
 
 }
 

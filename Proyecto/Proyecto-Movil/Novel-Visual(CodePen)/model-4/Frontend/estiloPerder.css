@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'upheavtt';
+    src: url('../Assets/Fonts/upheavtt.ttf');
+  }
+*{
+    background-color: black;
+}
+h1{
+    position: absolute;
+    top: 25%;
+    left: 50%; 
+    transform: translateX(-50%);/*Sirve para poder despues centrar el texto usando text-align junto con positive */
+    font-family: 'upheavtt', sans-serif;
+    text-align: center;
+    font-size: 500%;
+    color: brown;
+}
+input{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    font-family: 'upheavtt', sans-serif;
+    font-size: 250%;
+    width: 20%;
+    height: 15%;
+    border-radius: 15px;
+    color: black;
+    background-color: brown;
+    cursor: pointer;
+}
