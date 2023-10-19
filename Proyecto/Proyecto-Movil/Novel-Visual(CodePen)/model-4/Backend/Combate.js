@@ -1,62 +1,4 @@
-//Clases
-class Personajes{
-    constructor({PV,PA,PAMax}){
-        this.PV = PV;//Puntos de Salud
-        this.PA = PA;//Puntos de Aguante
-        this.PAMax = PAMax;//Puntos de Aguante Maximos
-    }PerderPA(Aguante){
-        this.PA -= Aguante;
-    }
-    PerderPV(Ataque){
-        this.PV -= Ataque;
-    }
-    RecuperarPA(){
-        this.PA = this.PAMax;
-    }
-    Atacar(Objetivo, Gasto){
-        this.PerderPA(Gasto);
-        Objetivo.PerderPV;
-    }
-}
-class Player extends Personajes{
-    constructor({PV,PA,PAMax,NV,PVMax, E, P}){
-        super({PV,PA,PAMax});
-        this.NV = NV //Nivel del personaje
-        this.PVMax = PVMax //Puntos de Salud Maximos
-        this.E = E //Puntos de Experiencia
-        this.P = P //Puntos de Juego
-    }//Acciones que pueden realizarse durante el combate
-    RecuperarPV(Puntos){
-        this.PV += Puntos;
-        if(this.PV>this.PVMax){
-            this.PV = this.PVMax;
-        }
-    }//Acciones que solo se dan despues del combate
-    SubirNvl(){
-        this.NV++;
-        this.E = 0;
-    }
-    SumarPuntos(E){
-        this.E = this.E + E;
-    }
-    SumarPuntos(P){
-        this.P = this.P + P;
-    }
-}
-var Player1 = new Player({
-    NV: 1,
-    PV: 10,
-    PVMax: 10,
-    PA: 10,
-    PAMax: 10,
-    E: 0,
-    P: 0
-});
-var Enemy = new Personajes({
-    PV: 2,
-    PA: 5,
-    PAMax: 5
-})
+
 //Funcion de inicio
 document.addEventListener('DOMContentLoaded', function() {
     var p = document.getElementById("puntos");
@@ -108,7 +50,6 @@ function RecibirAtaque(){
     MostrarTexto(Texto);
     ActualizarEstadoPersonaje();
 }
-
 function MostrarTexto(dialogo) {
     var boton1 = document.getElementById("boton1");
     var boton2 = document.getElementById("boton2");
@@ -135,8 +76,8 @@ function MostrarTexto(dialogo) {
             boton4.disabled = false;
             }
         }
-    , 25);}
-
+    , 25);
+}
 function MostrarAtaque(Ataque, elemento){
     console.log(`El daño ha sido de ${Ataque}`);
     //Animacion de Ataque
@@ -149,8 +90,8 @@ function MostrarAtaque(Ataque, elemento){
             clearInterval(intervalo);
         }
         contador++;
-    }, 2000);}
-
+    }, 2000);
+}
 function ActualizarEstadoPersonaje(){
     var p = document.getElementById("puntos");
     p.innerHTML = Player1.NV + "</br>" + Player1.PV + "</br>" + Player1.PA + "</br>" + Player1.E + "</br>" + Player1.P;
@@ -165,12 +106,9 @@ function ActualizarEstadoPersonaje(){
         setTimeout(function(){
             window.location.href = "./Perder.html";
         },4000);
-  
     }
 }
 function EnemyTurn(){
-    Numero = Math.random()*2;
     NarrarRecibirAtaque();
     Player1.RecuperarPA();
-
 }

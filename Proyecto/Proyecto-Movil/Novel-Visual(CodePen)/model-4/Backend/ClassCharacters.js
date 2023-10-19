@@ -1,30 +1,39 @@
+//Clases
 class Personajes{
-    constructor(LV, HP,HPMax, SP, SPMax, E, P){
-        this.LV = LV //Nivel del personaje
-        this.HP = HP //Puntos de Salud
-        this.HPMax = HPMax //Puntos de Salud Maximos
-        this.SP = SP //Puntos de Aguante
-        this.SPMax = SPMax //Puntos de Aguante Maximos
+    constructor({PV,PA,PAMax}){
+        this.PV = PV;//Puntos de Salud
+        this.PA = PA;//Puntos de Aguante
+        this.PAMax = PAMax;//Puntos de Aguante Maximos
+    }PerderPA(Aguante){
+        this.PA -= Aguante;
+    }
+    PerderPV(Ataque){
+        this.PV -= Ataque;
+    }
+    RecuperarPA(){
+        this.PA = this.PAMax;
+    }
+    Atacar(Objetivo, Gasto){
+        this.PerderPA(Gasto);
+        Objetivo.PerderPV;
+    }
+}
+class Player extends Personajes{
+    constructor({PV,PA,PAMax,NV,PVMax, E, P}){
+        super({PV,PA,PAMax});
+        this.NV = NV //Nivel del personaje
+        this.PVMax = PVMax //Puntos de Salud Maximos
         this.E = E //Puntos de Experiencia
         this.P = P //Puntos de Juego
     }//Acciones que pueden realizarse durante el combate
-    RealizarAtaque(Aguante){
-        this.HP = this.HP - Aguante;
-    }
-    RecibirAtaque(Ataque){
-        this.PV = PV - Ataque;
-    }
-    RecuperarSP(){
-        this.SP = this.SPMax;
-    }
-    RecuperarHP(Puntos){
-        this.HP = this.HP + Puntos;
-        if(this.HP>this.HPMax){
-            this.HP = this.HPMax;
+    RecuperarPV(Puntos){
+        this.PV += Puntos;
+        if(this.PV>this.PVMax){
+            this.PV = this.PVMax;
         }
     }//Acciones que solo se dan despues del combate
     SubirNvl(){
-        this.LV = LV++;
+        this.NV++;
         this.E = 0;
     }
     SumarPuntos(E){
@@ -34,4 +43,17 @@ class Personajes{
         this.P = this.P + P;
     }
 }
-export{Personajes};
+var Player1 = new Player({
+    NV: 1,
+    PV: 10,
+    PVMax: 10,
+    PA: 10,
+    PAMax: 10,
+    E: 0,
+    P: 0
+});
+var Enemy = new Personajes({
+    PV: 2,
+    PA: 5,
+    PAMax: 5
+})

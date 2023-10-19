@@ -1,0 +1,13 @@
+let listaDialogos=["Todos los humanos mueren. Y al igual que yo morí esa es la primera condición para ser elegido por la esfera negra. Morir no es la palabra correcta, pero la uso por conveniencia. Lo explicaré más tarde, ahora me gustaría explicar la razón de ser de la esfera negra."
+,"Es muy sencillo y claro. Los que estaban muertos reciben una nueva vida para librar a la tierra de los extraterrestres. Puede parecer absurdo, pero en realidad hay un gran número de ellos en la tierra."
+,"Vienen en todas las formas y tamaños, ¿por qué deben ser erradicados? no lo sé y no quiero saberlo todo lo que sé es que hay que hacerlo y que es la única razón por la que estoy haciendo esto.",
+'(Otra vez esta habitación)', '¡maldición!', '¡Kei!', '(Han llegado nuevas personas)', '(Un chico)', '(¿Qué le pasa a esa chica?)', '¿Ustedes son compañeros?', '¿Compañeros...? Si algo así...'
+,'No me dirás tú también que he sido traído a esta habitación para cazar alienígenas', 'No miento, ¡es la verdad!', 'Kei, ¡díselo tú también!', 'Eh...si...', '(Ha aparecido un chico llamado Hojo y una extraña chica que se parece a Sadako)'
+,'(Ambos tuvieron un accidente de tránsito, aunque\nse lo expliquemos dudo que confíen en nosotros)', '(Bueno...lo único que lograremos es que piensen que estamos mal de la cabeza)'
+,' ',' ',' ',' ', '¿Ves?, ¿es tal como te dije que sucedería, ahora confiaras en mí?', 'No, aun no confió en ti'
+,'Otra vez...nos harán cazar', '¿Realmente la única manera de salir de aquí es cazandolos?', 'Así es', 'Lo siguiente que pasara es que la esfera se abrirá, tengan cuidado', '¿Debo ponerme este raro traje?'
+,'Si, con el puesto podrás estar más tranquilo', '¿Podremos salir vivos de aquí?', 'No te preocupes, estaremos bien', '¿Y que debería hacer de ahora en adelante?', 'Seremos transportados afuera', 'Ya ha empezado'
+,'¿Como?, ¿no entiendo que sucede, será un programa de televisión?', '(¿Dónde estoy?)', '(Fui el primero en ser transportado)', '(¡Es el!)', '(¡Debe de ser una broma!)', '(Los demás aun no llegan)', '(¿Qué debería hacer?)'
+,'(Enfrentarlo solo es demasiado peligroso)', '(¿Por qué me pasa esto?)', '¿Sato?, ¿Sato?', 'Yo no me llamo Sato', '¿Sato?', 'Te dije que no soy Sato', '¡Grrrr!', 'Se ha enojado', 'Debo huir']
+let DialogoEsfera = ['SUS VID4S\nH4N\nT3RMINADO\nCOMO P4S4R4N 3L\nR3STO D3 SUS\nVID4S\n350 D3P3ND3 D3 M1\n354 35 MI T30R14'
+,'4H0R4 B4ST4RD0S T13N3N QU3 1R Y V3NCER 4 3ST4 P3RS0N4','ALIEN TANAKA','C4R4CT3R1ST1C4S:\n----FU3RT3\n----FRESCO\nGUST0S:\n----P4J4R0S\n----P0LLU3L0S\nFR4S3S:\n----H4H\n----H4H\n----H4H']

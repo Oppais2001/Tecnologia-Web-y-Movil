@@ -1,0 +1,87 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Map.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "exportAsImage.includeBackgroundColor": true,
+    "file.lastUsedOpenFilter": "Todos los archivos (*)",
+    "fileStates": {
+        "C:/Users/Ivonn/OneDrive/Documentos/Tecnologia-Web-y-Movil/Proyecto/Proyecto-Movil/Pokemon-Model(Youtube)/Tiled/Pellet Town.tmx": {
+            "scale": 1.0122023809523808,
+            "selectedLayer": 13,
+            "viewCenter": {
+                "x": 420.86445163187307,
+                "y": 240.56453984122317
+            }
+        },
+        "C:/Users/Ivonn/OneDrive/Documentos/Tecnologia-Web-y-Movil/Proyecto/Proyecto-Movil/Pokemon-Model(Youtube)/Tiled/collisionTileset.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/Ivonn/OneDrive/Documentos/Tecnologia-Web-y-Movil/Proyecto/Proyecto-Movil/Pokemon-Model(Youtube)/Tiled/mapa.tmx": {
+            "scale": 1.0122023809523808,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 420.86445163187307,
+                "y": 240.56453984122317
+            }
+        },
+        "C:/Users/Ivonn/OneDrive/Documentos/Tecnologia-Web-y-Movil/Proyecto/Proyecto-Movil/Pokemon-Model(Youtube)/Tiled/pokemonStyleGameTileset.tsx": {
+            "scaleInDock": 1
+        },
+        "Map.tmx": {
+            "scale": 2,
+            "selectedLayer": 6,
+            "viewCenter": {
+                "x": 160.5,
+                "y": 157.25
+            }
+        },
+        "TILETEST.tsx": {
+            "scaleInDock": 1.5,
+            "scaleInEditor": 2
+        },
+        "Water+.tsx": {
+            "scaleInDock": 1.5,
+            "scaleInEditor": 1
+        },
+        "collision.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "street.tsx": {
+            "scaleInDock": 1.5,
+            "scaleInEditor": 1
+        }
+    },
+    "last.exportedFilePath": "C:/Users/Ivonn/OneDrive/Documentos/Tecnologia-Web-y-Movil/Proyecto/Proyecto-Movil/Pokemon-Model(Youtube)/Tiled",
+    "last.imagePath": "C:/Users/Ivonn/OneDrive/Documentos/Tecnologia-Web-y-Movil/Proyecto/Proyecto-Movil/Pokemon-Model(Youtube)/Tiled",
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "openFiles": [
+        "Map.tmx",
+        "collision.tsx"
+    ],
+    "project": "Tiled.tiled-project",
+    "recentFiles": [
+        "collision.tsx",
+        "Map.tmx",
+        "C:/Users/Ivonn/OneDrive/Documentos/Tecnologia-Web-y-Movil/Proyecto/Proyecto-Movil/Pokemon-Model(Youtube)/Tiled/mapa.tmx",
+        "C:/Users/Ivonn/OneDrive/Documentos/Tecnologia-Web-y-Movil/Proyecto/Proyecto-Movil/Pokemon-Model(Youtube)/Tiled/Pellet Town.tmx",
+        "Water+.tsx",
+        "TILETEST.tsx",
+        "street.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    },
+    "tileset.transparentColor": "#ff0004",
+    "tileset.useTransparentColor": false
+}

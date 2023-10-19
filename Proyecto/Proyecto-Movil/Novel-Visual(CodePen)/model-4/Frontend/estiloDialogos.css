@@ -18,9 +18,21 @@
     font-family: 'upheavtt', sans-serif;
     font-size:145%;
     width: 96%;
+    transition: width 0.3s, height 0.3s;
 }#Nombres{
     font-size: 200%;
+    transition: width 0.3s, height 0.3s;
 }
+#TextoEsfera{
+    position: absolute;
+    top: 20%;
+    left: auto;
+    font-size: 250%;
+    color: green;
+    background-color: transparent;
+    transition: width 0.3s, height 0.3s;
+}
+
 #Recuadro-de-Nombres{
     background-color: black;
     width: 15%;
@@ -49,6 +61,23 @@
     border-radius: 15px;
 }
 
+#Esfera{
+    display: none;/*    display: flex;    */
+    position: absolute;
+    top: 15%;
+    left: 34%;
+    width: 32%;
+    height: 70%;
+    border-radius: 50%;
+    background-color: black;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0 0 10px white;
+
+}
+
 
 #Boton1{
     width: 0;
@@ -74,6 +103,15 @@
     border-bottom: 10px solid transparent;
     border-right: 20px solid white;
 }
+#BotonEsfera{
+    width: 10%;
+    height: 10%;
+    position: absolute;
+    top: 90%;
+    left: 75%;
+    color: green;
+    cursor: pointer;
+}
 
 #Personaje{
     width: 20%;
@@ -83,5 +121,14 @@
     bottom: 30%;
     left: 40%;
     background-color: transparent;
+    transition: left 1s ease-in-out;
 
+}
+#Alien{
+    display: none;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 28%;
+    left: auto;
 }
