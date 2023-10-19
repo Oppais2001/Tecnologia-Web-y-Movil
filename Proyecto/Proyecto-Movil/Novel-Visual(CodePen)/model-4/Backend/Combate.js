@@ -90,22 +90,32 @@ function MostrarTexto(dialogo) {
     , 25);
 }
 function MostrarAtaque(Ataque, elemento){
-    var Enemy = document.getElementById('Tanaka');
-    Enemy.style.animationPlayState = 'running';
+    var boton1 = document.getElementById("boton1");
+    var boton2 = document.getElementById("boton2");
+    var boton3 = document.getElementById("boton3");
+    var boton4 = document.getElementById("boton4");
+    boton1.disabled = true;
+    boton2.disabled = true;
+    boton3.disabled = true;
+    boton4.disabled = true;
+    var squareEnemy = document.getElementById('SquareEnemy');
+    var enemy = document.getElementById('Tanaka');
+    squareEnemy.style.animationPlayState = 'running';
+    enemy.style.animationPlayState = 'running';
     console.log("Activa Animacion")
     console.log(`El daño ha sido de ${Ataque}`);
     //Animacion de Ataque
     var ATQ = document.getElementById(elemento);
     ATQ.innerText= Ataque + "PTS";
-    var contador=0
-    var intervalo = setInterval(function(){
+    setTimeout(() => {
         ATQ.innerText=" ";
-        Enemy.style.animationPlayState = 'paused';
-        if(contador==2){
-            clearInterval(intervalo);
-        }
-        contador++;
-    }, 2000);
+        squareEnemy.style.animationPlayState = 'paused';
+        enemy.style.animationPlayState = 'paused';
+        boton1.disabled = false;
+        boton2.disabled = false;
+        boton3.disabled = false;
+        boton4.disabled = false;
+    }, 2000)
 }
 function ActualizarEstadoPersonaje(){
     var p = document.getElementById("puntos");

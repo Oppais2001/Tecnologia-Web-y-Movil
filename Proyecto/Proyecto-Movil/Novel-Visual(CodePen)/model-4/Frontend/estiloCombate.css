@@ -10,7 +10,7 @@ form{
     background-color: black;
 }
 .Square{
-    animation: vibrar 0.5s linear infinite;
+    animation: vibrarA 0.5s linear infinite;
     animation-play-state: paused;
 }
 #SquareCommand{
@@ -45,6 +45,8 @@ form{
     top: 28%;
     left: 35.25%;
     z-index: -1;
+    animation: vibrarB 0.5s linear infinite;
+    animation-play-state: paused;
 }
 
 .Command{
@@ -106,8 +108,7 @@ p{
     position: absolute;
     left: 60%;
     top: 35%;
-    transform: translate(0, -50%);
-    animation: moverAtaque 0.5s linear infinite;
+    animation: vibrarC 0.5s linear infinite;
 }
 #Tanaka{
     width: 50%;
@@ -116,26 +117,40 @@ p{
     top: 0%;
     left: 25%;
     z-index: 0;
-    animation: vibrar 0.5s linear infinite;
+    animation: vibrarB 0.5s linear infinite;
     animation-play-state: paused;
 }
 
-@keyframes moverAtaque {
-    0% {
-        left: 70%;
-    }
-    50% {
-        left: 60%;
-    }
-    100%{
-        left: 70%;
-    }
-}
-@keyframes vibrar {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(-5%); }
+@keyframes vibrarA {
+    0% { transform: translateX(0%); }
+    10% { transform: translateX(-5%); }
+    20% { transform: translateX(5%); }
+    30% { transform: translateX(-5%); }
     40% { transform: translateX(5%); }
-    60% { transform: translateX(-5%); }
-    80% { transform: translateX(5%); }
-    100% { transform: translateX(0); }
+    50% { transform: translateX(0%); }
+    60% { border: 10px solid white}
+    70% { border: 10px solid red}
+    80% { border: 10px solid white}
+    90% { border: 10px solid red}
+    100% { border: 10px solid white}
+}
+@keyframes vibrarB {
+    0% { transform: translateX(0%); }
+    10% { transform: translateX(-5%); }
+    20% { transform: translateX(5%); }
+    30% { transform: translateX(-5%); }
+    40% { transform: translateX(5%); }
+    50% { transform: translateX(0%); }
+    60% { background-color: black}
+    70% { background-color: red}
+    80% { background-color: black}
+    90% { background-color: red}
+    100% { background-color: black}
+}
+@keyframes vibrarC {
+    0% {transform: translateX(0%);}
+    25% {transform: translateX(-5%);}
+    50% {transform: translateX(5%);}
+    75% {transform: translateX(-5%);}
+    100% {transform: translateX(0%);}    
 }

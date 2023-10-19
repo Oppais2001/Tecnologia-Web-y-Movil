@@ -1,4 +1,4 @@
-var indiceDialogos = 18;
+var indiceDialogos = 0;
 function SgteDialogo(){
     let personaje = document.getElementById('Personaje');
     let nombre = document.getElementById('Nombres');
