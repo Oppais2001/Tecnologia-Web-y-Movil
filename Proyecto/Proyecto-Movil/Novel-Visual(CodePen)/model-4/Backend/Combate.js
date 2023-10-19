@@ -1,3 +1,4 @@
+var animacionActivada=false;
 
 //Funcion de inicio
 document.addEventListener('DOMContentLoaded', function() {
@@ -44,7 +45,17 @@ function Huir(){
     ActualizarEstadoPersonaje();
 }
 function RecibirAtaque(){
-    var MagnitudATQ = 10;
+    var Recuadros = document.querySelectorAll('.Square');
+    Recuadros.forEach(function(recuadro) {
+        recuadro.style.animationPlayState = 'running';
+    });
+   setTimeout(function(){
+        Recuadros.forEach(function(recuadro) {
+            recuadro.style.animationPlayState = 'paused';
+        });
+    }, 2000);
+
+    var MagnitudATQ = 1;
     var Texto = "¡Has sido Atacado!\n Tus puntos de salud\n disminuyen en "+ MagnitudATQ +".";
     Player1.PerderPV(MagnitudATQ);
     MostrarTexto(Texto);
@@ -79,6 +90,9 @@ function MostrarTexto(dialogo) {
     , 25);
 }
 function MostrarAtaque(Ataque, elemento){
+    var Enemy = document.getElementById('Tanaka');
+    Enemy.style.animationPlayState = 'running';
+    console.log("Activa Animacion")
     console.log(`El daño ha sido de ${Ataque}`);
     //Animacion de Ataque
     var ATQ = document.getElementById(elemento);
@@ -86,6 +100,7 @@ function MostrarAtaque(Ataque, elemento){
     var contador=0
     var intervalo = setInterval(function(){
         ATQ.innerText=" ";
+        Enemy.style.animationPlayState = 'paused';
         if(contador==2){
             clearInterval(intervalo);
         }

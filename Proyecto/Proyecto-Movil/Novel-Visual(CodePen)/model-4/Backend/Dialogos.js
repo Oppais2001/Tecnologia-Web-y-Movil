@@ -1,4 +1,4 @@
-var indiceDialogos = 0;
+var indiceDialogos = 18;
 function SgteDialogo(){
     let personaje = document.getElementById('Personaje');
     let nombre = document.getElementById('Nombres');
@@ -24,13 +24,13 @@ function SgteDialogo(){
                 recuadro2.style.display = "flex";
                 esfera.style.display = "none";
             }
-            personaje.style.width = '30%';
-            personaje.style.left = '35%';
+            personaje.style.width = '28%'
+            personaje.style.left = '35%'
             personaje.src = 'https://i.imgur.com/Zo2A9Uf.png'
             nombre.innerText = 'Kato';
         }else if(indiceDialogos==10||indiceDialogos==12||indiceDialogos==24||indiceDialogos==26||indiceDialogos==29||indiceDialogos==31||indiceDialogos==33||indiceDialogos==36){
-            personaje.style.width = '30%';
-            personaje.style.left = '35%';
+            personaje.style.left = '38%'
+            personaje.style.width = '20%'
             personaje.src = 'https://i.imgur.com/2WAy5eZ.png'
             nombre.innerText = 'Hojo';
         }else if(indiceDialogos==19||indiceDialogos==20||indiceDialogos==21||indiceDialogos==22){
@@ -54,8 +54,7 @@ function SgteDialogo(){
     
             
         }else if(indiceDialogos==45||indiceDialogos==47||indiceDialogos==49){
-            personaje.style.width = '20%';
-            personaje.style.left = '40%';
+
             personaje.src = 'https://i.imgur.com/xXSvLxj.png'
             nombre.innerText='Tanaka'
             if(indiceDialogos==46){

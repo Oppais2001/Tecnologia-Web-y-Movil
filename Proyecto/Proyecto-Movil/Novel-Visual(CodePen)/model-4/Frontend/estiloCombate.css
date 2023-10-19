@@ -2,7 +2,6 @@
     font-family: 'upheavtt';
     src: url('../Assets/Fonts/upheavtt.ttf');
 }
-
 *{
     background-color: black;
 }
@@ -10,7 +9,10 @@ form{
     border: 10px solid white;
     background-color: black;
 }
-
+.Square{
+    animation: vibrar 0.5s linear infinite;
+    animation-play-state: paused;
+}
 #SquareCommand{
     align-items: center;
     width: 35%;
@@ -114,7 +116,10 @@ p{
     top: 0%;
     left: 25%;
     z-index: 0;
+    animation: vibrar 0.5s linear infinite;
+    animation-play-state: paused;
 }
+
 @keyframes moverAtaque {
     0% {
         left: 70%;
@@ -126,4 +131,11 @@ p{
         left: 70%;
     }
 }
-
+@keyframes vibrar {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-5%); }
+    40% { transform: translateX(5%); }
+    60% { transform: translateX(-5%); }
+    80% { transform: translateX(5%); }
+    100% { transform: translateX(0); }
+}

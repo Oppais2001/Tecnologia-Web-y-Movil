@@ -2,6 +2,14 @@
     font-family: 'upheavtt';
     src: url('../Assets/Fonts/upheavtt.ttf');
 }
+@keyframes vibrar {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-5px); }
+    40% { transform: translateX(5px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
 
 *{
     margin: 0px;
@@ -27,7 +35,7 @@
     position: absolute;
     top: 20%;
     left: auto;
-    font-size: 250%;
+    font-size: 200%;
     color: green;
     background-color: transparent;
     transition: width 0.3s, height 0.3s;
