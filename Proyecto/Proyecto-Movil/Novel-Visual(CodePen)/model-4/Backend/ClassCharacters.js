@@ -36,7 +36,7 @@ class Player extends Personajes{
         this.NV++;
         this.E = 0;
     }
-    SumarPuntos(E){
+    SumarExperiencia(E){
         this.E = this.E + E;
     }
     SumarPuntos(P){
@@ -53,7 +53,7 @@ var Player1 = new Player({
     P: 0
 });
 var Enemy = new Personajes({
-    PV: 2,
+    PV: 5,
     PA: 5,
     PAMax: 5
 })

@@ -154,3 +154,8 @@ p{
     75% {transform: translateX(-5%);}
     100% {transform: translateX(0%);}    
 }
+@keyframes Morir {
+    0% {transform: translateY(0%);}
+    50% {transform: translateY(200%);}
+    100% {transform: translateY(400%);}    
+}
