@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'upheavtt';
+    src: url('../Assets/Fonts/upheavtt.ttf');
+  }
+*{
+    background-color: black;
+}
+p{
+    font-family: 'upheavtt', sans-serif;
+    font-size: 500%;
+    color: blue;
+    text-align: center;
+}
