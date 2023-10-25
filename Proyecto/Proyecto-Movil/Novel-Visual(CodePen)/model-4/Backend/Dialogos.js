@@ -64,6 +64,8 @@ function SgteDialogo(){
         else{
             if (indiceDialogos==4){
                 audio.pause();
+                let fondo = document.getElementById('Background');
+                fondo.style.display = 'flex';
             }
             personaje.style.width = '20%';
             personaje.style.left = '40%';
@@ -138,10 +140,10 @@ function AntDialogo(){
     }
 }
 function MostrarTexto(indice, dialogo, elemento) {
-    var boton1 = document.getElementById("Boton1");
+    var boton1 = document.getElementById("Boton1");//llamada de los botones
     var boton2 = document.getElementById("Boton2");
-    boton1.disabled = true;
-    boton2.disabled = true;
+    boton1.removeAttribute("onclick");//bloqueo de los botones
+    boton2.removeAttribute("onclick");
     var dialogoactual = "";
     var sgteDialogo = dialogo;
     var contador = 0;
@@ -154,8 +156,8 @@ function MostrarTexto(indice, dialogo, elemento) {
         contador++;
         if (contador == sgteDialogo.length) {
             clearInterval(intervalo); // Detiene la ejecución
-            boton1.disabled = false;
-            boton2.disabled = false;
+            boton1.setAttribute("onclick", "SgteDialogo()");// Reactiva los botones
+            boton2.setAttribute("onclick", "AntDialogo()");
             }
         }
     , 25);

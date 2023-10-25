@@ -147,9 +147,9 @@ function ActualizarEstadoPersonaje(){
             Player1.SumarPuntos(10);
             p.innerHTML = Player1.NV + "</br>" + Player1.PV + "</br>" + Player1.PA + "</br>" + Player1.E + "</br>" + Player1.P;
         }, 3000);
-        setTimeout(()=>{
-            window.location.href = "./Ganar.html";
-        },4000)
+        setTimeout(()=> {
+            window.location.href = 'Ganar.html'
+        }, 4000); 
     }
 }
 function EnemyTurn(){

@@ -24,11 +24,19 @@
     left: 2%;
     color: white;
     font-family: 'upheavtt', sans-serif;
-    font-size:145%;
+    font-size:210%;
     width: 96%;
     transition: width 0.3s, height 0.3s;
+}#Background{
+    display: none;
+    z-index: -2;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
 }#Nombres{
-    font-size: 200%;
+    font-size: 250%;
     transition: width 0.3s, height 0.3s;
 }
 #TextoEsfera{
@@ -50,7 +58,7 @@
     margin: 50px auto;
     border: 2px solid white;
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 22%;
     z-index: 1;
     border-radius: 15px;
@@ -58,13 +66,13 @@
 #Recuadro-de-Dialogos{
     background-color: black;
     width: 60%;
-    height: 25%;
+    height: 35%;
     padding-top: 0%;
     padding-left: 0%;
     margin: 50px auto;
     border: 2px solid white;
     position: absolute;
-    top: 60%;
+    top: 55%;
     left: 19%;
     border-radius: 15px;
 }
@@ -85,40 +93,21 @@
     box-shadow: 0 0 10px white;
 
 }
-
-
-#Boton1{
-    width: 0;
-    height: 0;
+.Botones{
+    background-color: transparent;
     cursor: pointer;
+    width: 131px;
+    height: 131px;
     position: absolute;
-    top: 75%;
-    left: 94%;
-    border-right: 0px;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 20px solid white;
+    top:45%;
+}
+#Boton1{
+
+    left: 85%;
 }
 #Boton2{
-    width: 0;
-    height: 0;
-    cursor: pointer;
-    position: absolute;
-    top: 75%;
-    left: 3%;
-    border-left: 0px solid transparent;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 20px solid white;
-}
-#BotonEsfera{
-    width: 10%;
-    height: 10%;
-    position: absolute;
-    top: 90%;
-    left: 75%;
-    color: green;
-    cursor: pointer;
+
+    left: 5%;
 }
 
 #Personaje{
@@ -126,7 +115,7 @@
     height: 60%;
     position: absolute;
     z-index: -1;
-    bottom: 30%;
+    bottom: 35%;
     left: 40%;
     background-color: transparent;
 
