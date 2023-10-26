@@ -1,14 +1,15 @@
+
 //Funcion de inicio
 document.addEventListener('DOMContentLoaded', function() {
     var p = document.getElementById("puntos");
     p.innerHTML = Player1.NV + "</br>" + Player1.PV + "</br>" + Player1.PA + "</br>" + Player1.E + "</br>" + Player1.P;
-    var Texto = "¡Acabas de ver a un Tanaka!\n¿Que deseas hacer?";
+    let Texto = "¡Acabas de ver a un Tanaka!\n¿Que deseas hacer?";
     MostrarTexto(Texto);
 });
 //Funciones para la narraciones mediante los botones
 function NarrarAtaque(){
-    var MagnitudATQ = 1;
-    var GastoPA= 5;
+    let MagnitudATQ = 1;
+    let GastoPA= 5;
     Player1.PerderPA(GastoPA);
     Enemy.PerderPV(MagnitudATQ);
     var Texto = "¡Has decidido Atacar!\n Los puntos de salud del\n Tanaka disminuyen en "+ MagnitudATQ +".";
@@ -20,7 +21,6 @@ function NarrarRecibirAtaque(){
     setTimeout(function(){
         RecibirAtaque();
     }, 2000);
-
 }
 function Defender(){
     var Texto = "Has decidido Defender";
@@ -65,10 +65,10 @@ function MostrarTexto(dialogo) {
     var boton2 = document.getElementById("boton2");
     var boton3 = document.getElementById("boton3");
     var boton4 = document.getElementById("boton4");
-    boton1.disabled = true;
-    boton2.disabled = true;
-    boton3.disabled = true;
-    boton4.disabled = true;
+    var botones = [boton1, boton2, boton3, boton4];
+    botones.forEach((boton)=>{
+        boton.removeAttribute("onclick");
+    })
     var dialogoactual = "";
     var contador = 0;
     console.log(`Dialogo: ${dialogo}`);
@@ -80,13 +80,14 @@ function MostrarTexto(dialogo) {
         contador++;        
         if (contador == dialogo.length) {
             clearInterval(intervalo); // Detiene la ejecución
-            boton1.disabled = false;
-            boton2.disabled = false;
-            boton3.disabled = false;
-            boton4.disabled = false;
+            boton1.setAttribute("onclick", "NarrarAtaque()");// Reactiva los botones
+            boton2.setAttribute("onclick", "Defender()");
+            boton3.setAttribute("onclick", "Descansar()");
+            boton4.setAttribute("onclick", "Huir()");
             }
         }
     , 25);
+
 }
 function MostrarAtaque(Ataque, elemento){
     let boton1 = document.getElementById("boton1");
@@ -117,7 +118,7 @@ function MostrarAtaque(Ataque, elemento){
     }, 2000)
 }
 function ActualizarEstadoPersonaje(){
-    var p = document.getElementById("puntos");
+    var p = document.getElementById('puntos');
     var ImgEnemy = document.getElementById("Tanaka");
     p.innerHTML = Player1.NV + "</br>" + Player1.PV + "</br>" + Player1.PA + "</br>" + Player1.E + "</br>" + Player1.P;
     console.log(`PV Enemigo: ${Enemy.PV}`);

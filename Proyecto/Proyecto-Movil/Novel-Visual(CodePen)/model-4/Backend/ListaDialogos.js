@@ -3,7 +3,7 @@ let listaDialogos=["Todos los humanos mueren. Y al igual que yo morí esa es la 
 ,"Vienen en todas las formas y tamaños, ¿por qué deben ser erradicados? no lo sé y no quiero saberlo todo lo que sé es que hay que hacerlo y que es la única razón por la que estoy haciendo esto.",
 '(Otra vez esta habitación)', '¡maldición!', '¡Kei!', '(Han llegado nuevas personas)', '(Un chico)', '(¿Qué le pasa a esa chica?)', '¿Ustedes son compañeros?', '¿Compañeros...? Si algo así...'
 ,'No me dirás tú también que he sido traído a esta habitación para cazar alienígenas', 'No miento, ¡es la verdad!', 'Kei, ¡díselo tú también!', 'Eh...si...', '(Ha aparecido un chico llamado Hojo y una extraña chica que se parece a Sadako)'
-,'(Ambos tuvieron un accidente de tránsito, aunque\nse lo expliquemos dudo que confíen en nosotros)', '(Bueno...lo único que lograremos es que piensen que estamos mal de la cabeza)'
+,'(Ambos tuvieron un accidente de tránsito, aunque se lo expliquemos dudo que confíen en nosotros)', '(Bueno...lo único que lograremos es que piensen que estamos mal de la cabeza)'
 ,' ',' ',' ',' ', '¿Ves?, ¿es tal como te dije que sucedería, ahora confiaras en mí?', 'No, aun no confió en ti'
 ,'Otra vez...nos harán cazar', '¿Realmente la única manera de salir de aquí es cazandolos?', 'Así es', 'Lo siguiente que pasara es que la esfera se abrirá, tengan cuidado', '¿Debo ponerme este raro traje?'
 ,'Si, con el puesto podrás estar más tranquilo', '¿Podremos salir vivos de aquí?', 'No te preocupes, estaremos bien', '¿Y que debería hacer de ahora en adelante?', 'Seremos transportados afuera', 'Ya ha empezado'

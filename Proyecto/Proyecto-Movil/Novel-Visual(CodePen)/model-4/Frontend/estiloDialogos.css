@@ -110,15 +110,58 @@
     left: 5%;
 }
 
-#Personaje{
+.Personajes{
+    display: none;
+    background-color: transparent;
+}
+#Nishi{
+    display: flex;
     width: 20%;
     height: 60%;
     position: absolute;
     z-index: -1;
     bottom: 35%;
     left: 40%;
-    background-color: transparent;
-
+}
+#Kei{
+    width: 20%;
+    height: 60%;
+    position: absolute;
+    z-index: -1;
+    bottom: 35%;
+    left: 40%;
+}
+#Kato{
+    width: 28%;
+    height: 60%;
+    position: absolute;
+    z-index: -1;
+    bottom: 35%;
+    left: 35%;
+}
+#Hojo{
+    width: 20%;
+    height: 60%;
+    position: absolute;
+    z-index: -1;
+    bottom: 35%;
+    left: 38%;
+}
+#Tanaka{
+    width: 20%;
+    height: 60%;
+    position: absolute;
+    z-index: -1;
+    bottom: 35%;
+    left: 40%;
+}
+#Tanaka-Furioso{
+    width: 20%;
+    height: 60%;
+    position: absolute;
+    z-index: -1;
+    bottom: 35%;
+    left: 40%;
 }
 #Alien{
     display: none;

@@ -1,6 +1,12 @@
 var indiceDialogos = 0;
 function SgteDialogo(){
-    let personaje = document.getElementById('Personaje');
+    let Nishi = document.getElementById('Nishi')
+    let Kei = document.getElementById('Kei')
+    let Kato = document.getElementById('Kato')
+    let Hojo = document.getElementById('Hojo')
+    let Tanaka = document.getElementById('Tanaka')
+    let Tanaka_Furioso = document.getElementById('Tanaka-Furioso')
+    let Personajes = [Nishi, Kei, Kato, Hojo, Tanaka, Tanaka_Furioso];
     let nombre = document.getElementById('Nombres');
     let textoEsfera = document.getElementById('TextoEsfera');
     let audio = document.getElementById('AudiosDialogos');
@@ -19,23 +25,27 @@ function SgteDialogo(){
             audio.play();
         }else if(indiceDialogos==6||indiceDialogos==13||indiceDialogos==14||indiceDialogos==23||indiceDialogos==27||indiceDialogos==28||indiceDialogos==30||indiceDialogos==32){
             if(indiceDialogos==23){
-                personaje.style.display = "flex";
                 recuadro1.style.display = "flex"; 
                 recuadro2.style.display = "flex";
                 esfera.style.display = "none";
             }
-            personaje.style.width = '28%'
-            personaje.style.left = '35%'
-            personaje.src = 'https://i.imgur.com/Zo2A9Uf.png'
+            Personajes.forEach((Personaje)=>{
+                Personaje.style.display = 'none'
+            })
+            Kato.style.display = "flex"
             nombre.innerText = 'Kato';
+
         }else if(indiceDialogos==10||indiceDialogos==12||indiceDialogos==24||indiceDialogos==26||indiceDialogos==29||indiceDialogos==31||indiceDialogos==33||indiceDialogos==36){
-            personaje.style.left = '38%'
-            personaje.style.width = '20%'
-            personaje.src = 'https://i.imgur.com/2WAy5eZ.png'
+            Personajes.forEach((Personaje)=>{
+                Personaje.style.display = 'none'
+            })
+            Hojo.style.display = "flex"
             nombre.innerText = 'Hojo';
         }else if(indiceDialogos==19||indiceDialogos==20||indiceDialogos==21||indiceDialogos==22){
+            Personajes.forEach((Personaje)=>{
+                Personaje.style.display = 'none'
+            })
             nombre.innerText = 'Esfera';
-            personaje.style.display = "none";
             recuadro1.style.display = "none"; 
             recuadro2.style.display = "none";
             esfera.style.display = "flex";
@@ -54,11 +64,16 @@ function SgteDialogo(){
     
             
         }else if(indiceDialogos==45||indiceDialogos==47||indiceDialogos==49){
-
-            personaje.src = 'https://i.imgur.com/xXSvLxj.png'
             nombre.innerText='Tanaka'
-            if(indiceDialogos==46){
-                personaje.src = 'https://i.imgur.com/VfKmYEf.png'
+            Personajes.forEach((Personaje)=>{
+                Personaje.style.display = 'none'
+            })
+            Tanaka.style.display = "flex"
+            if(indiceDialogos==49){
+                Personajes.forEach((Personaje)=>{
+                    Personaje.style.display = 'none'
+                })
+                Tanaka_Furioso.style.display = "flex"
             }
         }
         else{
@@ -67,9 +82,10 @@ function SgteDialogo(){
                 let fondo = document.getElementById('Background');
                 fondo.style.display = 'flex';
             }
-            personaje.style.width = '20%';
-            personaje.style.left = '40%';
-            personaje.src = 'https://i.imgur.com/uT4f2fN.png'
+            Personajes.forEach((Personaje)=>{
+                Personaje.style.display = 'none';
+            })
+            Kei.style.display = "flex";
             nombre.innerText = 'Kei';
             
         }
@@ -90,15 +106,15 @@ function AntDialogo(){
     if(indiceDialogos>1){
         indiceDialogos--;
         if(indiceDialogos<4){
-            personaje.src = 'https://i.imgur.com/qbL8Uo5.png'
+            personaje.src = 'Assets/Img/Characters/Nishi.png'
             nombre.innerText='Nishi'
             personaje.style.width = '20%';
         }else if(indiceDialogos==6||indiceDialogos==13||indiceDialogos==14||indiceDialogos==23||indiceDialogos==27||indiceDialogos==28||indiceDialogos==30||indiceDialogos==32){
-            personaje.src = 'https://i.imgur.com/Mq1xuiz.png'
+            personaje.src = 'Assets/Img/Characters/Kato.png'
             nombre.innerText = 'Kato';
             personaje.style.width = '35%';
         }else if(indiceDialogos==10||indiceDialogos==12||indiceDialogos==24||indiceDialogos==26||indiceDialogos==29||indiceDialogos==31||indiceDialogos==33||indiceDialogos==36){
-            personaje.src = 'https://i.imgur.com/uiArcp2.png'
+            personaje.src = 'Assets/Img/Characters/Hojo.png'
             nombre.innerText = 'Hojo';
             personaje.style.width = '35%';
         }else if(indiceDialogos==19||indiceDialogos==20||indiceDialogos==21||indiceDialogos==22){
@@ -120,16 +136,16 @@ function AntDialogo(){
             }
             RepetirTexto(indiceDialogos,DialogoEsfera[indiceDialogos-19],'TextoEsfera')
         }else if(indiceDialogos==45||indiceDialogos==47||indiceDialogos==49){
-            personaje.src = 'https://i.imgur.com/xXSvLxj.png'
+            personaje.src = 'Assets/Img/Characters/Tanaka.png'
             nombre.innerText='Tanaka'
             personaje.style.width = '20%';
-            if(indiceDialogos==46){
-                personaje.src = 'https://i.imgur.com/VfKmYEf.png'
+            if(indiceDialogos==49){
+                personaje.src = 'Assets/Img/Characters/Tanaka_Furioso.png'
             }
         }
         else{
             textoEsfera.innerText = '';
-            personaje.src = 'https://i.imgur.com/uT4f2fN.png'
+            personaje.src = 'Assets/Img/Characters/Kei.png'
             nombre.innerText = 'Kei';
             personaje.style.width = '20%';
         }
