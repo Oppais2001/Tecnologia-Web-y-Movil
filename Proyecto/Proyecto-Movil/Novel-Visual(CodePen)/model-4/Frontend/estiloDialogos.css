@@ -1,7 +1,9 @@
+/*IMPORTACION DE FUENTES DE TEXTO*/
 @font-face {
     font-family: 'upheavtt';
     src: url('../Assets/Fonts/upheavtt.ttf');
 }
+/*ANIMACIONES*/
 @keyframes vibrar {
     0% { transform: translateX(0); }
     20% { transform: translateX(-5px); }
@@ -10,45 +12,53 @@
     80% { transform: translateX(5px); }
     100% { transform: translateX(0); }
   }
-
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     font-family: "Times New Roman", Times, serif;
     background-color: black;
+/*PARRAFOS DE TEXTO*/
 }p{
     text-align: center;
-    position: absolute;
-    top: 10%;
-    left: 2%;
-    color: white;
     font-family: 'upheavtt', sans-serif;
-    font-size:210%;
-    width: 96%;
-    transition: width 0.3s, height 0.3s;
-}#Background{
-    display: none;
-    z-index: -2;
-    position: absolute;
-    left: 0%;
-    top: 0%;
-    width: 100%;
-    height: 100%;
-}#Nombres{
-    font-size: 250%;
-    transition: width 0.3s, height 0.3s;
-}
-#TextoEsfera{
-    position: absolute;
-    top: 20%;
-    left: auto;
-    font-size: 200%;
-    color: green;
+    color: white;
     background-color: transparent;
-    transition: width 0.3s, height 0.3s;
+}#Nombres{
+    font-size: 6vh;
+}#Dialogos{
+    font-size: 5vh;
+    position: absolute;
+    top: 2vh;
+    left: auto;
+}.TextoEsfera{
+    font-size: 5vh;
+    color: green;
 }
-
+#TextoEsfera1{
+    position: absolute;
+    top: 20vh;
+    left: auto;
+}
+#TextoEsfera2{
+    position: absolute;
+    top: 25vh;
+    left: auto;
+}
+#TextoEsfera3{
+    position: absolute;
+    top: 10vh;
+    left: auto;
+}
+#TextoEsfera4{
+    position: absolute;
+    top: 15vh;
+    left: auto;
+/*RECUADROS DE TEXTO*/
+}.Recuadros{
+    display: flex; /* contenedor flexible*/
+    justify-content: center; /* Centra los elementos secundarios de manera horizontal*/
+}
 #Recuadro-de-Nombres{
     background-color: black;
     width: 15%;
@@ -76,9 +86,9 @@
     left: 19%;
     border-radius: 15px;
 }
-
 #Esfera{
     display: none;/*    display: flex;    */
+    align-items: center; /* Centrar los elementos secundarios de manera vertical*/
     position: absolute;
     top: 15%;
     left: 34%;
@@ -87,12 +97,10 @@
     border-radius: 50%;
     background-color: black;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
     box-shadow: 0 0 10px white;
 
 }
+/*BOTONES*/
 .Botones{
     background-color: transparent;
     cursor: pointer;
@@ -102,15 +110,22 @@
     top:45%;
 }
 #Boton1{
-
     left: 85%;
 }
 #Boton2{
-
     left: 5%;
 }
+/*IMAGENES*/
+#Background{
+    display: none;
+    z-index: -2;
+    position: absolute;
+    left: 0vh;
+    top: 0vh;
+    width: 100%;
+    height: 100%;
 
-.Personajes{
+}.Personajes{
     display: none;
     background-color: transparent;
 }
@@ -165,9 +180,11 @@
 }
 #Alien{
     display: none;
+    background-color: white;
+    border: 0.5vh solid green;
     width: 50%;
     height: 50%;
     position: absolute;
-    top: 28%;
+    top: 20vh;
     left: auto;
 }

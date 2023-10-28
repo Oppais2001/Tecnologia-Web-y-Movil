@@ -9,5 +9,5 @@ let listaDialogos=["Todos los humanos mueren. Y al igual que yo morí esa es la 
 ,'Si, con el puesto podrás estar más tranquilo', '¿Podremos salir vivos de aquí?', 'No te preocupes, estaremos bien', '¿Y que debería hacer de ahora en adelante?', 'Seremos transportados afuera', 'Ya ha empezado'
 ,'¿Como?, ¿no entiendo que sucede, será un programa de televisión?', '(¿Dónde estoy?)', '(Fui el primero en ser transportado)', '(¡Es el!)', '(¡Debe de ser una broma!)', '(Los demás aun no llegan)', '(¿Qué debería hacer?)'
 ,'(Enfrentarlo solo es demasiado peligroso)', '(¿Por qué me pasa esto?)', '¿Sato?, ¿Sato?', 'Yo no me llamo Sato', '¿Sato?', 'Te dije que no soy Sato', '¡Grrrr!', 'Se ha enojado', 'Debo huir']
-let DialogoEsfera = ['SUS VID4S\nH4N\nT3RMINADO\nCOMO P4S4R4N 3L\nR3STO D3 SUS\nVID4S\n350 D3P3ND3 D3 M1\n354 35 MI T30R14'
-,'4H0R4 B4ST4RD0S T13N3N QU3 1R Y V3NCER 4 3ST4 P3RS0N4','ALIEN TANAKA','C4R4CT3R1ST1C4S:\n----FU3RT3\n----FRESCO\nGUST0S:\n----P4J4R0S\n----P0LLU3L0S\nFR4S3S:\n----H4H\n----H4H\n----H4H']
+let DialogoEsfera = ['   SUS VID4S H4N\n T3RMINADO COMO\n    P4S4R4N 3L\n   R3STO D3 SUS\nVID4S\n350 D3P3ND3 D3 M1\n354 35 MI T30R14'
+,'4H0R4 B4ST4RD0S\nT13N3N QU3 1R Y V3NCER\n4 3ST4 P3RS0N4','ALIEN TANAKA','C4R4CT3R1ST1C4S:\n----FU3RT3\n----FRESCO\nGUST0S:\n----P4J4R0S\n----P0LLU3L0S\nFR4S3S:\n----H4H\n----H4H\n----H4H']
