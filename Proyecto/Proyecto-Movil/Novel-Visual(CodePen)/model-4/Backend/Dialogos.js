@@ -1,23 +1,24 @@
-var indiceDialogos = 18;
+var indiceDialogos = 0;
 function SgteDialogo(){
-    let Nishi = document.getElementById('Nishi')
-    let Kei = document.getElementById('Kei')
-    let Kato = document.getElementById('Kato')
-    let Hojo = document.getElementById('Hojo')
-    let Tanaka = document.getElementById('Tanaka')
-    let Tanaka_Furioso = document.getElementById('Tanaka-Furioso')
-    let Personajes = [Nishi, Kei, Kato, Hojo, Tanaka, Tanaka_Furioso];
-    let nombre = document.getElementById('Nombres');
-    let textoEsfera1 = document.getElementById('TextoEsfera1');
-    let textoEsfera2 = document.getElementById('TextoEsfera2');
-    let textoEsfera3 = document.getElementById('TextoEsfera3');
-    let textoEsfera4 = document.getElementById('TextoEsfera4');
-    let audio = document.getElementById('AudiosDialogos');
-    let recuadro1 = document.getElementById('Recuadro-de-Nombres');
-    let recuadro2 = document.getElementById('Recuadro-de-Dialogos');
-    let esfera = document.getElementById('Esfera');
-    let Alien = document.getElementById('Alien');
-
+    const fondo = document.getElementById('Background');
+    const Nishi = document.getElementById('Nishi')
+    const Kei = document.getElementById('Kei')
+    const Kato = document.getElementById('Kato')
+    const Hojo = document.getElementById('Hojo')
+    const Tanaka = document.getElementById('Tanaka')
+    const Tanaka_Furioso = document.getElementById('Tanaka-Furioso')
+    const Personajes = [Nishi, Kei, Kato, Hojo, Tanaka, Tanaka_Furioso];
+    const nombre = document.getElementById('Nombres');
+    const dialogo = document.getElementById('Dialogos');
+    const textoEsfera1 = document.getElementById('TextoEsfera1');
+    const textoEsfera2 = document.getElementById('TextoEsfera2');
+    const textoEsfera3 = document.getElementById('TextoEsfera3');
+    const textoEsfera4 = document.getElementById('TextoEsfera4');
+    const audio = document.getElementById('AudiosDialogos');
+    const recuadro1 = document.getElementById('Recuadro-de-Nombres');
+    const recuadro2 = document.getElementById('Recuadro-de-Dialogos');
+    const esfera = document.getElementById('Esfera');
+    const Alien = document.getElementById('Alien');
     if(indiceDialogos<listaDialogos.length){
         indiceDialogos++;
         if(indiceDialogos<4){
@@ -52,6 +53,7 @@ function SgteDialogo(){
             recuadro1.style.display = "none"; 
             recuadro2.style.display = "none";
             esfera.style.display = "flex";
+            dialogo.innerText = '';
             if(indiceDialogos==19){
                 textoEsfera1.style.display = 'flex';
             }
@@ -86,8 +88,9 @@ function SgteDialogo(){
         else{
             if (indiceDialogos==4){
                 audio.pause();
-                let fondo = document.getElementById('Background');
                 fondo.style.display = 'flex';
+            }else if(indiceDialogos==37){
+                fondo.style.display = 'none';
             }
             Personajes.forEach((Personaje)=>{
                 Personaje.style.display = 'none';
@@ -105,27 +108,28 @@ function SgteDialogo(){
     }
 }
 function AntDialogo(){
-    let Nishi = document.getElementById('Nishi')
-    let Kei = document.getElementById('Kei')
-    let Kato = document.getElementById('Kato')
-    let Hojo = document.getElementById('Hojo')
-    let Tanaka = document.getElementById('Tanaka')
-    let Tanaka_Furioso = document.getElementById('Tanaka-Furioso')
-    let Personajes = [Nishi, Kei, Kato, Hojo, Tanaka, Tanaka_Furioso];
-    let nombre = document.getElementById('Nombres');
-    let textoEsfera1 = document.getElementById('TextoEsfera1');
-    let textoEsfera2 = document.getElementById('TextoEsfera2');
-    let textoEsfera3 = document.getElementById('TextoEsfera3');
-    let textoEsfera4 = document.getElementById('TextoEsfera4');
-    let audio = document.getElementById('AudiosDialogos');
-    let recuadro1 = document.getElementById('Recuadro-de-Nombres');
-    let recuadro2 = document.getElementById('Recuadro-de-Dialogos');
-    let esfera = document.getElementById('Esfera');
-    let Alien = document.getElementById('Alien');
+    const Nishi = document.getElementById('Nishi')
+    const Kei = document.getElementById('Kei')
+    const Kato = document.getElementById('Kato')
+    const Hojo = document.getElementById('Hojo')
+    const Tanaka = document.getElementById('Tanaka')
+    const Tanaka_Furioso = document.getElementById('Tanaka-Furioso')
+    const Personajes = [Nishi, Kei, Kato, Hojo, Tanaka, Tanaka_Furioso];
+    const nombre = document.getElementById('Nombres');
+    const dialogo = document.getElementById('Dialogos');
+    const textoEsfera1 = document.getElementById('TextoEsfera1');
+    const textoEsfera2 = document.getElementById('TextoEsfera2');
+    const textoEsfera3 = document.getElementById('TextoEsfera3');
+    const textoEsfera4 = document.getElementById('TextoEsfera4');
+    const audio = document.getElementById('AudiosDialogos');
+    const recuadro1 = document.getElementById('Recuadro-de-Nombres');
+    const recuadro2 = document.getElementById('Recuadro-de-Dialogos');
+    const esfera = document.getElementById('Esfera');
+    const Alien = document.getElementById('Alien');
     
     if(indiceDialogos<listaDialogos.length){
         indiceDialogos--;
-        if(indiceDialogos == 1){
+        if(indiceDialogos == 0){
             window.location.href = 'index.html'
         }
         else if(indiceDialogos<4){
@@ -133,6 +137,9 @@ function AntDialogo(){
                 Personaje.style.display = 'none';
             })
             Nishi.style.display = 'flex';
+            if(indiceDialogos==4){
+                fondo.style.display = 'none'
+            }
         }else if(indiceDialogos==6||indiceDialogos==13||indiceDialogos==14||indiceDialogos==23||indiceDialogos==27||indiceDialogos==28||indiceDialogos==30||indiceDialogos==32){
             Personajes.forEach((Personaje)=>{
                 Personaje.style.display = 'none'
@@ -146,6 +153,9 @@ function AntDialogo(){
             })
             Hojo.style.display = "flex"
             nombre.innerText = 'Hojo';
+            if(indiceDialogos==36){
+                fondo.style.display = 'flex'
+            }
         }else if(indiceDialogos==19||indiceDialogos==20||indiceDialogos==21||indiceDialogos==22){
             Personajes.forEach((Personaje)=>{
                 Personaje.style.display = 'none'
@@ -154,18 +164,21 @@ function AntDialogo(){
             recuadro2.style.display = "none";
             esfera.style.display = "flex";
             if(indiceDialogos==19){
-                textoEsfera1.style.display = 'flex';
                 textoEsfera2.style.display = 'none';
+                textoEsfera1.style.display = 'flex';
             }
             else if(indiceDialogos==20){
-                textoEsfera2.style.display = 'flex';
                 textoEsfera3.style.display = 'none';
                 Alien.style.display = 'none';
+                textoEsfera2.style.display = 'flex';
             }
             else if(indiceDialogos==21){
-                textoEsfera3.style.display = 'flex';
                 textoEsfera4.style.display = 'none';
+                textoEsfera3.style.display = 'flex';
                 Alien.style.display = 'flex';
+            }
+            else{
+                dialogo.innerText = ''
             }
         }else if(indiceDialogos==45||indiceDialogos==47||indiceDialogos==49){
             nombre.innerText='Tanaka'
@@ -182,16 +195,16 @@ function AntDialogo(){
         }
         else{
             if(indiceDialogos==18){
+                esfera.style.display = "none";
                 recuadro1.style.display = "flex"; 
                 recuadro2.style.display = "flex";
-                esfera.style.display = "none";
-            }
             Personajes.forEach((Personaje)=>{
                 Personaje.style.display = 'none';
             })
             Kei.style.display = "flex";
             nombre.innerText = 'Kei';
             
+            }
         }
     }else if(indiceDialogos==listaDialogos.length){
         window.location.href = "./Combate.html";

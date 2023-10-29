@@ -13,9 +13,9 @@
     100% { transform: translateX(0); }
   }
 *{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+    margin: 0vh;
+    padding: 0vh;
+    box-sizing: border-box;/*forma de tomar los bordees y contenido para las medidas totales con vh*/
     font-family: "Times New Roman", Times, serif;
     background-color: black;
 /*PARRAFOS DE TEXTO*/
@@ -29,7 +29,8 @@
 }#Dialogos{
     font-size: 5vh;
     position: absolute;
-    top: 2vh;
+    margin: 2vh;
+    top: 0.2vh;
     left: auto;
 }.TextoEsfera{
     font-size: 5vh;
@@ -63,28 +64,26 @@
     background-color: black;
     width: 15%;
     height: 7%;
-    padding-top: 0%;
-    padding-left: 0%;
-    margin: 50px auto;
-    border: 2px solid white;
+    margin: 6vh auto;
+    border: 0.5vh solid white;
+    padding: 0.5vh;
     position: absolute;
     top: 50%;
     left: 22%;
     z-index: 1;
-    border-radius: 15px;
+    border-radius: 2vh;
 }
 #Recuadro-de-Dialogos{
     background-color: black;
     width: 60%;
     height: 35%;
-    padding-top: 0%;
-    padding-left: 0%;
-    margin: 50px auto;
-    border: 2px solid white;
+    margin: 6vh auto;
+    padding: 5vh;
+    border: 0.5vh solid white;
     position: absolute;
     top: 55%;
     left: 19%;
-    border-radius: 15px;
+    border-radius: 2vh;
 }
 #Esfera{
     display: none;/*    display: flex;    */
@@ -120,8 +119,8 @@
     display: none;
     z-index: -2;
     position: absolute;
-    left: 0vh;
-    top: 0vh;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
 
@@ -180,10 +179,9 @@
 }
 #Alien{
     display: none;
-    background-color: white;
+    background-color: #E1EDE0;
     border: 0.5vh solid green;
-    width: 50%;
-    height: 50%;
+    height: 33vh;
     position: absolute;
     top: 20vh;
     left: auto;
