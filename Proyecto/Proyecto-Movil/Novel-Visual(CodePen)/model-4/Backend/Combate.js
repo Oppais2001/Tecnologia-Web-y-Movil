@@ -7,7 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
     MostrarTexto(Texto);
 });
 //Funciones para la narraciones mediante los botones
+function Ataque(){
+    const comandos = document.getElementById('SquareCommand');
+    const Ataques = document.getElementById('SquareAttack');
+    comandos.style.display = 'none';
+    Ataques.style.display = 'inline';
+}
 function NarrarAtaque(){
+    const comandos = document.getElementById('SquareCommand');
+    const Ataques = document.getElementById('SquareAttack');
     let MagnitudATQ = 1;
     let GastoPA= 5;
     Player1.PerderPA(GastoPA);
@@ -16,6 +24,8 @@ function NarrarAtaque(){
     MostrarTexto(Texto);
     MostrarAtaque(MagnitudATQ, "Ataque");
     ActualizarEstadoPersonaje();
+    comandos.style.display = 'inline';
+    Ataques.style.display = 'none';
 }
 function NarrarRecibirAtaque(){
     setTimeout(function(){
@@ -29,12 +39,11 @@ function Defender(){
     Player1.PerderPA(GastoPA);
     ActualizarEstadoPersonaje();
 }
-function Descansar(){
-    var Texto = "Has decidido Descansar";
-    MostrarTexto(Texto);
-    var GastoPA= 5;
-    Player1.PerderPA(GastoPA);
-    ActualizarEstadoPersonaje();
+function Items(){
+    const comandos = document.getElementById('SquareCommand');
+    const Items = document.getElementById('SquareItems');
+    comandos.style.display = 'none';
+    Items.style.display = 'inline';
 }
 function Huir(){
     var Texto ="Has decidido Huir";
@@ -80,9 +89,9 @@ function MostrarTexto(dialogo) {
         contador++;        
         if (contador == dialogo.length) {
             clearInterval(intervalo); // Detiene la ejecución
-            boton1.setAttribute("onclick", "NarrarAtaque()");// Reactiva los botones
+            boton1.setAttribute("onclick", "Ataque()");// Reactiva los botones
             boton2.setAttribute("onclick", "Defender()");
-            boton3.setAttribute("onclick", "Descansar()");
+            boton3.setAttribute("onclick", "Items()");
             boton4.setAttribute("onclick", "Huir()");
             }
         }
@@ -137,20 +146,18 @@ function ActualizarEstadoPersonaje(){
     if(Enemy.PV==0){
         console.log("Has ganado")
         setTimeout(function(){
-            MostrarTexto("Lo has hecho bien derrotando al Alien Tanaka.\nTu experiencia Incrementa en 5.\nTus Puntos Incrementa en 10.");
-            ImgEnemy.style.animation = "Morir 2s linear infinite";
+            MostrarTexto("¡Has derrotado\nal Alien Tanaka!");
+            ImgEnemy.style.animation = "Morir 4s linear infinite";
             ImgEnemy.style.animationPlayState = "running";
         }, 2000);
         setTimeout(() => {
+            MostrarTexto("Tu experiencia Incrementa en 5")
             ImgEnemy.style.animationPlayState = "paused";
             ImgEnemy.style.display = "none"
             Player1.SumarExperiencia(5); 
             Player1.SumarPuntos(10);
             p.innerHTML = Player1.NV + "</br>" + Player1.PV + "</br>" + Player1.PA + "</br>" + Player1.E + "</br>" + Player1.P;
-        }, 3000);
-        setTimeout(()=> {
-            window.location.href = 'Ganar.html'
-        }, 4000); 
+        }, 4000);
     }
 }
 function EnemyTurn(){

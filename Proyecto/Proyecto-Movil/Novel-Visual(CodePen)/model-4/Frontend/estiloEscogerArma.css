@@ -1,0 +1,15 @@
+#Menu-Armas{
+    width: 155vh;
+    height: 60vh;
+    position: absolute;
+    top: 10vh;
+    left: 10vw;
+    padding: 10vh;
+    background-color: black;
+}.Armas{
+    font-size: 8vh;
+    background-color: brown;
+    color: white;
+    width: 50vh;
+    height: 30vh;
+}

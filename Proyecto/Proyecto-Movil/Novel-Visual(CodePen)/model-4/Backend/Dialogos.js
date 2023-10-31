@@ -1,4 +1,5 @@
 var indiceDialogos = 0;
+
 function SgteDialogo(){
     const fondo = document.getElementById('Background');
     const Nishi = document.getElementById('Nishi')
@@ -19,6 +20,8 @@ function SgteDialogo(){
     const recuadro2 = document.getElementById('Recuadro-de-Dialogos');
     const esfera = document.getElementById('Esfera');
     const Alien = document.getElementById('Alien');
+    const soundtrack1 = document.getElementById('Soundtrack1');
+    const soundtrack2 = document.getElementById('Soundtrack2');
     if(indiceDialogos<listaDialogos.length){
         indiceDialogos++;
         if(indiceDialogos<4){
@@ -32,12 +35,19 @@ function SgteDialogo(){
                 recuadro1.style.display = "flex"; 
                 recuadro2.style.display = "flex";
                 esfera.style.display = "none";
+                soundtrack2.pause();
+                soundtrack1.play();
+                soundtrack2.addEventListener('ended', function(){
+                    this.currentTime = 0;
+                    this.play();
+                });
             }
             Personajes.forEach((Personaje)=>{
                 Personaje.style.display = 'none'
             })
             Kato.style.display = "flex"
             nombre.innerText = 'Kato';
+ 
 
         }else if(indiceDialogos==10||indiceDialogos==12||indiceDialogos==24||indiceDialogos==26||indiceDialogos==29||indiceDialogos==31||indiceDialogos==33||indiceDialogos==36){
             Personajes.forEach((Personaje)=>{
@@ -55,6 +65,9 @@ function SgteDialogo(){
             esfera.style.display = "flex";
             dialogo.innerText = '';
             if(indiceDialogos==19){
+                soundtrack1.pause();
+                soundtrack2.volume = 0.25;
+                soundtrack2.play();
                 textoEsfera1.style.display = 'flex';
             }
             else if(indiceDialogos==20){
@@ -90,7 +103,7 @@ function SgteDialogo(){
                 audio.pause();
                 fondo.style.display = 'flex';
             }else if(indiceDialogos==37){
-                fondo.style.display = 'none';
+                fondo.style.animation = 'desaparecer 1s ease forwards';
             }
             Personajes.forEach((Personaje)=>{
                 Personaje.style.display = 'none';
@@ -218,11 +231,11 @@ function AntDialogo(){
 
 function MostrarTexto(indice, dialogo, elemento) {
     console.log(`Valores indice: ${indice} , Dialogo: ${dialogo}, ${elemento}`)
-    var boton1 = document.getElementById("Boton1");//llamada de los botones
-    var boton2 = document.getElementById("Boton2");
+    const boton1 = document.getElementById("Boton1");//llamada de los botones
+    const boton2 = document.getElementById("Boton2");
     boton1.removeAttribute("onclick");//bloqueo de los botones
     boton2.removeAttribute("onclick");
-    var dialogoactual = "";
+    const dialogoactual = "";
     var sgteDialogo = dialogo;
     var contador = 0;
     var intervalo = setInterval(function () {
@@ -241,7 +254,15 @@ function MostrarTexto(indice, dialogo, elemento) {
 function RepetirTexto(indice, dialogo, elemento){
     console.log('Se esta repitiendo el texto')
     console.log(`Valores indice: ${indice} , Dialogo: ${dialogo}, ${elemento}`)
-    var Dialogo = document.getElementById(elemento);
+    const Dialogo = document.getElementById(elemento);
     Dialogo.innerText = dialogo
 }
-  
+window.onload = function() {
+    const miAudio = document.getElementById('Soundtrack1');
+    miAudio.volume = 0.05;
+    miAudio.play();
+    miAudio.addEventListener('ended', function(){
+        this.currentTime = 0;
+        this.play();
+    });
+}

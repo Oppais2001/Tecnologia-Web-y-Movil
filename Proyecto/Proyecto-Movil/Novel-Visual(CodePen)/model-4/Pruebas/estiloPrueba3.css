@@ -1,0 +1,29 @@
+.container {
+    width: 300px; /* Ancho de tu contenedor */
+    height: 200px; /* Alto de tu contenedor */
+    overflow: hidden;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  img {
+    opacity: 0;
+    transition: opacity 2s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom; /* Esto ajusta la posición inicial de la imagen para que comience desde abajo */
+  }
+  
+  .reveal-from-bottom {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%); /* Comienza con una máscara que oculta la parte superior */
+  }
+  
+  .reveal-from-bottom:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Cuando pasas el ratón, revela gradualmente la parte superior */
+    opacity: 1; /* A medida que se revela la parte superior, la imagen se vuelve visible */
+  }

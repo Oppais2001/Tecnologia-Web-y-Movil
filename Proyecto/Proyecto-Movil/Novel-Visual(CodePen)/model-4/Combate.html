@@ -27,11 +27,27 @@
     <section>
         <form action="" id="SquareCommand" class="Square">
             <p id="Comandos">Acciones</p>
-            <input class="Command" id="boton1" type="button" value="Atacar" onclick="NarrarAtaque()">
+            <input class="Command" id="boton1" type="button" value="Atacar" onclick="Ataque()">
             <input class="Command" id="boton2" type="button" value="Defenderse" onclick="Defender()">
             <br>
-            <input class="Command" id="boton3" type="button" value="Descansar" onclick="Descansar()">
+            <input class="Command" id="boton3" type="button" value="Items" onclick="Items()">
             <input class="Command" id="boton4" type="button" value="Huir" onclick="Huir()">
+        </form>
+    </section>
+    <section>
+        <form id="SquareAttack" class="Square">
+            <p id="Ataques">Ataques</p>
+            <input class="Option1" id="Atacar1" type="button" value="Ataque1" onclick="NarrarAtaque()">
+            <br>
+            <input class="Option2" id="Atacar2" type="button" value="Ataque2" onclick="NarrarAtaque()">
+        </form>
+    </section>
+    <section>
+        <form id="SquareItems" class="Square">
+            <p id="Items">Items</p>
+            <input class="Option1" id="Item1" type="button" value="Item1" onclick="Item1()">
+            <br>
+            <input class="Option2" id="Item2" type="button" value="Item2" onclick="Item2()">
         </form>
     </section>
     <section>
