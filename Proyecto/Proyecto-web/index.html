@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Quiz</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="index.js"></script>
+	</head>
+	<body>
+			<header>
+				<h1>Formulario</h1>
+				<p>Ciencias Naturales</p>
+			</header>
+  			<div class='container'>
+				<section id="p0">
+					<h3>1-.¿Cuál es el proceso por el cual las plantas convierten la luz solar en energía química?</h3>
+					<label>
+						<input type="radio" value="1" name="p0" onclick="respuesta(0,this)"> Fotosíntesis
+					</label>
+					<label>
+						<input type="radio" value="2" name="p0" onclick="respuesta(0,this)"> Respiración
+					</label>
+					<label>
+						<input type="radio" value="3" name="p0" onclick="respuesta(0,this)"> Fermentación
+					</label>
+					<label>
+						<input type="radio" value="4" name="p0" onclick="respuesta(0,this)"> Metabolismo
+					</label>
+				</section>
+				<section id="p1">
+					<h3>2-.¿Cuál es el símbolo químico del oro?</h3>
+					<label>
+						<input type="radio" value="1" name="p1" onclick="respuesta(1,this)"> Go
+					</label>
+					<label>
+						<input type="radio" value="2" name="p1" onclick="respuesta(1,this)"> Ag
+					</label>
+					<label>
+						<input type="radio" value="3" name="p1" onclick="respuesta(1,this)"> Fe
+					</label>
+					<label>
+						<input type="radio" value="4" name="p1" onclick="respuesta(1,this)"> Au
+					</label>
+				</section>
+				<section id="p2">
+					<h3>3-.¿Cuál es el planeta más grande del sistema solar?</h3>
+					<label>
+						<input type="radio" value="1" name="p2" onclick="respuesta(2,this)"> Marte
+					</label>
+					<label>
+						<input type="radio" value="2" name="p2" onclick="respuesta(2,this)"> Venus
+					</label>
+					<label>
+						<input type="radio" value="3" name="p2" onclick="respuesta(2,this)"> Júpiter
+					</label>
+					<label>
+						<input type="radio" value="4" name="p2" onclick="respuesta(2,this)"> Neptuno
+					</label>
+				</section>
+				<section id="p3">
+					<h3>4-.¿Cuál de las siguientes no es una parte de la célula?</h3>
+					<label>
+						<input type="radio" value="1" name="p3" onclick="respuesta(3,this)"> Núcleo
+					</label>
+					<label>
+						<input type="radio" value="2" name="p3" onclick="respuesta(3,this)"> Membrana celular
+					</label>
+					<label>
+						<input type="radio" value="3" name="p3" onclick="respuesta(3,this)"> Corteza terrestre
+					</label>
+					<label>
+						<input type="radio" value="4" name="p3" onclick="respuesta(3,this)"> Citoplasma
+					</label>
+				</section>
+				<section id="p4">
+					<h3>5-.¿Cuál es el gas más abundante en la atmósfera de la Tierra?</h3>
+					<label>
+						<input type="radio" value="1" name="p4" onclick="respuesta(4,this)"> Oxígeno
+					</label>
+					<label>
+						<input type="radio" value="2" name="p4" onclick="respuesta(4,this)"> Nitrógeno
+					</label>
+					<label>
+						<input type="radio" value="3" name="p4" onclick="respuesta(4,this)"> Dióxido de carbono
+					</label>
+					<label>
+						<input type="radio" value="4" name="p4" onclick="respuesta(4,this)"> Hidrógeno
+					</label>
+				</section>
+				<section id="p5">
+					<h3>6-.¿Qué tipo de energía se libera en una reacción nuclear?</h3>
+					<label>
+						<input type="radio" value="1" name="p5" onclick="respuesta(5,this)"> Energía térmica
+					</label>
+					<label>
+						<input type="radio" value="2" name="p5" onclick="respuesta(5,this)"> Energía eléctrica
+					</label>
+					<label>
+						<input type="radio" value="3" name="p5" onclick="respuesta(5,this)"> Energía nuclear
+					</label>
+					<label>
+						<input type="radio" value="4" name="p5" onclick="respuesta(5,this)"> Energía cinética
+					</label>
+				</section>
+				<section id="p6">
+					<h3>7-.¿Cuál es el proceso mediante el cual el agua se convierte en vapor debido al calor?</h3>
+					<label>
+						<input type="radio" value="1" name="p6" onclick="respuesta(6,this)"> Evaporación
+					</label>
+					<label>
+						<input type="radio" value="2" name="p6" onclick="respuesta(6,this)"> Sublimación
+					</label>
+					<label>
+						<input type="radio" value="3" name="p6" onclick="respuesta(6,this)"> Fusión
+					</label>
+					<label>
+						<input type="radio" value="4" name="p6" onclick="respuesta(6,this)"> Solidificación
+					</label>
+				</section>
+				<section id="p7">
+					<h3>8-.¿Cuál es la capa más externa de la Tierra, compuesta por placas tectónicas?</h3>
+					<label>
+						<input type="radio" value="1" name="p7" onclick="respuesta(7,this)"> Núcleo
+					</label>
+					<label>
+						<input type="radio" value="2" name="p7" onclick="respuesta(7,this)"> Manto
+					</label>
+					<label>
+						<input type="radio" value="3" name="p7" onclick="respuesta(7,this)"> Litosfera
+					</label>
+					<label>
+						<input type="radio" value="4" name="p7" onclick="respuesta(7,this)"> Astenosfera
+					</label>
+				</section>
+				<section id="p8">
+					<h3>9-.¿Cuál es la fórmula química del agua?</h3>
+					<label>
+						<input type="radio" value="1" name="p8" onclick="respuesta(8,this)"> O2
+					</label>
+					<label>
+						<input type="radio" value="2" name="p8" onclick="respuesta(8,this)"> H2O
+					</label>
+					<label>
+						<input type="radio" value="3" name="p8" onclick="respuesta(8,this)"> CO2
+					</label>
+					<label>
+						<input type="radio" value="4" name="p8" onclick="respuesta(8,this)"> NaCl
+					</label>
+				</section>
+				<section id="p9">
+					<h3>10-.¿Qué tipo de energía es producida por la fuerza del viento?</h3>
+					<label>
+						<input type="radio" value="1" name="p9" onclick="respuesta(9,this)"> Energía solar
+					</label>
+					<label>
+						<input type="radio" value="2" name="p9" onclick="respuesta(9,this)"> Energía hidroeléctrica
+					</label>
+					<label>
+						<input type="radio" value="3" name="p9" onclick="respuesta(9,this)"> Energía geotérmica
+					</label>
+					<label>
+						<input type="radio" value="4" name="p9" onclick="respuesta(9,this)"> Energía eólica
+					</label>
+				</section>
+				<section id="p10">
+					<h3>11-.¿Qué parte del cuerpo humano es responsable de bombear sangre?</h3>
+					<label>
+						<input type="radio" value="1" name="p10" onclick="respuesta(10,this)"> Pulmones
+					</label>
+					<label>
+						<input type="radio" value="2" name="p10" onclick="respuesta(10,this)"> Cerebro
+					</label>
+					<label>
+						<input type="radio" value="3" name="p10" onclick="respuesta(10,this)"> Corazón
+					</label>
+					<label>
+						<input type="radio" value="4" name="p10" onclick="respuesta(10,this)"> Estómago
+					</label>
+				</section>
+				<section id="p11">
+					<h3>12-.¿Cuál de los siguientes elementos químicos es un gas noble?</h3>
+					<label>
+						<input type="radio" value="1" name="p11" onclick="respuesta(11,this)"> Oxígeno
+					</label>
+					<label>
+						<input type="radio" value="2" name="p11" onclick="respuesta(11,this)"> Helio
+					</label>
+					<label>
+						<input type="radio" value="3" name="p11" onclick="respuesta(11,this)"> Hierro
+					</label>
+					<label>
+						<input type="radio" value="4" name="p11" onclick="respuesta(11,this)"> Carbono
+					</label>
+				</section>
+				<section id="p12">
+					<h3>13-.¿Cuál es el proceso por el cual el agua de mar se evapora y luego cae como lluvia?</h3>
+					<label>
+						<input type="radio" value="1" name="p12" onclick="respuesta(12,this)"> Desalinización
+					</label>
+					<label>
+						<input type="radio" value="2" name="p12" onclick="respuesta(12,this)"> Precipitación
+					</label>
+					<label>
+						<input type="radio" value="3" name="p12" onclick="respuesta(12,this)"> Condensación
+					</label>
+					<label>
+						<input type="radio" value="4" name="p12" onclick="respuesta(12,this)"> Filtración
+					</label>
+				</section>
+				<section id="p13">
+					<h3>14-.¿Cuál de las siguientes vitaminas es liposoluble?</h3>
+					<label>
+						<input type="radio" value="1" name="p13" onclick="respuesta(13,this)"> Vitamina C
+					</label>
+					<label>
+						<input type="radio" value="2" name="p13" onclick="respuesta(13,this)"> Vitamina B
+					</label>
+					<label>
+						<input type="radio" value="3" name="p13" onclick="respuesta(13,this)"> Vitamina A
+					</label>
+					<label>
+						<input type="radio" value="4" name="p13" onclick="respuesta(13,this)"> Vitamina K
+					</label>
+				</section>
+				<section id="p14">
+					<h3>15-. ¿Cuál es el símbolo químico del oxígeno?</h3>
+					<label>
+						<input type="radio" value="1" name="p14" onclick="respuesta(14,this)"> Ox
+					</label>
+					<label>
+						<input type="radio" value="2" name="p14" onclick="respuesta(14,this)"> O
+					</label>
+					<label>
+						<input type="radio" value="3" name="p14" onclick="respuesta(14,this)"> Oxg
+					</label>
+					<label>
+						<input type="radio" value="4" name="p14" onclick="respuesta(14,this)"> Oz
+					</label>
+				</section>
+
+				<button onclick="Corregir()">Corregir</button>
+				<h2>Cantidad de acertadas:<span id="Resultado"></span></h2>
+			</div>
+	</body>
+</html>

@@ -235,7 +235,7 @@ function MostrarTexto(indice, dialogo, elemento) {
     const boton2 = document.getElementById("Boton2");
     boton1.removeAttribute("onclick");//bloqueo de los botones
     boton2.removeAttribute("onclick");
-    const dialogoactual = "";
+    var dialogoactual = "";
     var sgteDialogo = dialogo;
     var contador = 0;
     var intervalo = setInterval(function () {
