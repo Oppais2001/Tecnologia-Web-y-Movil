@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control-2</title>
+    <script src="index.js"></script>
+</head>
+<body>
+    <p>Longitud de la contraseña: </p>
+    <br>
+    <input id="Longitud" type="number" > 
+    <br> 
+    <p>Incluir letras Mayusculas: </p>
+    <br>
+        <input type="checkbox" id="LetrasMayusculas">
+    <br> 
+    <p>Incluir letras Minusculas: </p>
+    <br>
+    <label>
+        <input type="checkbox" id="LetrasMinusculas">
+    </label>
+    <br>
+    <p>Incluir Caracteres Especiales: </p>
+    <br>
+    <label>
+        <input type="checkbox" id="Caracteres">
+    </label>
+    <br>
+    <input value="Generar contraseña" type="button" onclick="Generar()">
+    <div id="key">
+    </div>
+</body>
+</html>
