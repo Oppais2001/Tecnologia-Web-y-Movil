@@ -21,10 +21,10 @@
 
 }#Portada{
     display: flex;
-    width: 80vw;
+    width: 78vw;
     position: absolute;
-    top: -14vh;
-    left: 10vw;
+    top: 0vh;
+    left: 12vw;
     background-color: transparent;
 }
 #button1{
@@ -37,11 +37,11 @@
     background-color: white;
     cursor: pointer;
     position: absolute;
-    top: 85vh;
+    top: 95vh;
     left: 33vw;
 }#Texto1{
     position: absolute;
-    top: -14vh;
+    top: -4vh;
     left: 10vw;
     text-align: center;
     font-family:'Gantz', sans-serif;
@@ -51,7 +51,7 @@
 }#Texto2{
     display: flex;
     position: absolute;
-    top: 50vh;
+    top: 60vh;
     left: 37.5vw;
     font-family:'JMH_Savage', sans-serif;
     font-size: 15vh;
