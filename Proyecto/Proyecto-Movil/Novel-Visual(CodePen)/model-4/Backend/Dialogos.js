@@ -22,7 +22,7 @@ function SgteDialogo(){
     const Alien = document.getElementById('Alien');
     const soundtrack1 = document.getElementById('Soundtrack1');
     const soundtrack2 = document.getElementById('Soundtrack2');
-    if(indiceDialogos<listaDialogos.length){
+    if(indiceDialogos<listaDialogos.length+1){
         indiceDialogos++;
         if(indiceDialogos<4){
             if (indiceDialogos>1){
@@ -113,7 +113,7 @@ function SgteDialogo(){
             
         }
     }
-    if(indiceDialogos==listaDialogos.length){
+    if(indiceDialogos==listaDialogos.length+1){
         window.location.href = "./Combate.html";
     }
     if(indiceDialogos!==19&&indiceDialogos!==20&&indiceDialogos!==21&&indiceDialogos!==22){

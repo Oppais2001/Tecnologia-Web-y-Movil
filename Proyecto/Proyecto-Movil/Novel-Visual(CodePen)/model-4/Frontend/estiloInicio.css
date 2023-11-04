@@ -13,8 +13,8 @@
     background-color: black;
 }#Background{
     background-color: brown;
-    width: 101vw;
-    height: 65vh;
+    width: 100vw;
+    height: 60vh;
     position: absolute;
     top: 0vh;
     left: 0vw;
@@ -23,25 +23,25 @@
     display: flex;
     width: 78vw;
     position: absolute;
-    top: 0vh;
-    left: 12vw;
+    top: -5vh;
+    left: 17vw;
     background-color: transparent;
 }
 #button1{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 200%;
-    width: 33%;
+    font-size: 5vh;
+    width: 33vw;
     height: 10%;
     border-radius: 15px;
     color: brown;
     background-color: white;
     cursor: pointer;
     position: absolute;
-    top: 95vh;
+    top: 85vh;
     left: 33vw;
 }#Texto1{
-    position: absolute;
-    top: -4vh;
+    position: fixed;
+    top: -15vh;
     left: 10vw;
     text-align: center;
     font-family:'Gantz', sans-serif;
@@ -51,7 +51,7 @@
 }#Texto2{
     display: flex;
     position: absolute;
-    top: 60vh;
+    top: 50vh;
     left: 37.5vw;
     font-family:'JMH_Savage', sans-serif;
     font-size: 15vh;

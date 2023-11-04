@@ -11,8 +11,9 @@ form{
 }
 .Square{
     border-radius: 2.5vh;
-    animation: vibrarA 0.5s linear infinite forwards;
+    animation: vibrarA 0.5s linear forwards infinite;
     animation-play-state: paused;
+    border: 10px solid white
 }
 #SquareCommand{
     align-items: center;
@@ -64,7 +65,7 @@ form{
     top: 28%;
     left: 35.25%;
     z-index: -1;
-    animation: vibrarB 0.5s linear infinite;
+    animation: vibrarB 0.5s linear forwards infinite;
     animation-play-state: paused;
 }
 
@@ -167,44 +168,37 @@ p{
     position: absolute;
     left: 60%;
     top: 35%;
-    animation: vibrarC 0.5s linear infinite forwards;
+    animation: vibrarC 0.5s linear forwards infinite;
 }
 #Tanaka{
-    width: 50%;
-    height: 100%;
+    width: 15vw;
+    height: 45vh;
     position: fixed;/*mantiene el elemento fijo en la ventana del navegador, lo que evita que estire la página hacia abajo.*/
-    top: 0%;
-    left: 25%;
+    top: 0vh;
+    left: 8vw;
     z-index: 0;
-    animation: vibrarB 0.5s linear infinite forwards;
+    background-color: transparent;
+    animation: vibrarB 0.5s linear forwards infinite;
     animation-play-state: paused;
 }
 
 @keyframes vibrarA {
-    0% { transform: translateX(0%); }
-    10% { transform: translateX(-5%); }
-    20% { transform: translateX(5%); }
-    30% { transform: translateX(-5%); }
-    40% { transform: translateX(5%); }
-    50% { transform: translateX(0%); }
-    60% { border: 10px solid white}
-    70% { border: 10px solid red}
-    80% { border: 10px solid white}
-    90% { border: 10px solid red}
-    100% { border: 10px solid white}
+    0% { transform: translateX(0%);border: 10px solid white}
+    20% { transform: translateX(-5%);border: 10px solid white}
+    40% { transform: translateX(5%);border: 10px solid red}
+    60% { transform: translateX(-5%);border: 10px solid white}
+    80% { transform: translateX(5%);border: 10px solid red}
+    100% { transform: translateX(0%);border: 10px solid white }
 }
 @keyframes vibrarB {
-    0% { transform: translateX(0%); }
-    10% { transform: translateX(-5%); }
-    20% { transform: translateX(5%); }
-    30% { transform: translateX(-5%); }
-    40% { transform: translateX(5%); }
-    50% { transform: translateX(0%); }
-    60% { background-color: black}
-    70% { background-color: red}
-    80% { background-color: black}
-    90% { background-color: red}
-    100% { background-color: black}
+    0% { transform: translateX(0%);background-color: black}
+    20% { transform: translateX(-5%);background-color: red}
+    40% { transform: translateX(5%);background-color: black}
+    60% { transform: translateX(-5%);background-color: red}
+    80% { transform: translateX(5%);background-color: black}
+    90% { transform: translateX(0%);background-color: red}
+    100%{ transform: translateX(0%); 
+        background-color: transparent;}
 }
 @keyframes vibrarC {
     0% {transform: translateX(0%);}

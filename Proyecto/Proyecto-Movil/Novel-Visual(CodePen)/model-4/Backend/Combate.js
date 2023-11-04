@@ -158,9 +158,19 @@ function ActualizarEstadoPersonaje(){
             Player1.SumarPuntos(10);
             p.innerHTML = Player1.NV + "</br>" + Player1.PV + "</br>" + Player1.PA + "</br>" + Player1.E + "</br>" + Player1.P;
         }, 4000);
+        setTimeout(() => {
+            window.location.href = './Ganar.html';
+        }, 6000)
     }
 }
 function EnemyTurn(){
     NarrarRecibirAtaque();
     Player1.RecuperarPA();
+}
+function Radar(){
+    const comandos = document.getElementById('SquareCommand');
+    const Items = document.getElementById('SquareItems');
+    MostrarTexto('Te has vuelto invisible el tanaka no puede verte')
+    comandos.style.display = 'inline';
+    Items.style.display = 'none';
 }
