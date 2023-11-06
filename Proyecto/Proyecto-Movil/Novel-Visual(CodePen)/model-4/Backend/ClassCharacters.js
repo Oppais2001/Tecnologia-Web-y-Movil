@@ -53,7 +53,7 @@ var Player1 = new Player({
     P: 0
 });
 var Enemy = new Personajes({
-    PV: 5,
+    PV: 1,
     PA: 5,
     PAMax: 5
 })

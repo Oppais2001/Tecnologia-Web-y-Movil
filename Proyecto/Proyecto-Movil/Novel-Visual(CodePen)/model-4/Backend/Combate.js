@@ -23,7 +23,6 @@ function NarrarAtaque(){
     var Texto = "¡Has decidido Atacar!\n Los puntos de salud del\n Tanaka disminuyen en "+ MagnitudATQ +".";
     MostrarTexto(Texto);
     MostrarAtaque(MagnitudATQ, "Ataque");
-    ActualizarEstadoPersonaje();
     comandos.style.display = 'inline';
     Ataques.style.display = 'none';
 }
@@ -55,11 +54,11 @@ function Huir(){
 function RecibirAtaque(){
     var Recuadros = document.querySelectorAll('.Square');
     Recuadros.forEach(function(recuadro) {
-        recuadro.style.animationPlayState = 'running';
+        recuadro.classList.add("animacion1");
     });
    setTimeout(function(){
         Recuadros.forEach(function(recuadro) {
-            recuadro.style.animationPlayState = 'paused';
+            recuadro.classList.remove("animacion1");
         });
     }, 2000);
 
@@ -99,36 +98,52 @@ function MostrarTexto(dialogo) {
 
 }
 function MostrarAtaque(Ataque, elemento){
-    let boton1 = document.getElementById("boton1");
-    let boton2 = document.getElementById("boton2");
-    let boton3 = document.getElementById("boton3");
-    let boton4 = document.getElementById("boton4");
-    let squareEnemy = document.getElementById('SquareEnemy');
-    let enemy = document.getElementById('Tanaka');
-    let ATQ = document.getElementById(elemento);
-    boton1.disabled = true;
-    boton2.disabled = true;
-    boton3.disabled = true;
-    boton4.disabled = true;
-    squareEnemy.style.animationPlayState = 'running';
-    enemy.style.animationPlayState = 'running';
-    console.log("Activa Animacion")
+    const boton1 = document.getElementById("boton1");
+    const boton2 = document.getElementById("boton2");
+    const boton3 = document.getElementById("boton3");
+    const boton4 = document.getElementById("boton4");
+    const botones = [boton1, boton2, boton3, boton4];
+    const Disparo = document.getElementById("circulo");
+    const squareEnemy = document.getElementById("SquareEnemy");
+    const ATQ = document.getElementById(elemento);
+    var contador = 0
+    console.log("Se Activa la Animación")
+
+    botones.forEach((boton)=>{
+        boton.removeAttribute("onclick");
+    })
     console.log(`El daño ha sido de ${Ataque}`);
-    //Animacion de Ataque
-    ATQ.innerText= Ataque + "PTS";
-    setTimeout(() => {
-        ATQ.innerText=" ";
-        squareEnemy.style.animationPlayState = 'paused';
-        enemy.style.animationPlayState = 'paused';
-        boton1.disabled = false;
-        boton2.disabled = false;
-        boton3.disabled = false;
-        boton4.disabled = false;
-    }, 2000)
+    //Mostrar Animacion de Ataque
+    Intervalo1 = setInterval(() => {
+        if(contador==0){
+            circulo.classList.add('animacionDisparo');
+        }
+        else if(contador==2){
+            ATQ.innerText= Ataque + "PTS";
+            squareEnemy.classList.add("animacion2");
+            ATQ.classList.add("animacion3");
+        }
+        else if(contador == 4){
+            console.log("Se Detiene la Animación");
+            ATQ.innerText=" ";
+            squareEnemy.classList.remove("animacion2");
+            ATQ.classList.remove("animacion3");
+            squareEnemy.style.backgroundColor = 'black';
+            boton1.setAttribute("onclick", "Ataque()");
+            boton2.setAttribute("onclick", "Defender()");
+            boton3.setAttribute("onclick", "Items()");
+            boton4.setAttribute("onclick", "Huir()");
+            clearInterval(Intervalo1);
+            ActualizarEstadoPersonaje();
+        }
+        contador++;
+
+    }, 1000)
 }
 function ActualizarEstadoPersonaje(){
-    var p = document.getElementById('puntos');
-    var ImgEnemy = document.getElementById("Tanaka");
+    const p = document.getElementById('puntos');
+    const ImgEnemy = document.getElementById("Tanaka");
+    const botones = [boton1, boton2, boton3, boton4];
     p.innerHTML = Player1.NV + "</br>" + Player1.PV + "</br>" + Player1.PA + "</br>" + Player1.E + "</br>" + Player1.P;
     console.log(`PV Enemigo: ${Enemy.PV}`);
     if(Player1.PA==0&&Enemy.PV!=0){
@@ -139,28 +154,34 @@ function ActualizarEstadoPersonaje(){
         setTimeout(function(){
         MostrarTexto("¡¡¡Has muerto!!!");
         },2000);
+        botones.forEach((boton)=>{
+            boton.removeAttribute("onclick");
+        })
         setTimeout(function(){
             window.location.href = "./Perder.html";
         },4000);
     }
     if(Enemy.PV==0){
         console.log("Has ganado")
-        setTimeout(function(){
+        var contador = 0;
+        intervalo1 = setInterval(() => {
+            if((contador==0)){
+            ImgEnemy.classList.add("animacion4")
             MostrarTexto("¡Has derrotado\nal Alien Tanaka!");
-            ImgEnemy.style.animation = "Morir 4s linear infinite";
-            ImgEnemy.style.animationPlayState = "running";
-        }, 2000);
-        setTimeout(() => {
+            }else if(contador==4){
             MostrarTexto("Tu experiencia Incrementa en 5")
-            ImgEnemy.style.animationPlayState = "paused";
-            ImgEnemy.style.display = "none"
             Player1.SumarExperiencia(5); 
             Player1.SumarPuntos(10);
             p.innerHTML = Player1.NV + "</br>" + Player1.PV + "</br>" + Player1.PA + "</br>" + Player1.E + "</br>" + Player1.P;
-        }, 4000);
-        setTimeout(() => {
-            window.location.href = './Ganar.html';
-        }, 6000)
+            }else if(contador==8){
+                window.location.href = './Ganar.html';
+            }else{
+                botones.forEach((boton)=>{
+                    boton.removeAttribute("onclick");
+                })
+            }
+
+        }, 1000)
     }
 }
 function EnemyTurn(){

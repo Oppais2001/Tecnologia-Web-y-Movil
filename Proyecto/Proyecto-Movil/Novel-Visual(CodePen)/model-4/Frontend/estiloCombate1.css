@@ -1,0 +1,35 @@
+#SquareEnemy{
+    background-color: black;
+    width: 32vw;
+    height: 46vh;
+    position: absolute;
+    top: 28vh;
+    left: 35.25vw;
+    z-index: -1;
+}
+.animacion1{
+    animation-name: vibrarB;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+#Tanaka{
+    width: 15vw;
+    height: 45vh;
+    position: absolute;/*mantiene el elemento fijo en la ventana del navegador, lo que evita que estire la página hacia abajo.*/
+    top: 1vh;
+    left: 8vw;
+    z-index: 0;
+    background-color: transparent;
+}
+@keyframes vibrarB {
+    0% { transform: translateX(0%);background-color: black}
+    20% { transform: translateX(-1vh);background-color: red}
+    40% { transform: translateX(1vh);background-color: black}
+    60% { transform: translateX(-1vh);background-color: red}
+    80% { transform: translateX(1vh);background-color: black}
+    90% { transform: translateX(-1vh);background-color: red}
+    100%{ transform: translateX(0%); background-color: black;
+    }
+}

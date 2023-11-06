@@ -1,115 +1,15 @@
+/*Importaciones de Fuentes de Texto*/
 @font-face {
     font-family: 'upheavtt';
     src: url('../Assets/Fonts/upheavtt.ttf');
 }
+/*Elementos propios HTML*/
 *{
     background-color: black;
-}
-form{
+}form{
     border: 10px solid white;
     background-color: black;
-}
-.Square{
-    border-radius: 2.5vh;
-    animation: vibrarA 0.5s linear forwards infinite;
-    animation-play-state: paused;
-    border: 10px solid white
-}
-#SquareCommand{
-    align-items: center;
-    width: 35vw;
-    height: 20vh;
-    position: absolute;
-    top: 5vh;
-    left: 40vw;
-}
-#SquareAttack{
-    align-items: center;
-    display: none;
-    width: 17vw;
-    height: 20vh;
-    position: absolute;
-    top: 5vh;
-    left: 40vw;
-}
-#SquareItems{
-    align-items: center;
-    display: none;
-    width: 17vw;
-    height: 20vh;
-    position: absolute;
-    top: 5vh;
-    left: 40vw; 
-}
-#SquareNarracion{
-    width: 50%;
-    height: 30%;
-    position: absolute;
-    top: 65%;
-    left: 25%;
-
-}
-#SquareStatus{
-    width: 16%;
-    height: 43%;
-    position: absolute;
-    top: 12%;
-    left: 18%;
-}
-#SquareEnemy{
-    border: 5px solid black;
-    background-color: black;
-    width: 32%;
-    height: 36%;
-    position: absolute;
-    top: 28%;
-    left: 35.25%;
-    z-index: -1;
-    animation: vibrarB 0.5s linear forwards infinite;
-    animation-play-state: paused;
-}
-
-.Command{
-    width: 25vw;
-    height: 5vh;
-}
-
-input[type="button"]{
-    width: 49.5%;
-    height: 49.5%;
-    font-size: 200%;
-    font-family: 'upheavtt', sans-serif;
-    color: white;
-}
-#Atacar1{
-    width: 17vw;
-    height: 10vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-#Atacar2{
-    width: 17vw;
-    height: 10vh;
-    position: absolute;
-    top: 10vh;
-    left: 0;
-}
-#Item1{
-    width: 17vw;
-    height: 10vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-#Item2{
-    width: 17vw;
-    height: 10vh;
-    position: absolute;
-    top: 10vh;
-    left: 0;
-}
-p{
+}p{
     color: white;
     font-size: 250%;
     font-family: 'upheavtt', sans-serif;
@@ -118,97 +18,219 @@ p{
     top: 1%;
     left: 1%;
 
+}input[type="button"]{
+    width: 49.5%;
+    height: 49.5%;
+    font-size: 200%;
+    font-family: 'upheavtt', sans-serif;
+    color: white;
 }
-#stats{
+/*Objetos*/
+    /*Recuadros*/
+#SquareCommand{
+    align-items: center;
+    width: 70vh;
+    height: 20vh;
+    position: absolute;
+    top: 5vh;
+    left: 50vh;
+}#SquareAttack{
+    align-items: center;
+    display: none;
+    width: 17vw;
+    height: 20vh;
+    position: absolute;
+    top: 5vh;
+    left: 65vh;
+}#SquareItems{
+    align-items: center;
+    display: none;
+    width: 17vw;
+    height: 20vh;
+    position: absolute;
+    top: 5vh;
+    left: 40vw; 
+}#SquareNarracion{
+    width: 100vh;
+    height: 25vh;
+    position: absolute;
+    top: 70vh;
+    left: 100vh;
+
+}#SquareStatus{
+    width: 22vh;
+    height: 40vh;
+    position: absolute;
+    top: 6vh;
+    left: 6vh;
+}#SquareEnemy{
+    background-color: black;
+    width: 50vh;
+    height: 50vh;
+    position: absolute;
+    top: 10vh;
+    left: 125vh;
+    border-radius: 50vh;
+    z-index: -1;
+}#circulo{
+    height: 20vh;
+    width: 20vh;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    top: 50vh;
+    left: 86vh;
+    z-index: -1;
+}
+    /*Botones*/
+#Atacar1{
+    width: 17vw;
+    height: 10vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}#Atacar2{
+    width: 17vw;
+    height: 10vh;
+    position: absolute;
+    top: 10vh;
+    left: 0;
+}#Item1{
+    width: 17vw;
+    height: 10vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}#Item2{
+    width: 17vw;
+    height: 10vh;
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    /*Parrafos*/
+}#Nombre{
+    font-size: 9vh;
+    position: absolute;
+    top: -15vh;
+    left: 3vh;
+}#stats{
     position: absolute;
     top: -6%;
     left: 10%;
-}
-#puntos{
+}#puntos{
     position: absolute;
     top: -6%;
     left: 65%;
-}
-#Narracion{
+}#Narracion{
     position: absolute;
     top: -12%;
     left: 3%;
-}
-#Comandos{
+}#Comandos{
     font-size: 350%;
     position: absolute;
     top: -72%;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-}
-#Nombre{
-    font-size: 350%;
-    position: absolute;
-    top: -32%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-}
-#Ataques{
+}#Ataques{
     position: absolute;
     top: -10vh;
     left: 3vw;
     z-index: 1;
-}
-#Items{
+}#Items{
     position: absolute;
     top: -10vh;
     left: 5vw;
     z-index: 1;
-}
-#Ataque{
-    color: red;
+}#Ataque{
+    color: brown;
     background-color: transparent;
     position: absolute;
-    left: 60%;
-    top: 35%;
-    animation: vibrarC 0.5s linear forwards infinite;
-}
-#Tanaka{
-    width: 15vw;
-    height: 45vh;
-    position: fixed;/*mantiene el elemento fijo en la ventana del navegador, lo que evita que estire la página hacia abajo.*/
-    top: 0vh;
-    left: 8vw;
+    left: 175vh;
+    top: 35vh;
+    /*Imagenes*/
+}#Tanaka{
+    height: 75vh;
+    position: absolute;/*mantiene el elemento fijo en la ventana del navegador, lo que evita que estire la página hacia abajo.*/
+    top: -12.5vh;
     z-index: 0;
     background-color: transparent;
-    animation: vibrarB 0.5s linear forwards infinite;
-    animation-play-state: paused;
+}#Player{
+    height: 60vh;
+    position: absolute;
+    top: 40vh;
+    left: 13vh;
+    background-color: transparent;
 }
+/*Clases*/
+.Square{
+        border-radius: 2.5vh;
+        border: 10px solid white
 
+}.Command{
+    width: 25vw;
+    height: 5vh;
+}.animacion1{
+    animation-name: vibrarA;
+    animation-duration: 0.5s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}.animacion2{
+    animation-name: vibrarB;
+    animation-duration: 0.75s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}.animacion3{
+    animation-name: vibrarC;
+    animation-duration: 0.75s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}.animacion4{
+    animation-name: Descender;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}.animacionDisparo{
+    animation-name: Disparo;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+/*animaciones*/
 @keyframes vibrarA {
-    0% { transform: translateX(0%);border: 10px solid white}
-    20% { transform: translateX(-5%);border: 10px solid white}
-    40% { transform: translateX(5%);border: 10px solid red}
-    60% { transform: translateX(-5%);border: 10px solid white}
-    80% { transform: translateX(5%);border: 10px solid red}
-    100% { transform: translateX(0%);border: 10px solid white }
+    0% { transform: translateX(0vh);border: 10px solid white}
+    25% { transform: translateX(1vh);border: 10px solid red}
+    50% { transform: translateX(-1vh);border: 10px solid white}
+    75% { transform: translateX(1vh);border: 10px solid red}
+    100% { transform: translateX(0vh);border: 10px solid white }
+}@keyframes vibrarB {
+    0% { transform: translateX(0vh);background-color: black}
+    25% { transform: translateX(-1vh);background-color: red}
+    50% { transform: translateX(1vh);background-color: black}
+    75% { transform: translateX(-1vh);background-color: red}
+    100% { transform: translateX(0vh);background-color: black}
+}@keyframes vibrarC {
+    0% {transform: translateX(0vh);}
+    25% {transform: translateX(1vh);}
+    50% {transform: translateX(-1vh);}
+    75% {transform: translateX(1vh);}
+    100% {transform: translateX(0vh);}    
+}@keyframes Descender {
+    0% {position: fixed;
+        top: 0vh;
+        left: 125vh;
+        transform: translateY(0vh);}
+    100%{position: fixed;
+        top: 0vh;
+        left: 125vh;
+        transform: translateY(100vh);}
+}@keyframes Disparo {
+    0% {background-color: #40F2FE;
 }
-@keyframes vibrarB {
-    0% { transform: translateX(0%);background-color: black}
-    20% { transform: translateX(-5%);background-color: red}
-    40% { transform: translateX(5%);background-color: black}
-    60% { transform: translateX(-5%);background-color: red}
-    80% { transform: translateX(5%);background-color: black}
-    90% { transform: translateX(0%);background-color: red}
-    100%{ transform: translateX(0%); 
-        background-color: transparent;}
-}
-@keyframes vibrarC {
-    0% {transform: translateX(0%);}
-    25% {transform: translateX(-5%);}
-    50% {transform: translateX(5%);}
-    75% {transform: translateX(-5%);}
-    100% {transform: translateX(0%);}    
-}
-@keyframes Morir {
-    0% {transform: translateY(0vh);}
-    50%{transform: translateY(75vh);}
-    100%{transform: translateY(150vh);}
+    100%{background-color: black;}
 }
