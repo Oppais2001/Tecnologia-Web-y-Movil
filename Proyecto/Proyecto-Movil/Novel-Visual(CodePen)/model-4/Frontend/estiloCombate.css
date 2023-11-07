@@ -72,15 +72,6 @@
     left: 125vh;
     border-radius: 50vh;
     z-index: -1;
-}#circulo{
-    height: 20vh;
-    width: 20vh;
-    border-radius: 50%;
-    background-color: black;
-    position: absolute;
-    top: 50vh;
-    left: 86vh;
-    z-index: -1;
 }
     /*Botones*/
 #Atacar1{
@@ -159,8 +150,16 @@
     height: 60vh;
     position: absolute;
     top: 40vh;
-    left: 13vh;
+    left:20vh;
     background-color: transparent;
+}#Disparo{
+    height: 60vh;
+    position: absolute;
+    top: 40vh;
+    left: 20vh;
+    background-color: transparent;
+    opacity: 0;
+    z-index: -1;
 }
 /*Clases*/
 .Square{
@@ -230,7 +229,6 @@
         left: 125vh;
         transform: translateY(100vh);}
 }@keyframes Disparo {
-    0% {background-color: #40F2FE;
-}
-    100%{background-color: black;}
+    0% {opacity: 0;}
+    100%{opacity: 1;}
 }
