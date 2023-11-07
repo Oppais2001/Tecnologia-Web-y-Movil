@@ -128,6 +128,7 @@ function MostrarAtaque(Ataque, elemento){
         if(contador==0){
             Disparo.classList.add('animacionDisparo');
         }else if(contador==2){
+            Disparo.classList.remove('animacionDisparo');
             ATQ.innerText= Ataque + "PTS";
             squareEnemy.classList.add("animacion2");
             ATQ.classList.add("animacion3");
@@ -135,7 +136,6 @@ function MostrarAtaque(Ataque, elemento){
         else if(contador == 4){
             console.log("Se Detiene la Animación");
             ATQ.innerText=" ";
-            Disparo.classList.remove('animacionDisparo');
             squareEnemy.classList.remove("animacion2");
             ATQ.classList.remove("animacion3");
             squareEnemy.style.backgroundColor = 'black';
