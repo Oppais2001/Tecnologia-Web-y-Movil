@@ -64,9 +64,9 @@
     top: 6vh;
     left: 6vh;
 }#SquareEnemy{
-    background-color: black;
     width: 50vh;
     height: 50vh;
+    background-color: black;
     position: absolute;
     top: 10vh;
     left: 125vh;
@@ -146,6 +146,7 @@
     top: -12.5vh;
     z-index: 0;
     background-color: transparent;
+    /*"FILTROS": hue-rotate(45deg)=>filtro que sobrepone colores||invert(0)=>invierte los colores||*contrast(0)=>lo deja sin color || brightness(2)=>efecto de luz*/
 }#Player{
     height: 60vh;
     position: absolute;
@@ -199,6 +200,18 @@
     animation-delay: 0s;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
+}.animacionRecibirDisparo{
+    animation-name: RecibirDisparo;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}.animacionLuz{
+    animation-name: Luz;
+    animation-duration: 1.75s;
+    animation-delay: 0s;
+    animation-fill-mode: backwards;
+    animation-timing-function: linear;
 }
 /*animaciones*/
 @keyframes vibrarA {
@@ -228,7 +241,16 @@
         top: 0vh;
         left: 125vh;
         transform: translateY(100vh);}
+
 }@keyframes Disparo {
     0% {opacity: 0;}
     100%{opacity: 1;}
+
+}@keyframes Luz{
+    0%{filter: brightness(1);}
+    100%{filter: brightness(3);}
+
+}@keyframes RecibirDisparo{
+    0% {filter: contrast(0);}
+    100% {filter: contrast(1);}
 }

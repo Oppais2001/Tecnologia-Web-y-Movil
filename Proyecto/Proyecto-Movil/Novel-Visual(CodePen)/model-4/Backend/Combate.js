@@ -114,18 +114,20 @@ function MostrarTexto2(dialogo) {
 }
 function MostrarAtaque(Ataque, elemento){
     const botones = document.querySelectorAll('input[type=button]');
+    const Disparo = document.getElementById("Disparo");
+    const squareEnemy = document.getElementById("SquareEnemy");
+    const Tanaka = document.getElementById("Tanaka");
+    const ATQ = document.getElementById(elemento);
+    var contador = 0
+    //Desactivar botones
     botones.forEach((boton)=>{
         boton.disabled=true
     })
-    const Disparo = document.getElementById("Disparo");
-    const squareEnemy = document.getElementById("SquareEnemy");
-    const ATQ = document.getElementById(elemento);
-    var contador = 0
-    console.log("Se Activa la Animación")
     console.log(`El daño ha sido de ${Ataque}`);
     //Mostrar Animacion de Ataque
     Intervalo1 = setInterval(() => {
         if(contador==0){
+            Tanaka.classList.add('animacionLuz');
             Disparo.classList.add('animacionDisparo');
         }else if(contador==2){
             Disparo.classList.remove('animacionDisparo');
@@ -137,6 +139,7 @@ function MostrarAtaque(Ataque, elemento){
             console.log("Se Detiene la Animación");
             ATQ.innerText=" ";
             squareEnemy.classList.remove("animacion2");
+            Tanaka.classList.remove('animacionLuz');
             ATQ.classList.remove("animacion3");
             squareEnemy.style.backgroundColor = 'black';
             botones.forEach((boton)=>{
