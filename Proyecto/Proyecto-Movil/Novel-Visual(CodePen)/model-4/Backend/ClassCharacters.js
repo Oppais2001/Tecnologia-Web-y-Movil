@@ -47,7 +47,7 @@ var Player1 = new Player({
     NV: 1,
     PV: 10,
     PVMax: 10,
-    PA: 10,
+    PA: 0,
     PAMax: 10,
     E: 0,
     P: 0

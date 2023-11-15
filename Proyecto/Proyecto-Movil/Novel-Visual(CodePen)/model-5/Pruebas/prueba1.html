@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guardar Número</title>
+</head>
+<body>
+
+  <h1>Número: <span id="numero"></span></h1>
+  <button onclick="incrementarNumero()">Incrementar Número</button>
+  <button onclick="resetearNumero()">Resetear Número</button>
+
+  <script>
+    // Función para incrementar el número
+    function incrementarNumero() {
+      // Obtener el valor actual del número almacenado en localStorage
+      var numeroActual = localStorage.getItem('miNumero') || 0;
+
+      // Incrementar el número
+      var nuevoNumero = parseInt(numeroActual) + 1;
+
+      // Actualizar el número en la interfaz y en localStorage
+      document.getElementById('numero').textContent = nuevoNumero;
+      localStorage.setItem('miNumero', nuevoNumero);
+    }
+
+    // Función para resetear el número
+    function resetearNumero() {
+      // Resetear el número a 0 en la interfaz y en localStorage
+      document.getElementById('numero').textContent = 0;
+      localStorage.setItem('miNumero', 0);
+    }
+
+    // Al cargar la página, recuperar y mostrar el número almacenado en localStorage
+    window.onload = function() {
+      var numeroAlmacenado = localStorage.getItem('miNumero') || 0;
+      document.getElementById('numero').textContent = numeroAlmacenado;
+    };
+  </script>
+
+</body>
+</html>

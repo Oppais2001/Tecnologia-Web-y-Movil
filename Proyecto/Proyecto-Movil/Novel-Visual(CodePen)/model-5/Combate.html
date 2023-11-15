@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fight</title>
+    <script src="./js/ClassCharacters.js"></script>
+    <script src="./js/Combate.js"></script>
+    <link rel="stylesheet" href="./css/estiloCombate.css">
+</head>
+<body>
+    <section>
+        <form action="" id="SquareStatus" class="Square">
+            <p id="Nombre">Kei</p>
+            <p id="stats">NV<br/>PV<br/>PA<br/>E<br/>P</p>
+            <p id="puntos"></p>
+        </form>
+    </section>
+    <section>
+        <p id="Ataque"></p>
+    </section>
+        <div>
+            <form action="" id="SquareNarracion" class="Square">
+            <p id="Narracion"></p>
+            </form>
+        </div>
+    <section>
+        <form action="" id="SquareCommand" class="Square">
+            <p id="Comandos">Acciones</p>
+            <input class="Command" id="boton1" type="button" value="Atacar" onclick="Ataque()">
+            <input class="Command" id="boton2" type="button" value="Defenderse" onclick="Defender()">
+            <br>
+            <input class="Command" id="boton3" type="button" value="Items" onclick="Items()">
+            <input class="Command" id="boton4" type="button" value="Huir" onclick="Huir()">
+        </form>
+    </section>
+    <section>
+        <form id="SquareAttack" class="Square">
+            <p id="Ataques">Ataques</p>
+            <input class="Option1" id="Atacar1" type="button" value="X-Gun" onclick="NarrarAtaque()">
+            <br>
+            <input class="Option2" id="Atacar2" type="button" value="Y-Gun" onclick="NarrarAtaque()">
+        </form>
+    </section>
+    <section>
+        <form id="SquareItems" class="Square">
+            <p id="Items">Items</p>
+            <input class="Option1" id="Item1" type="button" value="Radar" onclick="Radar()">
+        </form>
+    </section>
+    <section>
+        <div id="SquareEnemy">
+            <img id="Tanaka" src="Assets/Img/Characters/TanakaFuriosoSystemCombat.png">
+            <img id="TanakaAtaqueFrames1" src="Assets/Img/Characters/TanakaAtaqueFrame1.png">
+            <img id="TanakaAtaqueFrames2" src="Assets/Img/Characters/TanakaAtaqueFrame2.png">
+        </div>
+    </section>
+    <section>
+        <div id="SquarePlayer">
+            <img id="Player" src="Assets/Img/Characters/Kei_Gun1.png">
+            <img id="Disparo" src="Assets/Img/Effects/X-Gun-Disparo.png">
+        </div>
+    </section>
+</body>
+</html>

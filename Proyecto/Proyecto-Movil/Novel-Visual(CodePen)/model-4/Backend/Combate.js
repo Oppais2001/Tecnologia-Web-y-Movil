@@ -25,9 +25,6 @@ function NarrarAtaque(){
     comandos.style.display = 'inline';
     Ataques.style.display = 'none';
 }
-function NarrarRecibirAtaque(){
-    RecibirAtaque();
-}
 function Defender(){
     var Texto = "Has decidido Defender";
     MostrarTexto2(Texto);
@@ -47,15 +44,25 @@ function Huir(){
     Player1.PerderPA(GastoPA);
 }
 function RecibirAtaque(){
-    console.log("se cancelaron los botones")
     const botones = document.querySelectorAll('input[type=button]');
+    const Recuadros = document.querySelectorAll('.Square');
+    const Tanaka = document.getElementById("Tanaka");
+    const DisparoFrame1 = document.getElementById("TanakaAtaqueFrames1");
+    const DisparoFrame2 = document.getElementById("TanakaAtaqueFrames2");
+    console.log("se cancelaron los botones");
+    Tanaka.src = "Assets/Img/Characters/TanakaAtaqueSystemCombat.png";
+    DisparoFrame1.classList.add("animacionDisparo");
+    DisparoFrame2.classList.add("animacionDisparo");
     botones.forEach((boton)=>{
         boton.disabled = true});
-    var Recuadros = document.querySelectorAll('.Square');
-    Recuadros.forEach(function(recuadro) {
-        recuadro.classList.add("animacion1");
-    });
-   setTimeout(function(){
+    setTimeout(function(){
+        DisparoFrame1.classList.remove("animacionDisparo");
+        DisparoFrame2.classList.remove("animacionDisparo");
+        Recuadros.forEach(function(recuadro) {
+            recuadro.classList.add("animacion1");})
+        }, 2000);
+    setTimeout(function(){
+        Tanaka.src = "Assets/Img/Characters/TanakaFuriosoSystemCombat.png";
         Recuadros.forEach(function(recuadro) {
             recuadro.classList.remove("animacion1");
             botones.forEach((boton)=>{
@@ -63,7 +70,7 @@ function RecibirAtaque(){
             var Texto = "¡Has sido Atacado!\n Tus puntos de salud\n disminuyen en "+ MagnitudATQ +".";
             MostrarTexto2(Texto);
         });
-    }, 2000);
+    }, 4000);
 
     var MagnitudATQ = 1;
     Player1.PerderPV(MagnitudATQ);
@@ -131,6 +138,8 @@ function MostrarAtaque(Ataque, elemento){
             Disparo.classList.add('animacionDisparo');
         }else if(contador==2){
             Disparo.classList.remove('animacionDisparo');
+            Tanaka.classList.remove('animacionLuz');
+            Tanaka.classList.add('animacionRecibirDisparo');
             ATQ.innerText= Ataque + "PTS";
             squareEnemy.classList.add("animacion2");
             ATQ.classList.add("animacion3");
@@ -139,8 +148,8 @@ function MostrarAtaque(Ataque, elemento){
             console.log("Se Detiene la Animación");
             ATQ.innerText=" ";
             squareEnemy.classList.remove("animacion2");
-            Tanaka.classList.remove('animacionLuz');
             ATQ.classList.remove("animacion3");
+            Tanaka.classList.remove('animacionRecibirDisparo');
             squareEnemy.style.backgroundColor = 'black';
             botones.forEach((boton)=>{
                 boton.disabled = false;
@@ -177,11 +186,13 @@ function ActualizarEstadoPersonaje(){
     else if(Enemy.PV==0){
         console.log("se cancelaron los botones")
         const botones = document.querySelectorAll('input[type=button]');
+        const Tanaka = document.getElementById("Tanaka");
         botones.forEach((boton)=>{
             boton.disabled = true;
         })
         console.log("Has ganado")
         var contador = 0;
+        Tanaka.style.filter = 'contrast(0)';
         intervalo1 = setInterval(() => {
             if((contador==0)){
             ImgEnemy.classList.add("animacion4")
@@ -201,7 +212,7 @@ function ActualizarEstadoPersonaje(){
     }
 
 function EnemyTurn(){
-    NarrarRecibirAtaque();
+    RecibirAtaque();
     Player1.RecuperarPA();
 }
 function Radar(){

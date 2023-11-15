@@ -1,6 +1,12 @@
-var indiceDialogos = 0;
-
+var indiceDialogos = 3;
+//Funcion de inicio
+document.addEventListener('DOMContentLoaded', function() {
+    SgteDialogo();
+});
+//Funciones de Botones
 function SgteDialogo(){
+    const boton1 = document.getElementById("Boton1");
+    const boton2 = document.getElementById("Boton2");
     const fondo = document.getElementById('Background');
     const Nishi = document.getElementById('Nishi')
     const Kei = document.getElementById('Kei')
@@ -18,6 +24,7 @@ function SgteDialogo(){
     const audio = document.getElementById('AudiosDialogos');
     const recuadro1 = document.getElementById('Recuadro-de-Nombres');
     const recuadro2 = document.getElementById('Recuadro-de-Dialogos');
+    const recuadroPlayer = document.getElementById('Recuadro-Player');
     const esfera = document.getElementById('Esfera');
     const Alien = document.getElementById('Alien');
     const soundtrack1 = document.getElementById('Soundtrack1');
@@ -43,21 +50,21 @@ function SgteDialogo(){
                 });
             }
             Personajes.forEach((Personaje)=>{
-                Personaje.style.display = 'none'
+                Personaje.style.opacity = 0
             })
-            Kato.style.display = "flex"
+            Kato.style.opacity = 1
             nombre.innerText = 'Kato';
  
 
         }else if(indiceDialogos==10||indiceDialogos==12||indiceDialogos==24||indiceDialogos==26||indiceDialogos==29||indiceDialogos==31||indiceDialogos==33||indiceDialogos==36){
             Personajes.forEach((Personaje)=>{
-                Personaje.style.display = 'none'
+                Personaje.style.opacity = 0
             })
-            Hojo.style.display = "flex"
+            Hojo.style.opacity = 1
             nombre.innerText = 'Hojo';
         }else if(indiceDialogos==19||indiceDialogos==20||indiceDialogos==21||indiceDialogos==22){
             Personajes.forEach((Personaje)=>{
-                Personaje.style.display = 'none'
+                Personaje.style.opacity = 0
             })
             nombre.innerText = 'Esfera';
             recuadro1.style.display = "none"; 
@@ -77,40 +84,53 @@ function SgteDialogo(){
             else if(indiceDialogos==21){
                 textoEsfera2.style.display = 'none';
                 textoEsfera3.style.display = 'flex';
-                Alien.style.display = 'flex';
+                Alien.style.opacity = 1
             }else if(indiceDialogos==22){
                 textoEsfera3.style.display = 'none';
                 textoEsfera4.style.display = 'flex';
-                Alien.style.display = 'none';
+                Alien.style.opacity = 0
             }
             MostrarTexto(indiceDialogos,DialogoEsfera[indiceDialogos-19],`TextoEsfera${indiceDialogos-18}`)
             
         }else if(indiceDialogos==45||indiceDialogos==47||indiceDialogos==49){
             nombre.innerText='Tanaka'
             Personajes.forEach((Personaje)=>{
-                Personaje.style.display = 'none'
+                Personaje.style.opacity = 0
             })
-            Tanaka.style.display = "flex"
-            if(indiceDialogos==49){
-                Personajes.forEach((Personaje)=>{
-                    Personaje.style.display = 'none'
-                })
-                Tanaka_Furioso.style.display = "flex"
+            if(indiceDialogos==45||indiceDialogos==47){
+                Tanaka.style.opacity = 1
+            }
+            else{
+                Tanaka_Furioso.opacity = 1
             }
         }
         else{
+            recuadroPlayer.style.display = 'flex';
             if (indiceDialogos==4){
                 audio.pause();
-                fondo.style.display = 'flex';
+                fondo.classList.add('AnimacionAparecer');
+            }else if(indiceDialogos==35){
+                console.log("Dialogo numero 35, se han bloqueado los botones")
+                boton1.removeAttribute("onclick");//bloqueo de los botones
+                boton2.removeAttribute("onclick");
+                recuadroPlayer.classList.add('AnimacionTransportar1')
+                Kei.classList.add('AnimacionTransportar2');
+                setTimeout(()=>{
+                    boton1.setAttribute("onclick", "SgteDialogo()");// Reactiva los botones
+                    boton2.setAttribute("onclick", "AntDialogo()");
+                    Kei.style.opacity = 0
+                    recuadroPlayer.classList.remove('AnimacionTransportar1')
+                    Kei.classList.remove('AnimacionTransportar2');
+                },6000);
             }else if(indiceDialogos==37){
-                fondo.style.animation = 'desaparecer 1s ease forwards';
+                fondo.classList.add('AnimacionDesaparecer');
             }
             Personajes.forEach((Personaje)=>{
-                Personaje.style.display = 'none';
+                Personaje.style.opacity = 0
             })
-            Kei.style.display = "flex";
-            nombre.innerText = 'Kei';
-            
+            recuadroPlayer.style.opacity = 1
+            Kei.style.opacity = 1
+            nombre.innerText = 'Kei';    
         }
     }
     if(indiceDialogos==listaDialogos.length+1){
@@ -121,6 +141,7 @@ function SgteDialogo(){
     }
 }
 function AntDialogo(){
+    const fondo = document.getElementById('Background');
     const Nishi = document.getElementById('Nishi')
     const Kei = document.getElementById('Kei')
     const Kato = document.getElementById('Kato')
@@ -147,31 +168,32 @@ function AntDialogo(){
         }
         else if(indiceDialogos<4){
             Personajes.forEach((Personaje)=>{
-                Personaje.style.display = 'none';
+                Personaje.style.opacity = 0;
             })
-            Nishi.style.display = 'flex';
+            Nishi.style.opacity = 1;
+            nombre.innerText = 'Nishi';
             if(indiceDialogos==4){
-                fondo.style.display = 'none'
+                fondo.style.opacity = 0;
             }
         }else if(indiceDialogos==6||indiceDialogos==13||indiceDialogos==14||indiceDialogos==23||indiceDialogos==27||indiceDialogos==28||indiceDialogos==30||indiceDialogos==32){
             Personajes.forEach((Personaje)=>{
-                Personaje.style.display = 'none'
+                Personaje.style.opacity = 0;
             })
-            Kato.style.display = "flex"
+            Kato.style.opacity = 1;
             nombre.innerText = 'Kato';
 
         }else if(indiceDialogos==10||indiceDialogos==12||indiceDialogos==24||indiceDialogos==26||indiceDialogos==29||indiceDialogos==31||indiceDialogos==33||indiceDialogos==36){
             Personajes.forEach((Personaje)=>{
-                Personaje.style.display = 'none'
+                Personaje.style.opacity = 0;
             })
-            Hojo.style.display = "flex"
+            Hojo.style.opacity = 1;
             nombre.innerText = 'Hojo';
             if(indiceDialogos==36){
-                fondo.style.display = 'flex'
+                fondo.classList.add('AnimacionAparecer')
             }
         }else if(indiceDialogos==19||indiceDialogos==20||indiceDialogos==21||indiceDialogos==22){
             Personajes.forEach((Personaje)=>{
-                Personaje.style.display = 'none'
+                Personaje.style.opacity = 0;
             })
             recuadro1.style.display = "none"; 
             recuadro2.style.display = "none";
@@ -182,13 +204,13 @@ function AntDialogo(){
             }
             else if(indiceDialogos==20){
                 textoEsfera3.style.display = 'none';
-                Alien.style.display = 'none';
+                Alien.style.opacity = 0;
                 textoEsfera2.style.display = 'flex';
             }
             else if(indiceDialogos==21){
                 textoEsfera4.style.display = 'none';
                 textoEsfera3.style.display = 'flex';
-                Alien.style.display = 'flex';
+                Alien.style.opacity = 1;
             }
             else{
                 dialogo.innerText = ''
@@ -196,14 +218,13 @@ function AntDialogo(){
         }else if(indiceDialogos==45||indiceDialogos==47||indiceDialogos==49){
             nombre.innerText='Tanaka'
             Personajes.forEach((Personaje)=>{
-                Personaje.style.display = 'none'
+                Personaje.style.opacity = 0;
             })
-            Tanaka.style.display = "flex"
-            if(indiceDialogos==49){
-                Personajes.forEach((Personaje)=>{
-                    Personaje.style.display = 'none'
-                })
-                Tanaka_Furioso.style.display = "flex"
+            if(indiceDialogos==45||indiceDialogos==47){
+                Tanaka.style.opacity = 1
+            }
+            else{
+                Tanaka_Furioso.style.opacity = 1
             }
         }
         else{
@@ -211,18 +232,17 @@ function AntDialogo(){
                 esfera.style.display = "none";
                 recuadro1.style.display = "flex"; 
                 recuadro2.style.display = "flex";
-            Personajes.forEach((Personaje)=>{
-                Personaje.style.display = 'none';
-            })
-            Kei.style.display = "flex";
-            nombre.innerText = 'Kei';
-            
             }
+            Personajes.forEach((Personaje)=>{
+                Personaje.style.opacity = 0;
+            })
+            Kei.style.opacity = 1;
+            nombre.innerText = 'Kei';
         }
     }else if(indiceDialogos==listaDialogos.length){
         window.location.href = "./Combate.html";
     }
-    if(indiceDialogos!==19&&indiceDialogos!==20&&indiceDialogos!==21&&indiceDialogos!==22){
+    if(indiceDialogos!=0&&indiceDialogos!==19&&indiceDialogos!==20&&indiceDialogos!==21&&indiceDialogos!==22){
         RepetirTexto(indiceDialogos, listaDialogos[indiceDialogos-1],'Dialogos');
     }else{
         RepetirTexto(indiceDialogos,DialogoEsfera[indiceDialogos-19],`TextoEsfera${indiceDialogos-18}`)

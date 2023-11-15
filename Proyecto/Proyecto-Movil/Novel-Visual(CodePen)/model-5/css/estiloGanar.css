@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Gantz';
+    src: url('../Assets/Fonts/gantz.ttf');
+}
+*{
+    background-color: black;
+}
+p{
+    font-family: 'Gantz', sans-serif;
+    font-size: 20vh;
+    color: red;
+    text-align: center;
+}#boton{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 200%;
+    width: 33%;
+    height: 10%;
+    border-radius: 15px;
+    color: brown;
+    background-color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 60vh;
+    left: 33vw;
+}

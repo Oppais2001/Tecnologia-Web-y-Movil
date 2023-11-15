@@ -3,44 +3,22 @@
     font-family: 'upheavtt';
     src: url('../Assets/Fonts/upheavtt.ttf');
 }
-/*ANIMACIONES*/
-@keyframes vibrar {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(-5px); }
-    40% { transform: translateX(5px); }
-    60% { transform: translateX(-5px); }
-    80% { transform: translateX(5px); }
-    100% { transform: translateX(0); }
-  }
-@keyframes aparecer {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-@keyframes desaparecer {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
+/*ELEMENTOS DE HTML*/
 *{
     margin: 0vh;
     padding: 0vh;
     box-sizing: border-box;/*forma de tomar los bordees y contenido para las medidas totales con vh*/
     font-family: "Times New Roman", Times, serif;
     background-color: black;
-/*PARRAFOS DE TEXTO*/
 }p{
     text-align: center;
     font-family: 'upheavtt', sans-serif;
     color: white;
     background-color: transparent;
-}#Nombres{
+}
+/*OBJETOS*/
+    /*PARRAFOS*/
+#Nombres{
     font-size: 6vh;
 }#Dialogos{
     font-size: 5vh;
@@ -48,35 +26,24 @@
     margin: 2vh;
     top: 0.2vh;
     left: auto;
-}.TextoEsfera{
-    font-size: 5vh;
-    color: green;
-}
-#TextoEsfera1{
+}#TextoEsfera1{
     position: absolute;
     top: 20vh;
     left: auto;
-}
-#TextoEsfera2{
+}#TextoEsfera2{
     position: absolute;
     top: 25vh;
     left: auto;
-}
-#TextoEsfera3{
+}#TextoEsfera3{
     position: absolute;
     top: 10vh;
     left: auto;
-}
-#TextoEsfera4{
+}#TextoEsfera4{
     position: absolute;
     top: 15vh;
     left: auto;
-/*RECUADROS DE TEXTO*/
-}.Recuadros{
-    display: flex; /* contenedor flexible*/
-    justify-content: center; /* Centra los elementos secundarios de manera horizontal*/
-}
-#Recuadro-de-Nombres{
+    /*RECUADROS*/
+}#Recuadro-de-Nombres{
     background-color: black;
     width: 15%;
     height: 7%;
@@ -86,10 +53,9 @@
     position: absolute;
     top: 50%;
     left: 22%;
-    z-index: 1;
+    z-index: 2;
     border-radius: 2vh;
-}
-#Recuadro-de-Dialogos{
+}#Recuadro-de-Dialogos{
     background-color: black;
     width: 60%;
     height: 35%;
@@ -100,9 +66,9 @@
     top: 55%;
     left: 19%;
     border-radius: 2vh;
-}
-#Esfera{
-    display: none;/*    display: flex;    */
+    z-index: 1;
+}#Esfera{
+    display: none;
     align-items: center; /* Centrar los elementos secundarios de manera vertical*/
     position: absolute;
     top: 15%;
@@ -111,96 +77,140 @@
     height: 70%;
     border-radius: 50%;
     background-color: black;
-    flex-direction: column;
-    box-shadow: 0 0 10px white;
-
-}
-/*BOTONES*/
-.Botones{
+}#Recuadro-Player{
+    border: 2px solid #E1EDE0;
+    display: none;
     background-color: transparent;
-    cursor: pointer;
-    width: 131px;
-    height: 131px;
-    position: absolute;
-    top:45%;
-}
+    width: 32vw;
+    height: 70vh;
+    position: relative;
+    top: 0vh;
+    left: 70vh;
+    z-index: 0;
+    overflow: hidden;
+    opacity: 0;
+}/*BOTONES*/
 #Boton1{
     left: 85%;
-}
-#Boton2{
+}#Boton2{
     left: 5%;
-}
-/*IMAGENES*/
+}/*IMAGENES*/
 #Background{
-    display: none;
-    z-index: -2;
+    z-index: 0;
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    animation: aparecer 1s ease forwards;/*ease = animacion suave, forwards= mantiene el estado final de la animacion*/
-
-}.Personajes{
-    display: none;
-    background-color: transparent;
-}
-#Nishi{
-    display: flex;
+    opacity: 0;
+}#Nishi{
     width: 20%;
     height: 60%;
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     bottom: 35%;
     left: 40%;
-    animation: aparecer 1s ease forwards;/*ease = animacion suave, forwards= mantiene el estado final de la animacion*/
-}
-#Kei{
-    width: 20%;
-    height: 60%;
+    opacity: 1;
+}#Kei{
+    height: 70vh;
     position: absolute;
-    z-index: -1;
-    bottom: 35%;
-    left: 40%;
-}
-#Kato{
+    left: 5vh;
+    top: 0;
+}#Kato{
     width: 28%;
     height: 60%;
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     bottom: 35%;
     left: 35%;
-}
-#Hojo{
+}#Hojo{
     width: 20%;
     height: 60%;
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     bottom: 35%;
     left: 38%;
-}
-#Tanaka{
+}#Tanaka{
     width: 20%;
     height: 60%;
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     bottom: 35%;
     left: 40%;
-}
-#Tanaka-Furioso{
+}#Tanaka-Furioso{
     width: 20%;
     height: 60%;
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     bottom: 35%;
     left: 40%;
-}
-#Alien{
-    display: none;
+}#Alien{
     background-color: #E1EDE0;
     border: 0.5vh solid green;
     height: 33vh;
     position: absolute;
     top: 20vh;
     left: auto;
+}
+/*CLASES*/
+.TextoEsfera{
+    font-size: 5vh;
+    color: green;
+}.Personajes{
+    opacity: 0;
+    background-color: transparent;
+}.Recuadros{
+    display: flex; /* contenedor flexible*/
+    justify-content: center; /* Centra los elementos secundarios de manera horizontal*/
+}.Botones{
+    background-color: transparent;
+    cursor: pointer;
+    width: 131px;
+    height: 131px;
+    position: absolute;
+    top:45%;
+}.AnimacionAparecer{
+    animation-name: aparecer;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;/*ease = animacion suave, forwards= mantiene el estado final de la animacion*/
+}.AnimacionDesaparecer{
+    animation-name: desaparecer;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}.AnimacionTransportar1{
+    position: relative;
+    overflow: hidden;
+    animation-name: transportar1;
+    animation-duration: 4s;
+    animation-fill-mode: backwards;
+}.AnimacionTransportar2{
+    position: relative;
+    animation-name: transportar2;
+    animation-duration: 4s;
+    animation-fill-mode: backwards;
+}
+
+/*ANIMACIONES*/
+@keyframes vibrar {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-5px); }
+    40% { transform: translateX(5px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}@keyframes aparecer {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}@keyframes desaparecer {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}@keyframes transportar1 {
+    from {transform: translateY(0%);}
+    to {transform: translateY(120%);}
+}
+@keyframes transportar2 {
+    from {transform: translateY(0%);}
+    to {transform: translateY(-120%);}
 }

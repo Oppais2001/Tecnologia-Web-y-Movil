@@ -144,9 +144,24 @@
     height: 75vh;
     position: absolute;/*mantiene el elemento fijo en la ventana del navegador, lo que evita que estire la página hacia abajo.*/
     top: -12.5vh;
+    left: 9vh;
     z-index: 0;
     background-color: transparent;
     /*"FILTROS": hue-rotate(45deg)=>filtro que sobrepone colores||invert(0)=>invierte los colores||*contrast(0)=>lo deja sin color || brightness(2)=>efecto de luz*/
+}#TanakaAtaqueFrames1{
+    height: 75vh;
+    position: absolute;
+    top: -12.5vh;
+    left: 9vh;
+    background-color: transparent;
+    opacity: 0;
+}#TanakaAtaqueFrames2{
+    height: 75vh;
+    position: absolute;
+    top: -12.5vh;
+    left: 9vh;
+    background-color: transparent;
+    opacity: 0;
 }#Player{
     height: 60vh;
     position: absolute;
@@ -235,22 +250,20 @@
 }@keyframes Descender {
     0% {position: fixed;
         top: 0vh;
-        left: 125vh;
+        left: 134vh;
         transform: translateY(0vh);}
     100%{position: fixed;
         top: 0vh;
-        left: 125vh;
+        left: 134vh;
         transform: translateY(100vh);}
 
-}@keyframes Disparo {
+}@keyframes Disparo{
     0% {opacity: 0;}
     100%{opacity: 1;}
-
 }@keyframes Luz{
     0%{filter: brightness(1);}
     100%{filter: brightness(3);}
-
 }@keyframes RecibirDisparo{
-    0% {filter: contrast(0);}
-    100% {filter: contrast(1);}
+    0% {filter: contrast(1);}
+    100% {filter: contrast(0);}
 }

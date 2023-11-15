@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novela Visual</title>
+    <script src="js/Dialogos.js"></script>
+    <script src="js/Clases.js"></script>
+    <link rel="stylesheet" href="css/estiloDialogos.css">
+</head>
+<body>
+    <section>
+        <img src="Assets/Img/Backgrounds/Room1.jpeg" id="Background">
+    </section>
+
+    <form action="" id="Recuadro-de-Nombres" class="Recuadros">
+        <p id="Nombres"></p>
+    </form>
+    <form action="" id="Recuadro-de-Dialogos" class="Recuadros">
+        <p id="Dialogos"></p>
+    </form>
+    <section>
+        <img src="Assets/Img/Characters/Nishi.png" id="Nishi" class="Personajes">
+        <img src="Assets/Img/Characters/kurono.png" id="Kurono" class="Personajes">
+        <img src="Assets/Img/Characters/Kato.png" id="Kato" class="Personajes">
+        <img src="Assets/Img/Characters/Hojo.png" id="Hojo" class="Personajes">
+        <img src="Assets/Img/Characters/Kishimoto.png" id="Kishimoto" class="Personajes">
+        <img src="Assets/Img/Characters/MisterCebollense.png" id="MrCebollense" class="Personajes">
+        <img src="Assets/Img/Characters/Cebollense.png" id="Cebollense" class="Personajes">
+        <img src="Assets/Img/Characters/Tanaka.png" id="Tanaka" class="Personajes">
+        <img src="Assets/Img/Characters/Tanaka_Furioso.png" id="Tanaka-Furioso" class="Personajes">
+        <input type="button" value="" id="Opcion1" class="Opciones" onclick="TomarDecision(true)">
+        <input type="button" value="" id="Opcion2" class="Opciones" onclick="TomarDecision(false)">
+        <img src="Assets/Img/Buttons/boton1.png" class="Botones" id="Boton1" alt="Siguiente" onclick="AvanzarTexto()">
+        <img src="Assets/Img/Buttons/boton2.png" class="Botones" id="Boton2" alt="Anterior"onclick="AntDialogo()">
+    </section>
+    <section>
+        <audio id="Soundtrack1" src="./Assets/Sounds/music_inicio.mp3"></audio>
+        <audio id="Soundtrack2" src="./Assets/Sounds/music_esfera.mp3"></audio>
+        <audio id="AudiosDialogos" src="Assets/Sounds/Dialogo1_Español.mp3"></audio>
+    </section>
+    <section>
+        <form action="" id="Esfera" class="Recuadros">
+            <p class="TextoEsfera" id="TextoEsfera1"></p>
+            <p class="TextoEsfera" id="TextoEsfera2"></p>
+            <p class="TextoEsfera" id="TextoEsfera3"></p>
+            <p class="TextoEsfera" id="TextoEsfera4"></p>
+            <img class="Personajes" id="Alien" src="Assets/Img/Characters/Tanaka.png">
+        </form>
+    </section>
+
+</body>
+</html>
