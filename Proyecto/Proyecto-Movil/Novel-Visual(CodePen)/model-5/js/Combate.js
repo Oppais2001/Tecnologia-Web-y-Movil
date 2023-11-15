@@ -203,6 +203,9 @@ function ActualizarEstadoPersonaje(){
             Player1.SumarPuntos(10);
             p.innerHTML = Player1.NV + "</br>" + Player1.PV + "</br>" + Player1.PA + "</br>" + Player1.E + "</br>" + Player1.P;
             }else if(contador==8){
+                var indiceActual = parseInt(localStorage.getItem('miNumero') || 0);// Incrementar el número
+                var indiceNuevo = parseInt(indiceActual) + 1;// Actualizar el 
+                localStorage.setItem('miNumero', indiceNuevo);
                 window.location.href = './Index.html';
                 clearInterval(intervalo1);
             }

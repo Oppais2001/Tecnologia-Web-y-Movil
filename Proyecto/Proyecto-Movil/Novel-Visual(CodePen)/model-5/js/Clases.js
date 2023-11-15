@@ -178,9 +178,6 @@ const decision2 = new Decision(208,["SI","NO"])
 
 function MostrarPersonajes(){
     var indiceActual = parseInt(localStorage.getItem('miNumero') || 0);// Incrementar el número
-    if(indiceActual==140){
-        window.location.href = 'Combate.html'
-    }
     if(Kurono.ComprobarIndice(indiceActual)){
         console.log(Kurono.Nombre)
         Kurono.MostrarPersonaje()
@@ -214,9 +211,12 @@ function MostrarPersonajes(){
     }else{
         console.log(indiceActual)
     }
+    if(indiceActual==140||indiceActual==155||indiceActual==198||indiceActual==515||indiceActual==542||indiceActual==560){
+        window.location.href = 'Combate.html'
+    }
 }
 function AvanzarTexto(){
-    var indiceActual = parseInt(localStorage.getItem('miNumero') || 0);// Incrementar el número
+    let indiceActual = parseInt(localStorage.getItem('miNumero') || 0);// Incrementar el número
     var indiceNuevo = parseInt(indiceActual) + 1;// Actualizar el número en la interfaz y en localStorage
     localStorage.setItem('miNumero', indiceNuevo);
     MostrarPersonajes();
@@ -228,7 +228,7 @@ function MostrarTexto(dialogo, elemento){
     Dialogo.innerText = dialogo
 }
 function TomarDecision(opcion){
-    var indiceActual = parseInt(localStorage.getItem('miNumero') || 0);// Incrementar el número
+    let indiceActual = parseInt(localStorage.getItem('miNumero') || 0);// Incrementar el número
     if(decision1.ComprobarIndice(indiceActual)){
         decision1.ElegirDecision(opcion)
         decision1.MoverDialogos(Personajes);
