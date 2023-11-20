@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'JMH_Savage';
+    src: url('../Assets/Fonts/JMH_Savage.ttf');
+    /*src: url('URL_DE_TU_FUENTE.ttf') format('truetype');*/
+    /* Opcional: otros formatos de fuentes como woff, woff2, eot, etc. */
+}
+@font-face {
+    font-family: 'Gantz';
+    src: url('../Assets/Fonts/gantz.ttf');
+}
+
+*{
+    background-color: black;
+}#Background{
+    background-color: brown;
+    width: 100vw;
+    height: 60vh;
+    position: absolute;
+    top: 0vh;
+    left: 0vw;
+
+}#Portada{
+    display: flex;
+    width: 78vw;
+    position: absolute;
+    top: -5vh;
+    left: 17vw;
+    background-color: transparent;
+}
+#button1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 5vh;
+    width: 33vw;
+    height: 10%;
+    border-radius: 15px;
+    color: brown;
+    background-color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 85vh;
+    left: 33vw;
+}#Texto1{
+    position: fixed;
+    top: -15vh;
+    left: 10vw;
+    text-align: center;
+    font-family:'Gantz', sans-serif;
+    font-size: 50vh;
+    color: red;
+    background-color: transparent;
+}#Texto2{
+    display: flex;
+    position: absolute;
+    top: 50vh;
+    left: 37.5vw;
+    font-family:'JMH_Savage', sans-serif;
+    font-size: 15vh;
+    color: white;
+    background-color: transparent;
+}

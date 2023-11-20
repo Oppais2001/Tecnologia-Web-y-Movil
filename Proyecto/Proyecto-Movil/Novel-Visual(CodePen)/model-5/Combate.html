@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fight</title>
+    <link rel="stylesheet" href="./css/estiloCombate.css">
     <script src="./js/ClassCharacters.js"></script>
     <script src="./js/Combate.js"></script>
-    <link rel="stylesheet" href="./css/estiloCombate.css">
+    <script src="./js/Storage.js"></script>
 </head>
 <body>
     <section>
@@ -31,7 +32,7 @@
             <input class="Command" id="boton2" type="button" value="Defenderse" onclick="Defender()">
             <br>
             <input class="Command" id="boton3" type="button" value="Items" onclick="Items()">
-            <input class="Command" id="boton4" type="button" value="Huir" onclick="Huir()">
+            <input class="Command" id="boton4" type="button" value="Salir" onclick="Huir()">
         </form>
     </section>
     <section>
@@ -50,16 +51,33 @@
     </section>
     <section>
         <div id="SquareEnemy">
-            <img id="Tanaka" src="Assets/Img/Characters/TanakaFuriosoSystemCombat.png">
-            <img id="TanakaAtaqueFrames1" src="Assets/Img/Characters/TanakaAtaqueFrame1.png">
-            <img id="TanakaAtaqueFrames2" src="Assets/Img/Characters/TanakaAtaqueFrame2.png">
         </div>
+        <!-- Enemy 0 -->
+        <img id="Cebollense" src="Assets/Img/Characters/Cebollense.png">
+        <img id="CebollenseFrame1">
+        <img id="CebollenseFrame2">
+        <!-- Enemy 1 -->
+        <img id="SR-Cebollense" src="Assets/Img/Characters/MisterCebollense.png">
+        <img id="SR-CebollenseFrame1">
+        <img id="SR-CebollenseFrame2">
+        <!-- Enemy 2 -->
+        <img id="Tanaka" src="Assets/Img/Characters/Tanaka_Furioso.png">
+        <img id="TanakaAtaque" src="Assets/Img/Characters/TanakaAtaque.png">
+        <img id="TanakaFrame1" src="Assets/Img/Effects/TanakasAtaqueFrame1.png">
+        <img id="TanakaFrame2" src="Assets/Img/Effects/TanakasAtaqueFrame2.png">
+        <!-- Enemy 3 -->
+        <img id="Jefe-Tanaka" src="Assets/Img/Characters/Jefe-Tanaka.png">
+        <img id="Jefe-TanakaAtaque">
+        <img id="Jefe-TanakaFrame1" src="Assets/Img/Effects/TanakasAtaqueFrame1.png">
+        <img id="Jefe-TanakaFrame2" src="Assets/Img/Effects/TanakasAtaqueFrame2.png">
+        <!-- Enemy 4 -->
     </section>
     <section>
-        <div id="SquarePlayer">
-            <img id="Player" src="Assets/Img/Characters/Kei_Gun1.png">
-            <img id="Disparo" src="Assets/Img/Effects/X-Gun-Disparo.png">
-        </div>
+        <!-- Player 0 -->
+        <img id="Kurono" src="Assets/Img/Characters/KuronoAtaque.png">
+        <img id="KuronoAtaque" src="Assets/Img/Characters/KuronoAtaque1.png">
+        <!-- Efectos Arma 0 -->
+        <img id="Arma0Frames1" src="Assets/Img/Effects/Arma0Frame1.png">
     </section>
 </body>
 </html>

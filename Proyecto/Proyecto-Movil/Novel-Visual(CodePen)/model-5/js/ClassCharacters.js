@@ -1,6 +1,7 @@
 //Clases
 class Personajes{
-    constructor({PV,PA,PAMax}){
+    constructor(Nombre,PV,PA,PAMax){
+        this.Nombre = Nombre;//Nombre de elementos que se mostraran en pantalla
         this.PV = PV;//Puntos de Salud
         this.PA = PA;//Puntos de Aguante
         this.PAMax = PAMax;//Puntos de Aguante Maximos
@@ -19,13 +20,22 @@ class Personajes{
     }
 }
 class Player extends Personajes{
-    constructor({PV,PA,PAMax,NV,PVMax, E, P}){
-        super({PV,PA,PAMax});
+    constructor(Nombre,PV,PA,PAMax,PVMax,NV, E, P){
+        super(Nombre,PV,PA,PAMax);
+        this.Nombre = Nombre;//Nombre de elementos que se mostraran en pantalla
+        this.PV = PV;//Puntos de Salud
+        this.PA = PA;//Puntos de Aguante
+        this.PAMax = PAMax;//Puntos de Aguante Maximos
         this.NV = NV //Nivel del personaje
         this.PVMax = PVMax //Puntos de Salud Maximos
         this.E = E //Puntos de Experiencia
         this.P = P //Puntos de Juego
     }//Acciones que pueden realizarse durante el combate
+    MostrarPlayer(){
+        const Imagen = document.getElementById('Player');
+        Imagen.src = `Assets/Img/Characters/Combate-${this.Nombre}.png`;
+        Imagen.opacity = 1;
+    }
     RecuperarPV(Puntos){
         this.PV += Puntos;
         if(this.PV>this.PVMax){
@@ -43,17 +53,30 @@ class Player extends Personajes{
         this.P = this.P + P;
     }
 }
-var Player1 = new Player({
-    NV: 1,
-    PV: 10,
-    PVMax: 10,
-    PA: 10,
-    PAMax: 10,
-    E: 0,
-    P: 0
-});
-var Enemy = new Personajes({
-    PV: 5,
-    PA: 5,
-    PAMax: 5
-})
+class Enemy extends Personajes{
+    constructor(Nombre,PV,PA,PAMax){
+        super(Nombre,PV,PA,PAMax);
+        this.Nombre = Nombre;//Nombre de elementos que se mostraran en pantalla
+        this.PV = PV;//Puntos de Salud
+        this.PA = PA;//Puntos de Aguante
+        this.PAMax = PAMax;//Puntos de Aguante Maximos
+    }
+    MostrarEnemy(){
+        const Enemy = document.getElementById('Enemy');
+        Enemy.src = `Assets/Img/Characters/Combate-${this.Nombre}.png`;
+        Enemy.opacity = 1;
+    }
+}
+const PlayerKurono = new Player("Kurono",10,10,10,10,1,0,0);
+const PlayerKishimoto = new Player("Kishimoto",10,10,10,10,1,0,0);
+const PlayerKato = new Player("Kato",10,10,10,10,1,0,0);
+const PlayerNishi = new Player("Nishi",10,10,10,10,1,0,0);
+const ListaPlayers = [PlayerKurono,PlayerKishimoto,PlayerKato,PlayerNishi];
+const EnemyCebollense = new Enemy('Cebollense',1,0,0,0);
+const EnemyCebollense1 = new Enemy('Cebollense',1,0,0,0);
+const EnemyMR = new Enemy('MR.Cebollense',5,5,5,0);
+const EnemyTanaka = new Enemy('Tanaka',5,5,5,0);
+const Enemies = [EnemyCebollense,EnemyCebollense1,EnemyMR,EnemyTanaka]
+
+
+

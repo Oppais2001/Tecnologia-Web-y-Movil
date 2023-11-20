@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novela Visual</title>
+    <link rel="stylesheet" href="css/estiloDialogos.css">
+    <script src="js/Dialogos.js"></script>
+    <script src="js/Clases.js"></script>
+    <script src="js/Storage.js"></script>
+</head>
+<body>
+    <section>
+        <img src="Assets/Img/Backgrounds/Room1.jpeg" id="Background">
+    </section>
+    <form action="" id="Recuadro-de-Nombres" class="Recuadros">
+        <p id="Nombres"></p>
+    </form>
+    <form action="" id="Recuadro-de-Dialogos" class="Recuadros">
+        <p id="Dialogos"></p>
+    </form>
+    <section>
+        <!-- Nishi -->
+        <img src="Assets/Img/Characters/NishiTraje.png" id="NishiTraje" class="Personajes">
+        <!-- Nishi Expresiones -->
+        <img src="" id="NishiSerio" class="Expresiones">
+        <img src="" id="NishiEnojado" class="Expresiones">
+        <!-- Kurono -->
+        <img src="" id="KuronoUniforme" class="Personajes">
+        <img src="" id="KuronoTraje" class="Personajes">
+        <img src="" id="KuronoPoleron" class="Personajes">
+        <!-- Kurono Expresiones -->
+        <img src="" id="KuronoSerio" class="KuronoExpresiones">
+        <img src="" id="KuronoEnojado" class="Expresiones">
+        <img src="" id="KuronoFeliz" class="Expresiones">
+        <!-- Kato -->
+        <img src="" id="KatoUniforme" class="Personajes">
+        <img src="Assets/Img/Characters/KatoTraje.png" id="KatoTraje" class="Personajes">
+        <!-- Kato Expresiones -->
+        <img src="" id="KatoSerio" class="KatoExpresiones">
+        <img src="" id="KatoEnojado" class="KatoExpresiones">
+        <img src="" id="KatoFeliz" class="KatoExpresiones">
+        <!-- Hojo -->
+        <img src="Assets/Img/Characters/HojoUniforme.png" id="HojoUniforme" class="Personajes">
+        <img src="" id="HojoTraje" class="Personajes">
+        <!-- Hojo Expresiones -->
+        <img src="" id="HojoSerio" class="HojoExpresiones">
+        <!-- Kishimoto -->
+        <img src="Assets/Img/Characters/KishimotoTraje.png" id="KishimotoTraje" class="Personajes">
+        <img src="Assets/Img/Characters/KishimotoUniforme.png" id="KishimotoUniforme" class="Personajes">
+        <!-- Kishimoto Expresiones -->
+        <img src="Assets/Img/Characters/KishimotoSeria.png" id="KishimotoSeria" class="Expresiones">
+        <img src="Assets/Img/Characters/KishimotoNerviosa.png" id="KishimotoNerviosa" class="Expresiones">
+        <img src="Assets/Img/Characters/KishimotoFeliz.png" id="KishimotoFeliz" class="Expresiones">
+        <img src="Assets/Img/Characters/KishimotoTriste.png" id="KishimotoTriste" class="Expresiones">
+        <!-- Mister Cebollense -->
+        <img src="Assets/Img/Characters/MisterCebollense.png" id="MrCebollense" class="Personajes">
+        <!-- Cebollense -->
+        <img src="Assets/Img/Characters/Cebollense.png" id="Cebollense" class="Personajes">
+        <!-- Tanaka -->
+        <img src="" id="Tanaka" class="Personajes">
+        <!-- Tanaka Expresiones -->
+        <img src="Assets/Img/Characters/TanakaFeliz.png" id="TanakaFeliz" class="Expresiones">
+        <img src="Assets/Img/Characters/TanakaFurioso.png" id="TanakaFurioso" class="Expresiones">
+        <!-- Botones -->
+            <!-- Ruta 1 -->
+        <input type="button" value="" id="Opcion1" class="Opciones" onclick="TomarDecision(true)">
+            <!-- Ruta 2 -->
+        <input type="button" value="" id="Opcion2" class="Opciones" onclick="TomarDecision(false)">
+            <!-- Avanzar -->
+        <img src="Assets/Img/Buttons/boton1.png" class="Botones" id="Boton1" alt="Siguiente" onclick="AvanzarTexto()">
+            <!-- Retroceder -->
+        <img src="Assets/Img/Buttons/boton2.png" class="Botones" id="Boton2" alt="Anterior"onclick="AntDialogo()">
+    </section>
+    <section>
+        <audio id="Soundtrack1" src="./Assets/Sounds/music_inicio.mp3"></audio>
+        <audio id="Soundtrack2" src="./Assets/Sounds/music_esfera.mp3"></audio>
+        <audio id="AudiosDialogos" src="Assets/Sounds/Dialogo1_Español.mp3"></audio>
+    </section>
+    <section>
+        <form action="" id="Esfera" class="Recuadros">
+            <p class="TextoEsfera" id="TextoEsfera1"></p>
+            <p class="TextoEsfera" id="TextoEsfera2"></p>
+            <p class="TextoEsfera" id="TextoEsfera3"></p>
+            <p class="TextoEsfera" id="TextoEsfera4"></p>
+            <img class="Personajes" id="Alien" src="Assets/Img/Characters/Tanaka.png">
+        </form>
+    </section>
+
+</body>
+</html>

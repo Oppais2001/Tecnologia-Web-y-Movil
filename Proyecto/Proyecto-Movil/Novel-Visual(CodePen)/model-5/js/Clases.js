@@ -1,7 +1,9 @@
 class Personaje{
-    constructor(Nombre, Indices){
+    constructor(Nombre, Indices, Expresion, Ropa){
         this.Nombre = Nombre;
         this.Indices = Indices;
+        this.Expresion = Expresion;
+        this.Ropa = Ropa;
     }
     ComprobarIndice(indice){
         if (this.Indices.includes(indice)){
@@ -18,14 +20,23 @@ class Personaje{
         }
     }
     MostrarPersonaje(){
-        const personajeActual = document.getElementById(this.Nombre); //Lista de Personajes
-        const Lista = document.querySelectorAll('.Personajes'); //Lista de Personajes
+        const elementoRopa = String(this.Nombre) + String(this.Ropa)
+        const personajeRopa = document.getElementById(elementoRopa);
+        const elementoExpresion = String(this.Nombre) + String(this.Expresion)
+        const personajeExpresion = document.getElementById(elementoExpresion);
+        const ListaPersonajes = document.querySelectorAll('.Personajes'); //Lista de Personajes
+        const ListaExpresiones = document.querySelectorAll('.Expresiones'); //Lista de Personajes
         const nombre = document.getElementById('Nombres');
-        Lista.forEach((Personaje)=>{
+        ListaPersonajes.forEach((Personaje)=>{
+            Personaje.style.opacity = 0
+        })
+        ListaExpresiones.forEach((Personaje)=>{
             Personaje.style.opacity = 0
         })
         nombre.innerText = this.Nombre;
-        personajeActual.style.opacity = 1;
+        console.log(this.Nombre, this.Ropa, this.Expresion)
+        personajeRopa.style.opacity = 1;
+        personajeExpresion.style.opacity = 1;
     }
 }
 class Decision{
@@ -126,7 +137,9 @@ class Decision{
     }
 }
 //Personaje1
-const Kurono = new Personaje('Kurono',[1,2,3,6,7,8,9,10,11,13,14,16,17,18,19,20,21,22,23,24,25,26,27,28,
+const Kurono = new Personaje(
+    'Kurono',
+    [1,2,3,6,7,8,9,10,11,13,14,16,17,18,19,20,21,22,23,24,25,26,27,28,
     29,30,31,32,33,34,35,36,37,38,40,42,43,46,47,50,51,54,57,58,60,64,67,69,71,73,75,77,78,79,81,82,
     84,87,91,93,96,98,100,104,105,106,107,109,111,114,117,118,120,123,125,126,127,128,129,130,131,
     132,133,134,135,136,139,141,143,145,151,152,155,158,159,161,164,165,166,172,173,176,177,182,184,
@@ -138,7 +151,9 @@ const Kurono = new Personaje('Kurono',[1,2,3,6,7,8,9,10,11,13,14,16,17,18,19,20,
     438,439,440,443,446,449,450,453,454,455,456,457,459,462,464,,465,467,468,469,471,475,476,477,478,
     481,495,496,497,498,499,500,501,502,504,506,508,509,510,513,514,516,519,520,521,523,524,528,529,
     530,532,533,534,535,539,540,541,547,549,550,551,553,554,555,556,557,558,559,561,562,565,567,570,
-    572,581,584,586,587]);
+    572,581,584,586,587],
+    "Serio",
+    "Poleron");
 //Personaje 2
 const Kato = new Personaje("Kato", [4,5,12,15,39,41,44,45,48,49,52,55,61,62,63,68,70,72,74,80,86,90,
     94,97,99,101,102,103,162,167,168,170,174,175,179,180,194,195,196,198,217,226,228,268,271,307,473,
@@ -170,14 +185,15 @@ const Tanaka = new Personaje("Tanaka",[503,505,507])
 // Personaje 11
 const Sadako = new Personaje("Sadako",[543,544,568])
 //Lista de Personajes
-const Personajes = [Kurono,Kato,Nishi,Kishimoto,SegundaKishimoto,MrCebollin,Cebollin,Perro,Hojo,
+const ListaPersonajes = [Kurono,Kato,Nishi,Kishimoto,SegundaKishimoto,MrCebollin,Cebollin,Perro,Hojo,
     Tanaka,Sadako]
 //Decisiones
 const decision1 = new Decision(80, ["Ponerse el Traje","No usar el Cosplay"])
 const decision2 = new Decision(208,["SI","NO"])
 
 function MostrarPersonajes(){
-    var indiceActual = parseInt(localStorage.getItem('miNumero') || 0);// Incrementar el número
+    console.log("Mostrar Personajes")
+    var indiceActual = parseInt(storageObtener('Indice'));
     if(Kurono.ComprobarIndice(indiceActual)){
         console.log(Kurono.Nombre)
         Kurono.MostrarPersonaje()
@@ -211,27 +227,45 @@ function MostrarPersonajes(){
     }else{
         console.log(indiceActual)
     }
-    if(indiceActual==140||indiceActual==155||indiceActual==198||indiceActual==515||indiceActual==542||indiceActual==560){
-        window.location.href = 'Combate.html'
+    if(indiceActual==139||indiceActual==155||indiceActual==198||indiceActual==515||indiceActual==542||indiceActual==560){
+        BloquearBotones()
+        setTimeout(()=>{
+            window.location.href = 'Combate.html'
+        },2000);
     }
 }
 function AvanzarTexto(){
-    let indiceActual = parseInt(localStorage.getItem('miNumero') || 0);// Incrementar el número
-    var indiceNuevo = parseInt(indiceActual) + 1;// Actualizar el número en la interfaz y en localStorage
-    localStorage.setItem('miNumero', indiceNuevo);
+    console.log("Avanzar Texto")
+    let indiceActual = parseInt(storageObtener("Indice"));// Incrementar el número
+    let indiceNuevo = parseInt(indiceActual) + 1;// Actualizar el número en la interfaz y en localStorage
+    console.log(indiceNuevo);
+    storageAsignar("Indice", indiceNuevo);
     MostrarPersonajes();
     MostrarTexto(Dialogos[indiceNuevo-1],"Dialogos");
-    console.log(Dialogos[indiceNuevo-1])
 }
 function MostrarTexto(dialogo, elemento){
+    console.log("Mostrar Texto")
     const Dialogo = document.getElementById(elemento);
     Dialogo.innerText = dialogo
 }
+function BloquearBotones(){
+    const Boton1 = document.getElementById('Boton1');
+    const Boton2 = document.getElementById('Boton2');
+    Boton1.onclick = null;
+    Boton2.onclick = null;
+}
+function ActivarBotones(){
+    const Boton1 = document.getElementById('Boton1');
+    const Boton2 = document.getElementById('Boton2');
+    Boton1.onclick = AvanzarTexto;
+    Boton2.onclick = null;
+}
 function TomarDecision(opcion){
-    let indiceActual = parseInt(localStorage.getItem('miNumero') || 0);// Incrementar el número
+    console.log("Tomar Decision")
+    let indiceActual = parseInt(storageObtener('Indice'));// Incrementar el número
     if(decision1.ComprobarIndice(indiceActual)){
         decision1.ElegirDecision(opcion)
-        decision1.MoverDialogos(Personajes);
+        decision1.MoverDialogos(ListaPersonajes);
         decision1.AgregarDialogos();
         decision1.AgregarIndices(Kurono,Kato,Kishimoto,Nishi);
         decision1.OcultarOpciones();
@@ -242,7 +276,12 @@ function TomarDecision(opcion){
     }
 }
 window.onload = function() {
-    var indiceActual = parseInt(localStorage.getItem('miNumero') || 0);// Incrementar el número
+    console.log("Ha cargado la pagina")
+    ActivarBotones()
     MostrarPersonajes();
+    let indiceActual = parseInt(storageObtener('Indice'));// Incrementar el número
     MostrarTexto(Dialogos[indiceActual-1],"Dialogos")
-  };
+};
+window.close = function() {
+    storageLimpiar();
+}

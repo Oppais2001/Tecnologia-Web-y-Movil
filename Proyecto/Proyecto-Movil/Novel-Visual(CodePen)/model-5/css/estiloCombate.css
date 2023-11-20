@@ -140,26 +140,32 @@
     left: 175vh;
     top: 35vh;
     /*Imagenes*/
-}#Tanaka{
-    height: 75vh;
-    position: absolute;/*mantiene el elemento fijo en la ventana del navegador, lo que evita que estire la página hacia abajo.*/
-    top: -12.5vh;
-    left: 9vh;
-    z-index: 0;
+}#Cebollense{
+    height: 50vh;
+    position: absolute;
+    top: 10vh;
+    left: 138vh;
+    z-index: -1;
     background-color: transparent;
     /*"FILTROS": hue-rotate(45deg)=>filtro que sobrepone colores||invert(0)=>invierte los colores||*contrast(0)=>lo deja sin color || brightness(2)=>efecto de luz*/
-}#TanakaAtaqueFrames1{
-    height: 75vh;
-    position: absolute;
-    top: -12.5vh;
-    left: 9vh;
+}#CebollenseFrame1{
     background-color: transparent;
     opacity: 0;
-}#TanakaAtaqueFrames2{
-    height: 75vh;
+}#CebollenseFrame2{
+    background-color: transparent;
+    opacity: 0;
+}#MRCebollense{
+    height: 50vh;
     position: absolute;
-    top: -12.5vh;
-    left: 9vh;
+    top: 10vh;
+    left: 138vh;
+    z-index: -1;
+    background-color: transparent;
+    /*"FILTROS": hue-rotate(45deg)=>filtro que sobrepone colores||invert(0)=>invierte los colores||*contrast(0)=>lo deja sin color || brightness(2)=>efecto de luz*/
+}#MRCebollenseFrames1{
+    background-color: transparent;
+    opacity: 0;
+}#MRCebollenseFrames2{
     background-color: transparent;
     opacity: 0;
 }#Player{
@@ -249,12 +255,8 @@
     100% {transform: translateX(0vh);}    
 }@keyframes Descender {
     0% {position: fixed;
-        top: 0vh;
-        left: 134vh;
         transform: translateY(0vh);}
     100%{position: fixed;
-        top: 0vh;
-        left: 134vh;
         transform: translateY(100vh);}
 
 }@keyframes Disparo{

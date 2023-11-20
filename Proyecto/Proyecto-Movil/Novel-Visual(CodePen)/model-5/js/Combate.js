@@ -1,8 +1,24 @@
+window.onload = function(){
+    const NumberEnemy = parseInt(storageObtener('NumberEnemy'));
+    const NumberPlayer = parseInt(storageObtener('NumberPlayer'));
+    const PlayerActual = ListaPlayers[NumberPlayer];
+    const EnemyActual = Enemies[NumberEnemy];
+    console.log(ListaPlayers)
+    console.log(NumberPlayer)
+    console.log(PlayerActual, EnemyActual)
+    PlayerActual.MostrarPlayer();
+    EnemyActual.MostrarEnemy();
+
+}
 //Funcion de inicio
 document.addEventListener('DOMContentLoaded', function() {
+    const NumberEnemy = parseInt(localStorage.getItem('NumberEnemy') || 0);
+    const NumberPlayer = parseInt(localStorage.getItem('NumberPlayer') ||0);
+    const PlayerActual = ListaPlayers[NumberPlayer];
+    const EnemyActual = Enemies[NumberEnemy];
     var p = document.getElementById("puntos");
-    p.innerHTML = Player1.NV + "</br>" + Player1.PV + "</br>" + Player1.PA + "</br>" + Player1.E + "</br>" + Player1.P;
-    let Texto = "¡Acabas de ver a un Tanaka!\n¿Que deseas hacer?";
+    p.innerHTML = PlayerActual.NV + "</br>" + PlayerActual.PV + "</br>" + PlayerActual.PA + "</br>" + PlayerActual.E + "</br>" + PlayerActual.P;
+    let Texto = `¡Acabas de ver a un ${EnemyActual.Nombre}!\n¿Que deseas hacer?`;
     MostrarTexto2(Texto);
 });
 //Funciones para la narraciones mediante los botones
@@ -17,8 +33,8 @@ function NarrarAtaque(){
     const Ataques = document.getElementById('SquareAttack');
     let MagnitudATQ = 1;
     let GastoPA= 5;
-    Player1.PerderPA(GastoPA);
-    Enemy.PerderPV(MagnitudATQ);
+    PlayerKurono.PerderPA(GastoPA);
+    EnemyCebollense.PerderPV(MagnitudATQ);
     var Texto = "¡Has decidido Atacar!\n Los puntos de salud del\n Tanaka disminuyen en "+ MagnitudATQ +".";
     MostrarTexto1(Texto);
     MostrarAtaque(MagnitudATQ, "Ataque");
@@ -29,7 +45,7 @@ function Defender(){
     var Texto = "Has decidido Defender";
     MostrarTexto2(Texto);
     var GastoPA= 5;
-    Player1.PerderPA(GastoPA);
+    PlayerKurono.PerderPA(GastoPA);
 }
 function Items(){
     const comandos = document.getElementById('SquareCommand');
@@ -41,28 +57,23 @@ function Huir(){
     var Texto ="Has decidido Huir";
     MostrarTexto2(Texto);
     var GastoPA= 5;
-    Player1.PerderPA(GastoPA);
+    PlayerKurono.PerderPA(GastoPA);
 }
 function RecibirAtaque(){
     const botones = document.querySelectorAll('input[type=button]');
     const Recuadros = document.querySelectorAll('.Square');
-    const Tanaka = document.getElementById("Tanaka");
-    const DisparoFrame1 = document.getElementById("TanakaAtaqueFrames1");
-    const DisparoFrame2 = document.getElementById("TanakaAtaqueFrames2");
+    const Enemy = document.getElementById("Enemy");
     console.log("se cancelaron los botones");
-    Tanaka.src = "Assets/Img/Characters/TanakaAtaqueSystemCombat.png";
-    DisparoFrame1.classList.add("animacionDisparo");
-    DisparoFrame2.classList.add("animacionDisparo");
+    //Aqui se activan las animaciones
     botones.forEach((boton)=>{
         boton.disabled = true});
     setTimeout(function(){
-        DisparoFrame1.classList.remove("animacionDisparo");
-        DisparoFrame2.classList.remove("animacionDisparo");
+        //Aqui se desactivan las animaciones
         Recuadros.forEach(function(recuadro) {
             recuadro.classList.add("animacion1");})
         }, 2000);
     setTimeout(function(){
-        Tanaka.src = "Assets/Img/Characters/TanakaFuriosoSystemCombat.png";
+        Enemy.src = "Assets/Img/Characters/TanakaFuriosoSystemCombat.png";
         Recuadros.forEach(function(recuadro) {
             recuadro.classList.remove("animacion1");
             botones.forEach((boton)=>{
@@ -73,7 +84,7 @@ function RecibirAtaque(){
     }, 4000);
 
     var MagnitudATQ = 1;
-    Player1.PerderPV(MagnitudATQ);
+    PlayerKurono.PerderPV(MagnitudATQ);
 
 }
 function MostrarTexto1(dialogo) {
@@ -121,9 +132,9 @@ function MostrarTexto2(dialogo) {
 }
 function MostrarAtaque(Ataque, elemento){
     const botones = document.querySelectorAll('input[type=button]');
-    const Disparo = document.getElementById("Disparo");
+    const Disparo = document.getElementById("PlayerFrames1");
     const squareEnemy = document.getElementById("SquareEnemy");
-    const Tanaka = document.getElementById("Tanaka");
+    const Enemy = document.getElementById("Enemy");
     const ATQ = document.getElementById(elemento);
     var contador = 0
     //Desactivar botones
@@ -134,12 +145,12 @@ function MostrarAtaque(Ataque, elemento){
     //Mostrar Animacion de Ataque
     Intervalo1 = setInterval(() => {
         if(contador==0){
-            Tanaka.classList.add('animacionLuz');
+            Enemy.classList.add('animacionLuz');
             Disparo.classList.add('animacionDisparo');
         }else if(contador==2){
+            Enemy.classList.remove('animacionLuz');
             Disparo.classList.remove('animacionDisparo');
-            Tanaka.classList.remove('animacionLuz');
-            Tanaka.classList.add('animacionRecibirDisparo');
+            Enemy.classList.add('animacionRecibirDisparo');
             ATQ.innerText= Ataque + "PTS";
             squareEnemy.classList.add("animacion2");
             ATQ.classList.add("animacion3");
@@ -149,7 +160,7 @@ function MostrarAtaque(Ataque, elemento){
             ATQ.innerText=" ";
             squareEnemy.classList.remove("animacion2");
             ATQ.classList.remove("animacion3");
-            Tanaka.classList.remove('animacionRecibirDisparo');
+            Enemy.classList.remove('animacionRecibirDisparo');
             squareEnemy.style.backgroundColor = 'black';
             botones.forEach((boton)=>{
                 boton.disabled = false;
@@ -163,13 +174,13 @@ function MostrarAtaque(Ataque, elemento){
 }
 function ActualizarEstadoPersonaje(){
     const p = document.getElementById('puntos');
-    const ImgEnemy = document.getElementById("Tanaka");
-    p.innerHTML = Player1.NV + "</br>" + Player1.PV + "</br>" + Player1.PA + "</br>" + Player1.E + "</br>" + Player1.P;
-    console.log(`PV Enemigo: ${Enemy.PV}`);
-    if(Player1.PA==0&&Enemy.PV!=0){
+    const ImgEnemy = document.getElementById("Enemy");
+    p.innerHTML = PlayerKurono.NV + "</br>" + PlayerKurono.PV + "</br>" + PlayerKurono.PA + "</br>" + PlayerKurono.E + "</br>" + PlayerKurono.P;
+    console.log(`PV Enemigo: ${EnemyCebollense.PV}`);
+    if(PlayerKurono.PA==0&&EnemyCebollense.PV!=0){
         EnemyTurn();
     }
-    else if(Player1.PV==0){
+    else if(PlayerKurono.PV==0){
         console.log("se cancelaron los botones")
         const botones = document.querySelectorAll('input[type=button]');
         botones.forEach((boton)=>{
@@ -183,30 +194,30 @@ function ActualizarEstadoPersonaje(){
             window.location.href = "./Perder.html";
         },4000);
     }
-    else if(Enemy.PV==0){
+    else if(EnemyCebollense.PV==0){
         console.log("se cancelaron los botones")
         const botones = document.querySelectorAll('input[type=button]');
-        const Tanaka = document.getElementById("Tanaka");
+        const Enemy = document.getElementById("Enemy");
         botones.forEach((boton)=>{
             boton.disabled = true;
         })
         console.log("Has ganado")
         var contador = 0;
-        Tanaka.style.filter = 'contrast(0)';
+        Enemy.style.filter = 'contrast(0)';
         intervalo1 = setInterval(() => {
             if((contador==0)){
             ImgEnemy.classList.add("animacion4")
             MostrarTexto1("¡Has derrotado\nal Alien Tanaka!");
             }else if(contador==4){
             MostrarTexto1("Tu experiencia Incrementa en 5")
-            Player1.SumarExperiencia(5); 
-            Player1.SumarPuntos(10);
-            p.innerHTML = Player1.NV + "</br>" + Player1.PV + "</br>" + Player1.PA + "</br>" + Player1.E + "</br>" + Player1.P;
+            PlayerKurono.SumarExperiencia(5); 
+            PlayerKurono.SumarPuntos(10);
+            p.innerHTML = PlayerKurono.NV + "</br>" + PlayerKurono.PV + "</br>" + PlayerKurono.PA + "</br>" + PlayerKurono.E + "</br>" + PlayerKurono.P;
             }else if(contador==8){
-                var indiceActual = parseInt(localStorage.getItem('miNumero') || 0);// Incrementar el número
-                var indiceNuevo = parseInt(indiceActual) + 1;// Actualizar el 
-                localStorage.setItem('miNumero', indiceNuevo);
-                window.location.href = './Index.html';
+                let indiceActual = parseInt(storageObtener("Indice"));// Incrementar el número
+                let indiceNuevo = parseInt(indiceActual) + 1;// Actualizar el valor
+                storageAsignar("Indice", indiceNuevo);
+                window.location.href = './Dialogos.html';
                 clearInterval(intervalo1);
             }
             contador++;
@@ -215,7 +226,7 @@ function ActualizarEstadoPersonaje(){
     }
 function EnemyTurn(){
     RecibirAtaque();
-    Player1.RecuperarPA();
+    PlayerKurono.RecuperarPA();
 }
 function Radar(){
     const comandos = document.getElementById('SquareCommand');
