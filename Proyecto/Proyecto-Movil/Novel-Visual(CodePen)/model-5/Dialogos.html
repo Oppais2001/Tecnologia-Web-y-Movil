@@ -6,6 +6,7 @@
     <title>Novela Visual</title>
     <link rel="stylesheet" href="css/estiloDialogos.css">
     <script src="js/Dialogos.js"></script>
+    <script src="js/ListaDialogos.js"></script>
     <script src="js/Clases.js"></script>
     <script src="js/Storage.js"></script>
 </head>
@@ -20,40 +21,43 @@
         <p id="Dialogos"></p>
     </form>
     <section>
+        <div id="Teletransportacion">
         <!-- Nishi -->
         <img src="Assets/Img/Characters/NishiTraje.png" id="NishiTraje" class="Personajes">
         <!-- Nishi Expresiones -->
-        <img src="" id="NishiSerio" class="Expresiones">
-        <img src="" id="NishiEnojado" class="Expresiones">
+        <img src="" id="NishiSerio" class="Personajes Expresiones">
+        <img src="" id="NishiEnojado" class="Personajes Expresiones">
         <!-- Kurono -->
-        <img src="" id="KuronoUniforme" class="Personajes">
-        <img src="" id="KuronoTraje" class="Personajes">
-        <img src="" id="KuronoPoleron" class="Personajes">
+        <img src="Assets/Img/Characters/kuronouniforme.png" id="KuronoUniforme" class="Personajes">
+        <img src="Assets/Img/Characters/KuronoCamisa.png" id="KuronoCamisa" class="Personajes">
+        <img src="Assets/Img/Characters/KuronoTraje.png" id="KuronoTraje" class="Personajes">
+        <img src="Assets/Img/Characters/KuronoPoleron.png" id="KuronoPoleron" class="Personajes">
         <!-- Kurono Expresiones -->
-        <img src="" id="KuronoSerio" class="KuronoExpresiones">
-        <img src="" id="KuronoEnojado" class="Expresiones">
-        <img src="" id="KuronoFeliz" class="Expresiones">
+        <img src="Assets/Img/Characters/KuronoSerio.png" id="KuronoSerio" class="Personajes Expresiones">
+        <img src="Assets/Img/Characters/KuronoEnojado.png" id="KuronoEnojado" class="Personajes Expresiones">
+        <img src="" id="KuronoFeliz" class="Personajes Expresiones">
         <!-- Kato -->
         <img src="" id="KatoUniforme" class="Personajes">
         <img src="Assets/Img/Characters/KatoTraje.png" id="KatoTraje" class="Personajes">
         <!-- Kato Expresiones -->
-        <img src="" id="KatoSerio" class="KatoExpresiones">
-        <img src="" id="KatoEnojado" class="KatoExpresiones">
-        <img src="" id="KatoFeliz" class="KatoExpresiones">
+        <img src="" id="KatoSerio" class="Personajes Expresiones">
+        <img src="" id="KatoEnojado" class="Personajes Expresiones">
+        <img src="" id="KatoFeliz" class="Personajes Expresiones">
         <!-- Hojo -->
         <img src="Assets/Img/Characters/HojoUniforme.png" id="HojoUniforme" class="Personajes">
         <img src="" id="HojoTraje" class="Personajes">
         <!-- Hojo Expresiones -->
-        <img src="" id="HojoSerio" class="HojoExpresiones">
+        <img src="" id="HojoSerio" class="Personajes Expresiones">
         <!-- Kishimoto -->
         <img src="Assets/Img/Characters/KishimotoTraje.png" id="KishimotoTraje" class="Personajes">
         <img src="Assets/Img/Characters/KishimotoUniforme.png" id="KishimotoUniforme" class="Personajes">
+        <img src="Assets/Img/Characters/KishimotoColegiala.png" id="KishimotoColegial" class="Personajes">
         <!-- Kishimoto Expresiones -->
-        <img src="Assets/Img/Characters/KishimotoSeria.png" id="KishimotoSeria" class="Expresiones">
-        <img src="Assets/Img/Characters/KishimotoNerviosa.png" id="KishimotoNerviosa" class="Expresiones">
-        <img src="Assets/Img/Characters/KishimotoFeliz.png" id="KishimotoFeliz" class="Expresiones">
-        <img src="Assets/Img/Characters/KishimotoTriste.png" id="KishimotoTriste" class="Expresiones">
-        <!-- Mister Cebollense -->
+        <img src="Assets/Img/Characters/KishimotoSeria.png" id="KishimotoSeria" class="Personajes Expresiones">
+        <img src="Assets/Img/Characters/KishimotoNerviosa.png" id="KishimotoNerviosa" class="Personajes Expresiones">
+        <img src="Assets/Img/Characters/KishimotoFeliz.png" id="KishimotoFeliz" class="Personajes Expresiones">
+        <img src="Assets/Img/Characters/KishimotoTriste.png" id="KishimotoTriste" class="Personajes Expresiones">
+        <!-- Mister   -->
         <img src="Assets/Img/Characters/MisterCebollense.png" id="MrCebollense" class="Personajes">
         <!-- Cebollense -->
         <img src="Assets/Img/Characters/Cebollense.png" id="Cebollense" class="Personajes">
@@ -62,20 +66,26 @@
         <!-- Tanaka Expresiones -->
         <img src="Assets/Img/Characters/TanakaFeliz.png" id="TanakaFeliz" class="Expresiones">
         <img src="Assets/Img/Characters/TanakaFurioso.png" id="TanakaFurioso" class="Expresiones">
+        <!-- Perro -->
+        <img src="" id="Perro" class="Personajes">
         <!-- Botones -->
             <!-- Ruta 1 -->
+        </div>
         <input type="button" value="" id="Opcion1" class="Opciones" onclick="TomarDecision(true)">
             <!-- Ruta 2 -->
         <input type="button" value="" id="Opcion2" class="Opciones" onclick="TomarDecision(false)">
             <!-- Avanzar -->
         <img src="Assets/Img/Buttons/boton1.png" class="Botones" id="Boton1" alt="Siguiente" onclick="AvanzarTexto()">
             <!-- Retroceder -->
-        <img src="Assets/Img/Buttons/boton2.png" class="Botones" id="Boton2" alt="Anterior"onclick="AntDialogo()">
+        <img src="Assets/Img/Buttons/boton2.png" class="Botones" id="Boton2" alt="Anterior"onclick="RetrocederTexto()">
     </section>
     <section>
         <audio id="Soundtrack1" src="./Assets/Sounds/music_inicio.mp3"></audio>
         <audio id="Soundtrack2" src="./Assets/Sounds/music_esfera.mp3"></audio>
         <audio id="AudiosDialogos" src="Assets/Sounds/Dialogo1_Español.mp3"></audio>
+        <audio id="CambioRopa" src="Assets/Sounds/Effects/CambioRopa.mp3"></audio>
+        <audio id="EfectoTeletransportacion" src="Assets/Sounds/Effects/Teletransportacion.mp3"></audio>
+
     </section>
     <section>
         <form action="" id="Esfera" class="Recuadros">
@@ -83,7 +93,7 @@
             <p class="TextoEsfera" id="TextoEsfera2"></p>
             <p class="TextoEsfera" id="TextoEsfera3"></p>
             <p class="TextoEsfera" id="TextoEsfera4"></p>
-            <img class="Personajes" id="Alien" src="Assets/Img/Characters/Tanaka.png">
+            <!--<img class="Personajes" id="Alien" src="">-->
         </form>
     </section>
 

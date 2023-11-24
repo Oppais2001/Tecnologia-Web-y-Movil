@@ -50,20 +50,20 @@
     border: 0.5vh solid white;
     padding: 0.5vh;
     position: absolute;
-    top: 50%;
-    left: 42vh;
+    top: 54vh;
+    left: 19vw;
     z-index: 2;
     border-radius: 2vh;
 }#Recuadro-de-Dialogos{
-    background-color: black;
+    background-color: rgb(8, 7, 7);
     width: 60%;
-    height: 35%;
+    height: 35vh;
     margin: 6vh auto;
     padding: 5vh;
     border: 0.5vh solid white;
     position: absolute;
-    top: 55%;
-    left: 19%;
+    top: 59vh;
+    left: 19vw;
     border-radius: 2vh;
     z-index: 1;
 }#Esfera{
@@ -88,143 +88,106 @@
     z-index: 0;
     overflow: hidden;
     opacity: 0;
+}#Teletransportacion{
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
 }/*BOTONES*/
 #Boton1{
-    left: 85%;
+    left: 85vw;
 }#Boton2{
-    left: 5%;
+    left: 5vw;
 }#Opcion1{
-    left: 115vh;
+    top: 74vh;
 }#Opcion2{
-    left: 52vh;
+    top: 86vh;
 
 }/*IMAGENES*/
 #Background{
+    display: flex;
     z-index: 0;
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    opacity: 0;
-}#Nishi{
-    width: 50vh;
-    position: absolute;
-    top: 0;
-    left: 85vh;
-    z-index: 0;
-}#Kurono{
-    height: 70vh;
-    position: absolute;
-    left: 85vh;
-    top: 0;
-}#Kishimoto{
-    height: 70vh;
-    position: absolute;
-    left: 80vh;
-    top: 0;
-}#Kato{
-    width: 55vh;
-    position: absolute;
-    top: 0;
-    left: 80vh;
-    z-index: 0;
-
-}#Hojo{
-    width: 55vh;
-    position: absolute;
-    left: 80vh;
-    top: 0;
-    z-index: 0;
+    opacity: 1;
 }#Cebollense{
-    width: 35vh;
-    position: absolute;
-    top: 10vh;
-    left: 90vh;
-    z-index: 0;
+    width: 20vw;
+    position: fixed;
+    left: 40vw;
+    top: 0vh;
 }#MrCebollense{
-    height: 100vh;
-    position: absolute;
-    left: 85vh;
-    z-index: 0;
-}#Tanaka{
-    width: 20%;
-    height: 60%;
-    position: absolute;
-    z-index: 0;
-    bottom: 35%;
-    left: 40%;
-}#Tanaka-Furioso{
-    width: 20%;
-    height: 60%;
-    position: absolute;
-    z-index: 0;
-    bottom: 35%;
-    left: 40%;
-}#Alien{
-    background-color: #E1EDE0;
-    border: 0.5vh solid green;
-    height: 33vh;
-    position: absolute;
-    top: 20vh;
-    left: auto;
+    width: 40vw;
+    position: fixed;
+    left: 30vw;
+    top: 0vh;
 }
 /*CLASES*/
 .TextoEsfera{
     font-size: 5vh;
     color: green;
 }.Personajes{
-    display: none;
+    display: flex;
+    width: 33vw;
+    position: absolute;
+    left: 33vw;
+    top: -2vh;
     opacity: 0;
     background-color: transparent;
 }.Expresiones{
-    display: none;
+    display: flex;
     opacity: 0;
+    position: fixed;
     background-color: transparent;
+    z-index: 1;
 }.Recuadros{
     display: flex; /* contenedor flexible*/
     justify-content: center; /* Centra los elementos secundarios de manera horizontal*/
 }.Botones{
     background-color: transparent;
     cursor: pointer;
-    width: 131px;
-    height: 131px;
+    width: 20vh;
+    height: 20vh;
     position: absolute;
-    top:45%;
+    top: 45vh;
+    z-index: 2;
 }.Opciones{
     height: 10vh;
-    width: 50vh;
+    width: 33vw;
     position: absolute;
-    top: 75vh;
+    left: 33vw;
     color: white;
     border: white solid 1vh;
     font-family: 'upheavtt', sans-serif;
+    border-radius: 5vh;
     font-size: 4vh;
     opacity: 0;
     z-index: 1;
 }.AnimacionAparecer{
     animation-name: aparecer;
-    animation-duration: 1s;
+    animation-duration: 4s;
     animation-timing-function: ease;
-    animation-fill-mode: forwards;/*ease = animacion suave, forwards= mantiene el estado final de la animacion*/
+    animation-fill-mode: backwards;/*ease = animacion suave, forwards= mantiene el estado final de la animacion*/
 }.AnimacionDesaparecer{
     animation-name: desaparecer;
     animation-duration: 1s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
 }.AnimacionTransportar1{
-    position: relative;
+    position: fixed;
     overflow: hidden;
     animation-name: transportar1;
     animation-duration: 4s;
+    animation-timing-function: ease-in;
     animation-fill-mode: backwards;
 }.AnimacionTransportar2{
-    position: relative;
+    position: fixed;
     animation-name: transportar2;
     animation-duration: 4s;
+    animation-timing-function: ease-in;
     animation-fill-mode: backwards;
 }
-
 /*ANIMACIONES*/
 @keyframes vibrar {
     0% { transform: translateX(0); }
@@ -240,10 +203,10 @@
     from {opacity: 1;}
     to {opacity: 0;}
 }@keyframes transportar1 {
-    from {transform: translateY(0%);}
-    to {transform: translateY(120%);}
+    from {transform: translateY(0vh);}
+    to {transform: translateY(75vh);}
 }
 @keyframes transportar2 {
-    from {transform: translateY(0%);}
-    to {transform: translateY(-120%);}
+    from {transform: translateY(0vh);}
+    to {transform: translateY(-75vh);}
 }

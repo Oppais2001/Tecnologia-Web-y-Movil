@@ -1,7 +1,7 @@
 /*Importaciones de Fuentes de Texto*/
 @font-face {
     font-family: 'upheavtt';
-    src: url('../Assets/Fonts/upheavtt.ttf');
+    src: url('../Assets/Fonts/ccwild-words-roman.ttf');
 }
 /*Elementos propios HTML*/
 *{
@@ -11,17 +11,18 @@
     background-color: black;
 }p{
     color: white;
-    font-size: 250%;
+    font-size: 6vh;
     font-family: 'upheavtt', sans-serif;
     text-align: start;
     position: absolute;
     top: 1%;
     left: 1%;
-
+}body{
+    overflow: hidden;
 }input[type="button"]{
     width: 49.5%;
     height: 49.5%;
-    font-size: 200%;
+    font-size: 5vh;
     font-family: 'upheavtt', sans-serif;
     color: white;
 }
@@ -32,7 +33,7 @@
     width: 70vh;
     height: 20vh;
     position: absolute;
-    top: 5vh;
+    top: 10vh;
     left: 50vh;
 }#SquareAttack{
     align-items: center;
@@ -64,12 +65,12 @@
     top: 6vh;
     left: 6vh;
 }#SquareEnemy{
-    width: 50vh;
-    height: 50vh;
+    width: 25vw;
+    height: 25vw;
     background-color: black;
     position: absolute;
     top: 10vh;
-    left: 125vh;
+    left: 60vw;
     border-radius: 50vh;
     z-index: -1;
 }
@@ -119,7 +120,7 @@
 }#Comandos{
     font-size: 350%;
     position: absolute;
-    top: -72%;
+    top: -16vh;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -141,38 +142,42 @@
     top: 35vh;
     /*Imagenes*/
 }#Cebollense{
-    height: 50vh;
+    display: flex;
+    width: 10vw;
     position: absolute;
     top: 10vh;
-    left: 138vh;
-    z-index: -1;
+    left: 67.5vw;
     background-color: transparent;
-    /*"FILTROS": hue-rotate(45deg)=>filtro que sobrepone colores||invert(0)=>invierte los colores||*contrast(0)=>lo deja sin color || brightness(2)=>efecto de luz*/
 }#CebollenseFrame1{
     background-color: transparent;
     opacity: 0;
 }#CebollenseFrame2{
     background-color: transparent;
     opacity: 0;
-}#MRCebollense{
-    height: 50vh;
+}#SR-Cebollense{
+    display: flex;
+    height: 75vh;
     position: absolute;
     top: 10vh;
-    left: 138vh;
-    z-index: -1;
+    left: 65vw;
     background-color: transparent;
-    /*"FILTROS": hue-rotate(45deg)=>filtro que sobrepone colores||invert(0)=>invierte los colores||*contrast(0)=>lo deja sin color || brightness(2)=>efecto de luz*/
 }#MRCebollenseFrames1{
     background-color: transparent;
-    opacity: 0;
 }#MRCebollenseFrames2{
     background-color: transparent;
-    opacity: 0;
-}#Player{
-    height: 60vh;
+}#Tanaka{
+    display: flex;
+    height: 75vh;
     position: absolute;
-    top: 40vh;
-    left:20vh;
+    top: 10vh;
+    left: 65vw;
+    background-color: transparent;
+}#Jefe-Tanaka{
+    display: flex;
+    width: 40vw;
+    position: absolute;
+    left: 55vw;
+    top: -10vh;
     background-color: transparent;
 }#Disparo{
     height: 60vh;
@@ -184,9 +189,24 @@
     z-index: -1;
 }
 /*Clases*/
+.Player{
+    height: 60vh;
+    position: absolute;
+    top: 40vh;
+    left:20vh;
+    background-color: transparent;
+    opacity: 0;
+}.Enemies{
+    display: none;
+    opacity: 0;
+    z-index: -1;
+}.Frames{
+    display: none;
+    opacity: 0;
+}
 .Square{
-        border-radius: 2.5vh;
-        border: 10px solid white
+    border-radius: 2.5vh;
+    border: 10px solid white
 
 }.Command{
     width: 25vw;

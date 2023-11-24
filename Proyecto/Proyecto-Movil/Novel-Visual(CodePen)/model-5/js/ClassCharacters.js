@@ -14,10 +14,6 @@ class Personajes{
     RecuperarPA(){
         this.PA = this.PAMax;
     }
-    Atacar(Objetivo, Gasto){
-        this.PerderPA(Gasto);
-        Objetivo.PerderPV;
-    }
 }
 class Player extends Personajes{
     constructor(Nombre,PV,PA,PAMax,PVMax,NV, E, P){
@@ -32,9 +28,10 @@ class Player extends Personajes{
         this.P = P //Puntos de Juego
     }//Acciones que pueden realizarse durante el combate
     MostrarPlayer(){
-        const Imagen = document.getElementById('Player');
-        Imagen.src = `Assets/Img/Characters/Combate-${this.Nombre}.png`;
-        Imagen.opacity = 1;
+        const elemento = String(this.Nombre) + "Ataque"
+        const Imagen = document.getElementById(elemento);
+        console.log(Imagen)
+        Imagen.style.opacity = 1;
     }
     RecuperarPV(Puntos){
         this.PV += Puntos;
@@ -62,9 +59,9 @@ class Enemy extends Personajes{
         this.PAMax = PAMax;//Puntos de Aguante Maximos
     }
     MostrarEnemy(){
-        const Enemy = document.getElementById('Enemy');
-        Enemy.src = `Assets/Img/Characters/Combate-${this.Nombre}.png`;
-        Enemy.opacity = 1;
+        const Enemy = document.getElementById(this.Nombre);
+        console.log(Enemy)
+        Enemy.style.opacity = 1;
     }
 }
 const PlayerKurono = new Player("Kurono",10,10,10,10,1,0,0);
@@ -72,11 +69,12 @@ const PlayerKishimoto = new Player("Kishimoto",10,10,10,10,1,0,0);
 const PlayerKato = new Player("Kato",10,10,10,10,1,0,0);
 const PlayerNishi = new Player("Nishi",10,10,10,10,1,0,0);
 const ListaPlayers = [PlayerKurono,PlayerKishimoto,PlayerKato,PlayerNishi];
-const EnemyCebollense = new Enemy('Cebollense',1,0,0,0);
-const EnemyCebollense1 = new Enemy('Cebollense',1,0,0,0);
-const EnemyMR = new Enemy('MR.Cebollense',5,5,5,0);
-const EnemyTanaka = new Enemy('Tanaka',5,5,5,0);
-const Enemies = [EnemyCebollense,EnemyCebollense1,EnemyMR,EnemyTanaka]
+const EnemyCebollense = new Enemy('Cebollense',1,0,0);
+const EnemyCebollense1 = new Enemy('Cebollense',1,0,0);
+const EnemyMR = new Enemy('SR-Cebollense',5,5,5);
+const EnemyTanaka = new Enemy('Tanaka',5,5,5);
+const JefeTanaka = new Enemy('Jefe-Tanaka',10,10,10)
+const Enemies = [EnemyCebollense,EnemyCebollense1,EnemyMR,EnemyTanaka,JefeTanaka]
 
 
 

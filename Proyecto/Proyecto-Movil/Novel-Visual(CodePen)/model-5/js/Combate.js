@@ -8,12 +8,11 @@ window.onload = function(){
     console.log(PlayerActual, EnemyActual)
     PlayerActual.MostrarPlayer();
     EnemyActual.MostrarEnemy();
-
 }
 //Funcion de inicio
 document.addEventListener('DOMContentLoaded', function() {
-    const NumberEnemy = parseInt(localStorage.getItem('NumberEnemy') || 0);
-    const NumberPlayer = parseInt(localStorage.getItem('NumberPlayer') ||0);
+    const NumberEnemy = parseInt(localStorage.getItem('NumberEnemy'));
+    const NumberPlayer = parseInt(localStorage.getItem('NumberPlayer'));
     const PlayerActual = ListaPlayers[NumberPlayer];
     const EnemyActual = Enemies[NumberEnemy];
     var p = document.getElementById("puntos");
@@ -29,12 +28,15 @@ function Ataque(){
     Ataques.style.display = 'inline';
 }
 function NarrarAtaque(){
+    const NumberEnemy = parseInt(localStorage.getItem('NumberEnemy'));
+    const EnemyActual = Enemies[NumberEnemy];
     const comandos = document.getElementById('SquareCommand');
     const Ataques = document.getElementById('SquareAttack');
     let MagnitudATQ = 1;
     let GastoPA= 5;
     PlayerKurono.PerderPA(GastoPA);
-    EnemyCebollense.PerderPV(MagnitudATQ);
+    console.log(EnemyActual)
+    EnemyActual.PerderPV(MagnitudATQ);
     var Texto = "¡Has decidido Atacar!\n Los puntos de salud del\n Tanaka disminuyen en "+ MagnitudATQ +".";
     MostrarTexto1(Texto);
     MostrarAtaque(MagnitudATQ, "Ataque");
@@ -73,7 +75,6 @@ function RecibirAtaque(){
             recuadro.classList.add("animacion1");})
         }, 2000);
     setTimeout(function(){
-        Enemy.src = "Assets/Img/Characters/TanakaFuriosoSystemCombat.png";
         Recuadros.forEach(function(recuadro) {
             recuadro.classList.remove("animacion1");
             botones.forEach((boton)=>{
@@ -92,7 +93,6 @@ function MostrarTexto1(dialogo) {
     var contador = 0;
     console.log(`Dialogo: ${dialogo}`);
     var intervalo = setInterval(function () {
-        console.log("Este mensaje se mostrará cada 25 milisegundos (0.025 segundo).");
         dialogoactual = dialogoactual + dialogo[contador];
         var Dialogo = document.getElementById("Narracion");
         Dialogo.innerText = dialogoactual;
@@ -114,7 +114,6 @@ function MostrarTexto2(dialogo) {
     var contador = 0;
     console.log(`Dialogo: ${dialogo}`);
     var intervalo = setInterval(function () {
-        console.log("Este mensaje se mostrará cada 25 milisegundos (0.025 segundo).");
         dialogoactual = dialogoactual + dialogo[contador];
         var Dialogo = document.getElementById("Narracion");
         Dialogo.innerText = dialogoactual;
@@ -134,7 +133,9 @@ function MostrarAtaque(Ataque, elemento){
     const botones = document.querySelectorAll('input[type=button]');
     const Disparo = document.getElementById("PlayerFrames1");
     const squareEnemy = document.getElementById("SquareEnemy");
-    const Enemy = document.getElementById("Enemy");
+    const NumberEnemy = parseInt(localStorage.getItem('NumberEnemy'));
+    const EnemyActual = Enemies[NumberEnemy];
+    const Enemy = document.getElementById(EnemyActual.Nombre);
     const ATQ = document.getElementById(elemento);
     var contador = 0
     //Desactivar botones
@@ -146,10 +147,10 @@ function MostrarAtaque(Ataque, elemento){
     Intervalo1 = setInterval(() => {
         if(contador==0){
             Enemy.classList.add('animacionLuz');
-            Disparo.classList.add('animacionDisparo');
+            //Disparo.classList.add('animacionDisparo');
         }else if(contador==2){
             Enemy.classList.remove('animacionLuz');
-            Disparo.classList.remove('animacionDisparo');
+            //Disparo.classList.remove('animacionDisparo');
             Enemy.classList.add('animacionRecibirDisparo');
             ATQ.innerText= Ataque + "PTS";
             squareEnemy.classList.add("animacion2");
@@ -174,10 +175,12 @@ function MostrarAtaque(Ataque, elemento){
 }
 function ActualizarEstadoPersonaje(){
     const p = document.getElementById('puntos');
-    const ImgEnemy = document.getElementById("Enemy");
+    const NumberEnemy = parseInt(localStorage.getItem('NumberEnemy'));
+    const EnemyActual = Enemies[NumberEnemy];
+    const Enemy = document.getElementById(EnemyActual.Nombre);
     p.innerHTML = PlayerKurono.NV + "</br>" + PlayerKurono.PV + "</br>" + PlayerKurono.PA + "</br>" + PlayerKurono.E + "</br>" + PlayerKurono.P;
-    console.log(`PV Enemigo: ${EnemyCebollense.PV}`);
-    if(PlayerKurono.PA==0&&EnemyCebollense.PV!=0){
+    console.log(`PV Enemigo: ${EnemyActual.PV}`);
+    if(PlayerKurono.PA==0&&Enemy.PV!=0){
         EnemyTurn();
     }
     else if(PlayerKurono.PV==0){
@@ -194,10 +197,9 @@ function ActualizarEstadoPersonaje(){
             window.location.href = "./Perder.html";
         },4000);
     }
-    else if(EnemyCebollense.PV==0){
+    else if(EnemyActual.PV==0){
         console.log("se cancelaron los botones")
         const botones = document.querySelectorAll('input[type=button]');
-        const Enemy = document.getElementById("Enemy");
         botones.forEach((boton)=>{
             boton.disabled = true;
         })
@@ -206,7 +208,7 @@ function ActualizarEstadoPersonaje(){
         Enemy.style.filter = 'contrast(0)';
         intervalo1 = setInterval(() => {
             if((contador==0)){
-            ImgEnemy.classList.add("animacion4")
+            Enemy.classList.add("animacion4")
             MostrarTexto1("¡Has derrotado\nal Alien Tanaka!");
             }else if(contador==4){
             MostrarTexto1("Tu experiencia Incrementa en 5")
@@ -214,6 +216,9 @@ function ActualizarEstadoPersonaje(){
             PlayerKurono.SumarPuntos(10);
             p.innerHTML = PlayerKurono.NV + "</br>" + PlayerKurono.PV + "</br>" + PlayerKurono.PA + "</br>" + PlayerKurono.E + "</br>" + PlayerKurono.P;
             }else if(contador==8){
+                let AnteriorEnemigo = parseInt(storageObtener("NumberEnemy"))
+                let NuevoEnemigo = parseInt(AnteriorEnemigo) + 1;
+                storageAsignar("NumberEnemy", NuevoEnemigo);
                 let indiceActual = parseInt(storageObtener("Indice"));// Incrementar el número
                 let indiceNuevo = parseInt(indiceActual) + 1;// Actualizar el valor
                 storageAsignar("Indice", indiceNuevo);
