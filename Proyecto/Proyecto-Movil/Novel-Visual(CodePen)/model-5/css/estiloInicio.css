@@ -8,47 +8,107 @@
     font-family: 'Gantz';
     src: url('../Assets/Fonts/gantz.ttf');
 }
-
+@font-face {
+    font-family: 'Kashima';
+    src: url('../Assets/Fonts/Kashima\ Demo.otf');
+}
 *{
-    background-color: black;
-}#Background{
     background-color: brown;
-    width: 100vw;
-    height: 60vh;
+}#Esfera{
+    height: 33vw;
+    width: 33vw;
     position: absolute;
-    top: 0vh;
-    left: 0vw;
-
-}#Portada{
-    display: flex;
-    width: 78vw;
-    position: absolute;
+    top: 4vh;
+    left: 33.5vw;
+    background-color: black;
+    border-radius: 50%;
+}input[type=button]{
+    font-family: 'Kashima', sans-serif;
+    border-radius: 15px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    position: fixed;
+}#button1{
+    font-size: 10vh;
+    width: 20vw;
+    height: 10vh;
+    top: 56vh;
+    left: 40vw;
+}#button2{
+    font-size: 6vh;
+    width: 18vw;
+    height: 6vh;
+    top: 66vh;
+    left: 41vw;
+}#button3{
+    font-size: 6vh;
+    width: 16vw;
+    height: 6vh;
+    top: 72vh;
+    left: 42vw;
+}#button4{
+    font-size: 6vh;
+    width: 14vw;
+    height: 6vh;
+    top: 78vh;
+    left: 43vw;
+}#button5{
+    font-size: 6vh;
+    width: 12vw;
+    height: 6vh;
+    top: 84vh;
+    left: 44vw;
+}#button6{
+    font-size: 6vh;
+    width: 10vw;
+    height: 6vh;
+    top: 90vh;
+    left: 45vw;
+}.Gantz{
+    position: fixed;
+    left: 15vw;
+    font-family:'Gantz', sans-serif;
+    font-size: 20vh;
+    color: white;
+    background-color: transparent;
+}#G{
+    top: -15vh;
+}#A{
+    font-size: 25vh;
     top: -5vh;
     left: 17vw;
-    background-color: transparent;
-}
-#button1{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 5vh;
-    width: 33vw;
-    height: 10%;
-    border-radius: 15px;
-    color: brown;
-    background-color: white;
-    cursor: pointer;
-    position: absolute;
-    top: 85vh;
-    left: 33vw;
-}#Texto1{
+}#N{
+    top: 19vh;
+}#T{
+    top: 38vh;
+    left: 17vw;
+}#Z{
+    top: 53vh;
+    left: 17vw;
+}.Nexus{
     position: fixed;
-    top: -15vh;
-    left: 10vw;
-    text-align: center;
+    left: 75vw;
     font-family:'Gantz', sans-serif;
-    font-size: 50vh;
-    color: red;
+    font-size: 20vh;
+    color: white;
     background-color: transparent;
-}#Texto2{
+}#N1{
+    top: -15vh;
+}#E{
+    top: 2vh;
+    left: 77vw;
+}#X{
+    top: 19vh;
+    left: 77vw;
+}#U{
+    top: 36vh;
+    left: 77vw;
+}#S{
+    top: 53vh;
+    left: 77vw;
+}
+#Texto2{
     display: flex;
     position: absolute;
     top: 50vh;

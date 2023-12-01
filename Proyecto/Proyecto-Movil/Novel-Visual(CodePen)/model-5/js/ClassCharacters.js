@@ -27,8 +27,13 @@ class Player extends Personajes{
         this.E = E //Puntos de Experiencia
         this.P = P //Puntos de Juego
     }//Acciones que pueden realizarse durante el combate
-    MostrarPlayer(){
-        const elemento = String(this.Nombre) + "Ataque"
+    MostrarPlayer(frame){
+        const elementosActuales = document.querySelectorAll('.Player');
+        console.log(elementosActuales)
+        elementosActuales.forEach((elemento)=>{
+            elemento.style.opacity = 0;
+        })
+        const elemento = String(this.Nombre) + "Ataque";
         const Imagen = document.getElementById(elemento);
         console.log(Imagen)
         Imagen.style.opacity = 1;
@@ -44,7 +49,10 @@ class Player extends Personajes{
         this.E = 0;
     }
     SumarExperiencia(E){
-        this.E = this.E + E;
+        this.E = parseInt(this.E) + parseInt(E);
+        const Experiencia = parseInt(storageObtener("Experiencia"))
+        const NuevaExperiencia = Experiencia + E;
+        storageAsignar("Experiencia", NuevaExperiencia)
     }
     SumarPuntos(P){
         this.P = this.P + P;

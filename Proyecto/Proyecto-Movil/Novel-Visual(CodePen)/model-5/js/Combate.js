@@ -1,25 +1,19 @@
 window.onload = function(){
     const NumberEnemy = parseInt(storageObtener('NumberEnemy'));
     const NumberPlayer = parseInt(storageObtener('NumberPlayer'));
+    const p = document.getElementById("puntos");
     const PlayerActual = ListaPlayers[NumberPlayer];
     const EnemyActual = Enemies[NumberEnemy];
+    const Texto = `¡Acabas de ver a un ${EnemyActual.Nombre}!\n¿Que deseas hacer?`;
+    PlayerActual.E = storageObtener("Experiencia");
     console.log(ListaPlayers)
     console.log(NumberPlayer)
     console.log(PlayerActual, EnemyActual)
-    PlayerActual.MostrarPlayer();
+    PlayerActual.MostrarPlayer(0);
     EnemyActual.MostrarEnemy();
-}
-//Funcion de inicio
-document.addEventListener('DOMContentLoaded', function() {
-    const NumberEnemy = parseInt(localStorage.getItem('NumberEnemy'));
-    const NumberPlayer = parseInt(localStorage.getItem('NumberPlayer'));
-    const PlayerActual = ListaPlayers[NumberPlayer];
-    const EnemyActual = Enemies[NumberEnemy];
-    var p = document.getElementById("puntos");
     p.innerHTML = PlayerActual.NV + "</br>" + PlayerActual.PV + "</br>" + PlayerActual.PA + "</br>" + PlayerActual.E + "</br>" + PlayerActual.P;
-    let Texto = `¡Acabas de ver a un ${EnemyActual.Nombre}!\n¿Que deseas hacer?`;
     MostrarTexto2(Texto);
-});
+}
 //Funciones para la narraciones mediante los botones
 function Ataque(){
     const comandos = document.getElementById('SquareCommand');
@@ -37,7 +31,7 @@ function NarrarAtaque(){
     PlayerKurono.PerderPA(GastoPA);
     console.log(EnemyActual)
     EnemyActual.PerderPV(MagnitudATQ);
-    var Texto = "¡Has decidido Atacar!\n Los puntos de salud del\n Tanaka disminuyen en "+ MagnitudATQ +".";
+    var Texto = "¡Has decidido Atacar!\n Los puntos de salud del\n"+ EnemyActual.Nombre +" disminuyen en "+ MagnitudATQ +".";
     MostrarTexto1(Texto);
     MostrarAtaque(MagnitudATQ, "Ataque");
     comandos.style.display = 'inline';
@@ -56,9 +50,9 @@ function Items(){
     Items.style.display = 'inline';
 }
 function Huir(){
-    var Texto ="Has decidido Huir";
+    const Texto ="Has decidido Huir";
+    const GastoPA= 5;
     MostrarTexto2(Texto);
-    var GastoPA= 5;
     PlayerKurono.PerderPA(GastoPA);
 }
 function RecibirAtaque(){
@@ -130,14 +124,18 @@ function MostrarTexto2(dialogo) {
 
 }
 function MostrarAtaque(Ataque, elemento){
+    const ArmaAbierta = document.getElementById('ArmaAbierta');
+    const Sonido = document.getElementById('Disparo');
     const botones = document.querySelectorAll('input[type=button]');
-    const Disparo = document.getElementById("PlayerFrames1");
+    const EfectoDisparo1 = document.getElementById("ArmaFrame1");
+    const EfectoDisparo2 = document.getElementById("ArmaFrame2");
     const squareEnemy = document.getElementById("SquareEnemy");
     const NumberEnemy = parseInt(localStorage.getItem('NumberEnemy'));
     const EnemyActual = Enemies[NumberEnemy];
     const Enemy = document.getElementById(EnemyActual.Nombre);
     const ATQ = document.getElementById(elemento);
     var contador = 0
+    console.log(EfectoDisparo2)
     //Desactivar botones
     botones.forEach((boton)=>{
         boton.disabled=true
@@ -146,19 +144,28 @@ function MostrarAtaque(Ataque, elemento){
     //Mostrar Animacion de Ataque
     Intervalo1 = setInterval(() => {
         if(contador==0){
+            Sonido.currentTime = 0;
+            Sonido.play()
+            ArmaAbierta.classList.add('animacionAparecer')
             Enemy.classList.add('animacionLuz');
-            //Disparo.classList.add('animacionDisparo');
+            EfectoDisparo1.classList.add('animacionDisparo');
+            EfectoDisparo2.classList.add('animacionDisparo');
         }else if(contador==2){
             Enemy.classList.remove('animacionLuz');
-            //Disparo.classList.remove('animacionDisparo');
+            EfectoDisparo1.classList.remove('animacionDisparo');
+            EfectoDisparo2.classList.remove('animacionDisparo');
             Enemy.classList.add('animacionRecibirDisparo');
             ATQ.innerText= Ataque + "PTS";
             squareEnemy.classList.add("animacion2");
             ATQ.classList.add("animacion3");
+        }else if(contador==3){
+            ArmaAbierta.classList.remove('animacionAparecer')
+            ArmaAbierta.classList.add('animacionDesaparecer')
         }
         else if(contador == 4){
             console.log("Se Detiene la Animación");
             ATQ.innerText=" ";
+            ArmaAbierta.classList.remove('animacionDesaparecer')
             squareEnemy.classList.remove("animacion2");
             ATQ.classList.remove("animacion3");
             Enemy.classList.remove('animacionRecibirDisparo');
@@ -209,7 +216,9 @@ function ActualizarEstadoPersonaje(){
         intervalo1 = setInterval(() => {
             if((contador==0)){
             Enemy.classList.add("animacion4")
-            MostrarTexto1("¡Has derrotado\nal Alien Tanaka!");
+            let EnemigoActual = parseInt(storageObtener("NumberEnemy"));
+            EnemigoActual = Enemies[EnemigoActual];
+            MostrarTexto1("¡Has derrotado\nal Alien " + EnemigoActual.Nombre + "!");
             }else if(contador==4){
             MostrarTexto1("Tu experiencia Incrementa en 5")
             PlayerKurono.SumarExperiencia(5); 
@@ -236,7 +245,7 @@ function EnemyTurn(){
 function Radar(){
     const comandos = document.getElementById('SquareCommand');
     const Items = document.getElementById('SquareItems');
-    MostrarTexto2('Te has vuelto invisible el tanaka no puede verte')
+    MostrarTexto2('Te has vuelto invisible')
     comandos.style.display = 'inline';
     Items.style.display = 'none';
 }

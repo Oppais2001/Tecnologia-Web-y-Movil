@@ -130,7 +130,7 @@
 }.Personajes{
     display: flex;
     width: 33vw;
-    position: absolute;
+    position: fixed;
     left: 33vw;
     top: -2vh;
     opacity: 0;
@@ -141,6 +141,8 @@
     position: fixed;
     background-color: transparent;
     z-index: 1;
+}.Censura{
+    top: 2vh;
 }.Recuadros{
     display: flex; /* contenedor flexible*/
     justify-content: center; /* Centra los elementos secundarios de manera horizontal*/
@@ -169,6 +171,9 @@
     animation-duration: 4s;
     animation-timing-function: ease;
     animation-fill-mode: backwards;/*ease = animacion suave, forwards= mantiene el estado final de la animacion*/
+}.AnimacionAparecer1s{
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }.AnimacionDesaparecer{
     animation-name: desaparecer;
     animation-duration: 1s;
@@ -184,6 +189,19 @@
 }.AnimacionTransportar2{
     position: fixed;
     animation-name: transportar2;
+    animation-duration: 4s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: backwards;
+}.AnimacionTransportar3{
+    position: fixed;
+    overflow: hidden;
+    animation-name: transportar3;
+    animation-duration: 4s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: backwards;
+}.AnimacionTransportar4{
+    position: fixed;
+    animation-name: transportar4;
     animation-duration: 4s;
     animation-timing-function: ease-in;
     animation-fill-mode: backwards;
@@ -209,4 +227,12 @@
 @keyframes transportar2 {
     from {transform: translateY(0vh);}
     to {transform: translateY(-75vh);}
+}
+@keyframes transportar3 {
+    from {transform: translateY(75vh);}
+    to {transform: translateY(0vh);}
+}
+@keyframes transportar4 {
+    from {transform: translateY(-75vh);}
+    to {transform: translateY(0vh);}
 }

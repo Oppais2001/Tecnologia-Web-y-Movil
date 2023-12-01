@@ -1,7 +1,19 @@
 /*Importaciones de Fuentes de Texto*/
 @font-face {
-    font-family: 'upheavtt';
+    font-family: 'wild-words-roman';
     src: url('../Assets/Fonts/ccwild-words-roman.ttf');
+}
+@font-face {
+    font-family: 'Platinun-Sign-Over';
+    src: url('../Assets/Fonts/Platinum\ Sign\ Over.ttf');
+}
+@font-face {
+    font-family: 'DS-Digital';
+    src: url('../Assets/Fonts/DS-DIGIT.TTF');
+}
+@font-face {
+    font-family: 'Full-Pack';
+    src: url('../Assets/Fonts/full\ Pack\ 2025.ttf');
 }
 /*Elementos propios HTML*/
 *{
@@ -12,9 +24,9 @@
 }p{
     color: white;
     font-size: 6vh;
-    font-family: 'upheavtt', sans-serif;
+    font-family: 'wild-words-roman', sans-serif;
     text-align: start;
-    position: absolute;
+    position: fixed;
     top: 1%;
     left: 1%;
 }body{
@@ -23,7 +35,7 @@
     width: 49.5%;
     height: 49.5%;
     font-size: 5vh;
-    font-family: 'upheavtt', sans-serif;
+    font-family: 'wild-words-roman';
     color: white;
 }
 /*Objetos*/
@@ -32,7 +44,7 @@
     align-items: center;
     width: 70vh;
     height: 20vh;
-    position: absolute;
+    position: fixed;
     top: 10vh;
     left: 50vh;
 }#SquareAttack{
@@ -40,41 +52,60 @@
     display: none;
     width: 17vw;
     height: 20vh;
-    position: absolute;
-    top: 5vh;
+    position: fixed;
+    top: 10vh;
     left: 65vh;
 }#SquareItems{
     align-items: center;
     display: none;
     width: 17vw;
     height: 20vh;
-    position: absolute;
+    position: fixed;
     top: 5vh;
     left: 40vw; 
 }#SquareNarracion{
     width: 100vh;
     height: 25vh;
-    position: absolute;
+    position: fixed;
     top: 70vh;
     left: 100vh;
 
 }#SquareStatus{
     width: 22vh;
     height: 40vh;
-    position: absolute;
+    position: fixed;
     top: 6vh;
     left: 6vh;
 }#SquareEnemy{
     width: 25vw;
     height: 25vw;
     background-color: black;
-    position: absolute;
+    position: fixed;
     top: 10vh;
     left: 60vw;
     border-radius: 50vh;
     z-index: -1;
 }
     /*Botones*/
+
+#boton1{
+    position: absolute;
+    top: 0vh;
+    left: 0vw;
+}
+#boton2{
+    position: absolute;
+    top: 0vh;
+    left: 35vh;
+}#boton3{
+    position: absolute;
+    top: 10vh;
+    left: 0vw;
+}#boton4{
+    position: absolute;
+    top: 10vh;
+    left: 35vh;
+}
 #Atacar1{
     width: 17vw;
     height: 10vh;
@@ -107,27 +138,36 @@
     left: 3vh;
 }#stats{
     position: absolute;
-    top: -6%;
-    left: 10%;
+    top: -1vh;
+    left: 1vw;
 }#puntos{
     position: absolute;
-    top: -6%;
-    left: 65%;
+    top: -1vh;
+    left: 6vw;
 }#Narracion{
+    font-family: 'wild-words-roman';
     position: absolute;
-    top: -12%;
-    left: 3%;
+    top: -3vh;
+    left: 1vw;
+    font-size: 5vh;
 }#Comandos{
-    font-size: 350%;
+    font-family: 'Full-pack';
+    font-size: 7vh;
     position: absolute;
-    top: -16vh;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
+    top: -13.5vh;
+    left: 9vh;
+    z-index: 2;
+}#Nombre{
+    font-family: 'Full-Pack';
+    font-size: 7vh;
+    position: absolute;
+    top: -12vh;
+    left: 1vw;
 }#Ataques{
+    font-family: 'Full-Pack';
     position: absolute;
-    top: -10vh;
-    left: 3vw;
+    top: -12vh;
+    left: -1vw;
     z-index: 1;
 }#Items{
     position: absolute;
@@ -144,7 +184,7 @@
 }#Cebollense{
     display: flex;
     width: 10vw;
-    position: absolute;
+    position: fixed;
     top: 10vh;
     left: 67.5vw;
     background-color: transparent;
@@ -157,7 +197,7 @@
 }#SR-Cebollense{
     display: flex;
     height: 75vh;
-    position: absolute;
+    position: fixed;
     top: 10vh;
     left: 65vw;
     background-color: transparent;
@@ -168,34 +208,43 @@
 }#Tanaka{
     display: flex;
     height: 75vh;
-    position: absolute;
+    position: fixed;
     top: 10vh;
     left: 65vw;
     background-color: transparent;
 }#Jefe-Tanaka{
     display: flex;
     width: 40vw;
-    position: absolute;
+    position: fixed;
     left: 55vw;
     top: -10vh;
     background-color: transparent;
-}#Disparo{
-    height: 60vh;
-    position: absolute;
-    top: 40vh;
-    left: 20vh;
+}#ArmaFrame1{
+    left: 24vh;
+    display: flex;
     background-color: transparent;
     opacity: 0;
     z-index: -1;
+}#ArmaFrame2{
+    top: 46vh;
+    left: 25vh;
+    display: flex;
+    background-color: transparent;
+    opacity: 0;
+    z-index: -1;
+    transform: rotate(-12deg);
+}/*Clases*/
+.Status{
+    font-family: "DS-Digital";
 }
-/*Clases*/
 .Player{
     height: 60vh;
-    position: absolute;
+    position: fixed;
     top: 40vh;
     left:20vh;
     background-color: transparent;
     opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }.Enemies{
     display: none;
     opacity: 0;
@@ -209,8 +258,8 @@
     border: 10px solid white
 
 }.Command{
-    width: 25vw;
-    height: 5vh;
+    width: 35vh;
+    height: 10vh;
 }.animacion1{
     animation-name: vibrarA;
     animation-duration: 0.5s;
@@ -236,7 +285,7 @@
     animation-fill-mode: forwards;
     animation-timing-function: linear;
 }.animacionDisparo{
-    animation-name: Disparo;
+    animation-name: aparecer;
     animation-duration: 2s;
     animation-delay: 0s;
     animation-fill-mode: forwards;
@@ -253,6 +302,16 @@
     animation-delay: 0s;
     animation-fill-mode: backwards;
     animation-timing-function: linear;
+}.animacionAparecer{
+    animation-name: aparecer;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;/*ease = animacion suave, forwards= mantiene el estado final de la animacion*/
+}.animacionDesaparecer{
+    animation-name: desaparecer;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
 }
 /*animaciones*/
 @keyframes vibrarA {
@@ -278,14 +337,16 @@
         transform: translateY(0vh);}
     100%{position: fixed;
         transform: translateY(100vh);}
-
-}@keyframes Disparo{
-    0% {opacity: 0;}
-    100%{opacity: 1;}
 }@keyframes Luz{
     0%{filter: brightness(1);}
     100%{filter: brightness(3);}
 }@keyframes RecibirDisparo{
     0% {filter: contrast(1);}
     100% {filter: contrast(0);}
+}@keyframes aparecer {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}@keyframes desaparecer {
+    from {opacity: 1;}
+    to {opacity: 0;}
 }

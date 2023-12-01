@@ -12,9 +12,9 @@
 <body>
     <section>
         <form action="" id="SquareStatus" class="Square">
-            <p id="Nombre">Kei</p>
-            <p id="stats">NV<br/>PV<br/>PA<br/>E<br/>P</p>
-            <p id="puntos"></p>
+            <p class="Status" id="Nombre">KEI</p>
+            <p class="Status" id="stats">NV<br/>PV<br/>PA<br/>E<br/>P</p>
+            <p class="Status" id="puntos"></p>
         </form>
     </section>
     <section>
@@ -27,17 +27,16 @@
         </div>
     <section>
         <form action="" id="SquareCommand" class="Square">
-            <p id="Comandos">Acciones</p>
+            <p id="Comandos">ACCIONES</p>
             <input class="Command" id="boton1" type="button" value="Atacar" onclick="Ataque()">
             <input class="Command" id="boton2" type="button" value="Defenderse" onclick="Defender()">
-            <br>
             <input class="Command" id="boton3" type="button" value="Items" onclick="Items()">
             <input class="Command" id="boton4" type="button" value="Salir" onclick="Huir()">
         </form>
     </section>
     <section>
         <form id="SquareAttack" class="Square">
-            <p id="Ataques">Ataques</p>
+            <p id="Ataques">ATAQUES</p>
             <input class="Option1" id="Atacar1" type="button" value="X-Gun" onclick="NarrarAtaque()">
             <br>
             <input class="Option2" id="Atacar2" type="button" value="Y-Gun" onclick="NarrarAtaque()">
@@ -76,9 +75,11 @@
         <!-- Player 0 -->
         <img id="Kurono" src="" class="Player">
         <img id="KuronoAtaque" src="Assets/Img/Characters/KuronoPoleronAtaque.png" class="Player">
-        <img id="KuronoAtaque1" src="Assets/Img/Characters/KuronoPoleronAtaque1.png" class="Player">
+        <img id="ArmaAbierta" src="Assets/Img/Characters/ArmaAbierta.png" class="Player">
         <!-- Efectos Arma 0 -->
-        <img id="Arma0Frames1" src="Assets/Img/Effects/Arma0Frame1.png" class="Frames">
+        <img id="ArmaFrame1" src="Assets/Img/Effects/EfectoArma1.png" class="Frames Player">
+        <img id="ArmaFrame2" src="Assets/Img/Effects/EfectoArma2.png" class="Frames Player">
     </section>
+    <audio id="Disparo" src="Assets/Sounds/Effects/xgun.mp3"></audio>
 </body>
 </html>
